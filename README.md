@@ -8,7 +8,7 @@ Microchip is not responding to any mail reporting this issue.
 That is why this repository exists.
 
 I maintain only registers and bit fields. No peripherals etc. association.
-You can find them in `fixed` directory in `yaml` format for easy parsing and reading.
+You can find them in `registers` directory in `yaml` format for easy parsing and reading.
 
 Original files can be downloaded from [here](http://packs.download.atmel.com/).
 
