@@ -1,11 +1,24 @@
-# Fixed version of `atdf` and `pic` files for atmega.
+# Collection of registers and their bit fields
 
-Known bugs:
-* Missing `WGM` bit fields. e.g. `WGM11` should exist, instead WGM1 with a mask field set to non power of two.
-* Bit fields named `Res` or `Reserved`, which indicates that they are reserved. They should not exist in file.
-* Missing bit fields in `TWAR1` for `atmega328pb`.
+Motivation:
+Writing all registers and bit fields by hand it error prone and tideus.
+While generating c++ header files with registers and bit fields,
+I've noticed seriuos bugs and Inconsistencies in atdf files (see below).
+Microchip is not responding to any mail reporting this issue.
+That is why this repository exists.
 
-Inconsistencies:
+I maintain only registers and bit fields. No peripherals etc. association.
+You can find them in `fixed` directory in `yaml` format for easy parsing and reading.
+
+Original files can be downloaded from [here](http://packs.download.atmel.com/).
+
+Known bugs in original files:
+* missing bit fields
+* wrongly named bit fields
+* missing registers
+* `Res`, `Reserved` bit fields which should not exist
+
+Inconsistencies in original files:
 * Same attribute names are represented in hex as well in int.
 
 For all fixes see git log for atdf files.
