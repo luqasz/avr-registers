@@ -614,10 +614,13 @@
       <register-group caption="Timer/Counter, 8-bit" name="TC0">
         <register caption="Timer/Counter Control Register" name="TCCR0" offset="0x53" size="1">
           <bitfield caption="Force Output Compare" mask="0x80" name="FOC0"/>
-          <bitfield caption="Waveform Generation Mode" mask="0x40" name="WGM00" values="WAVEFORM_GEN_MODE"/>
-          <bitfield caption="Compare Match Output Modes" mask="0x30" name="COM0"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x40" name="WGM00"/>
+          <bitfield caption="Compare Match Output Modes" mask="0x20" name="COM01"/>
+          <bitfield caption="Compare Match Output Modes" mask="0x10" name="COM00"/>
           <bitfield caption="Waveform Generation Mode 1" mask="0x08" name="WGM01"/>
-          <bitfield caption="Clock Selects" mask="0x07" name="CS0" values="CLK_SEL_3BIT_EXT"/>
+          <bitfield caption="Clock Select" mask="0x01" name="CS00"/>
+          <bitfield caption="Clock Select" mask="0x02" name="CS01"/>
+          <bitfield caption="Clock Select" mask="0x04" name="CS02"/>
         </register>
         <register caption="Timer/Counter Register" name="TCNT0" offset="0x52" size="1" mask="0xFF"/>
         <register caption="Output Compare Register" name="OCR0" offset="0x5C" size="1" mask="0xFF"/>
