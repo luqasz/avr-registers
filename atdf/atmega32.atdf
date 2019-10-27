@@ -633,22 +633,6 @@
           <bitfield caption="Timer/Counter0 Overflow Flag" mask="0x01" name="TOV0"/>
         </register>
       </register-group>
-      <value-group caption="" name="WAVEFORM_GEN_MODE">
-        <value caption="Normal" name="VAL_0x00" value="0x00"/>
-        <value caption="PWM, Phase Correct" name="VAL_0x02" value="0x02"/>
-        <value caption="CTC" name="VAL_0x01" value="0x01"/>
-        <value caption="Fast PWM" name="VAL_0x03" value="0x03"/>
-      </value-group>
-      <value-group caption="" name="CLK_SEL_3BIT_EXT">
-        <value caption="No Clock Source (Stopped)" name="VAL_0x00" value="0x00"/>
-        <value caption="Running, No Prescaling" name="VAL_0x01" value="0x01"/>
-        <value caption="Running, CLK/8" name="VAL_0x02" value="0x02"/>
-        <value caption="Running, CLK/64" name="VAL_0x03" value="0x03"/>
-        <value caption="Running, CLK/256" name="VAL_0x04" value="0x04"/>
-        <value caption="Running, CLK/1024" name="VAL_0x05" value="0x05"/>
-        <value caption="Running, ExtClk Tx Falling Edge" name="VAL_0x06" value="0x06"/>
-        <value caption="Running, ExtClk Tx Rising Edge" name="VAL_0x07" value="0x07"/>
-      </value-group>
     </module>
     <module caption="Timer/Counter, 8-bit Async" name="TC8_ASYNC">
       <register-group caption="Timer/Counter, 8-bit Async" name="TC2">
