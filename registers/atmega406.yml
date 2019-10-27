@@ -1,0 +1,793 @@
+name: atmega406
+registers:
+- address: 1
+  bit_fields:
+  - bit: 1
+    description: JTAG Interface Enabled
+    name: JTAGEN
+  - bit: 2
+    description: On-Chip Debug Enabled
+    name: OCDEN
+  description: ''
+  name: HIGH
+- address: 0
+  bit_fields:
+  - bit: 48
+    description: Select boot size
+    name: BOOTSZ
+  - bit: 128
+    description: Watchdog timer always on
+    name: WDTON
+  - bit: 7
+    description: Clock Selection
+    name: SUT_CKSEL
+  - bit: 8
+    description: Boot Reset vector Enabled
+    name: BOOTRST
+  - bit: 64
+    description: Preserve EEPROM through the Chip Erase cycle
+    name: EESAVE
+  description: ''
+  name: LOW
+- address: 0
+  bit_fields:
+  - bit: 3
+    description: Memory Lock
+    name: LB
+  - bit: 48
+    description: Boot Loader Protection Mode
+    name: BLB1
+  - bit: 12
+    description: Boot Loader Protection Mode
+    name: BLB0
+  description: ''
+  name: LOCKBIT
+- address: 124
+  bit_fields:
+  - bit: 15
+    description: Analog Channel and Gain Selection Bits
+    name: VADMUX
+  description: The VADC multiplexer Selection Register
+  name: VADMUX
+- address: 120
+  bit_fields: []
+  description: VADC Data Register  Bytes
+  name: VADC
+- address: 122
+  bit_fields:
+  - bit: 4
+    description: VADC Satrt Conversion
+    name: VADSC
+  - bit: 8
+    description: VADC Enable
+    name: VADEN
+  - bit: 2
+    description: VADC Conversion Complete Interrupt Flag
+    name: VADCCIF
+  - bit: 1
+    description: VADC Conversion Complete Interrupt Enable
+    name: VADCCIE
+  description: The VADC Control and Status register
+  name: VADCSR
+- address: 105
+  bit_fields:
+  - bit: 192
+    description: External Interrupt Sense Control 3 Bits
+    name: ISC3
+  - bit: 12
+    description: External Interrupt Sense Control 1 Bits
+    name: ISC1
+  - bit: 48
+    description: External Interrupt Sense Control 2 Bits
+    name: ISC2
+  - bit: 3
+    description: External Interrupt Sense Control 0 Bits
+    name: ISC0
+  description: External Interrupt Control Register
+  name: EICRA
+- address: 61
+  bit_fields:
+  - bit: 15
+    description: External Interrupt Request 1 Enable
+    name: INT
+  description: External Interrupt Mask Register
+  name: EIMSK
+- address: 60
+  bit_fields:
+  - bit: 15
+    description: External Interrupt Flags
+    name: INTF
+  description: External Interrupt Flag Register
+  name: EIFR
+- address: 104
+  bit_fields:
+  - bit: 3
+    description: Pin Change Interrupt Enables
+    name: PCIE
+  description: Pin Change Interrupt Control Register
+  name: PCICR
+- address: 59
+  bit_fields:
+  - bit: 3
+    description: Pin Change Interrupt Flags
+    name: PCIF
+  description: Pin Change Interrupt Flag Register
+  name: PCIFR
+- address: 108
+  bit_fields: []
+  description: Pin Change Enable Mask Register 1
+  name: PCMSK1
+- address: 107
+  bit_fields: []
+  description: Pin Change Enable Mask Register 0
+  name: PCMSK0
+- address: 129
+  bit_fields:
+  - bit: 8
+    description: Clear Timer/Counter on Compare Match
+    name: CTC1
+  - bit: 7
+    description: Clock Select1 bits
+    name: CS1
+  description: Timer/Counter1 Control Register B
+  name: TCCR1B
+- address: 132
+  bit_fields: []
+  description: Timer Counter 1  Bytes
+  name: TCNT1
+- address: 136
+  bit_fields: []
+  description: Output Compare Register 1A Low byte
+  name: OCR1AL
+- address: 137
+  bit_fields: []
+  description: Output Compare Register 1A High byte
+  name: OCR1AH
+- address: 111
+  bit_fields:
+  - bit: 1
+    description: Timer/Counter1 Overflow Interrupt Enable
+    name: TOIE1
+  - bit: 2
+    description: Timer/Counter1 Output Compare Interrupt Enable
+    name: OCIE1A
+  description: Timer/Counter Interrupt Mask Register
+  name: TIMSK1
+- address: 54
+  bit_fields:
+  - bit: 2
+    description: Timer/Counter1 Output Compare Flag A
+    name: OCF1A
+  - bit: 1
+    description: Timer/Counter1 Overflow Flag
+    name: TOV1
+  description: Timer/Counter Interrupt Flag register
+  name: TIFR1
+- address: 67
+  bit_fields:
+  - bit: 1
+    description: Prescaler Reset
+    name: PSRSYNC
+  - bit: 128
+    description: Timer/Counter Synchronization Mode
+    name: TSM
+  description: General Timer/Counter Control Register
+  name: GTCCR
+- address: 98
+  bit_fields:
+  - bit: 8
+    description: Wake-up Timer Enable
+    name: WUTE
+  - bit: 7
+    description: Wake-up Timer Prescaler Bits
+    name: WUTP
+  - bit: 16
+    description: Wake-up Timer Reset
+    name: WUTR
+  - bit: 32
+    description: Wake-up timer Calibration Flag
+    name: WUTCF
+  - bit: 128
+    description: Wake-up Timer Interrupt Flag
+    name: WUTIF
+  - bit: 64
+    description: Wake-up Timer Interrupt Enable
+    name: WUTIE
+  description: Wake-up Timer Control Register
+  name: WUTCSR
+- address: 248
+  bit_fields:
+  - bit: 2
+    description: Battery Protection Parameter Lock Enable
+    name: BPPLE
+  - bit: 1
+    description: Battery Protection Parameter Lock
+    name: BPPL
+  description: Battery Protection Parameter Lock Register
+  name: BPPLR
+- address: 247
+  bit_fields:
+  - bit: 8
+    description: ''
+    name: DUVD
+  - bit: 4
+    description: ''
+    name: SCD
+  - bit: 2
+    description: ''
+    name: DCD
+  - bit: 1
+    description: ''
+    name: CCD
+  description: Battery Protection Control Register
+  name: BPCR
+- address: 246
+  bit_fields:
+  - bit: 15
+    description: ''
+    name: OCPT
+  - bit: 240
+    description: ''
+    name: SCPT
+  description: Current Battery Protection Timing Register
+  name: CBPTR
+- address: 245
+  bit_fields:
+  - bit: 15
+    description: ''
+    name: CCDL
+  - bit: 240
+    description: ''
+    name: DCDL
+  description: Battery Protection OverCurrent Detection Level Register
+  name: BPOCD
+- address: 244
+  bit_fields:
+  - bit: 15
+    description: ''
+    name: SCDL
+  description: Battery Protection Short-Circuit Detection Level Register
+  name: BPSCD
+- address: 243
+  bit_fields:
+  - bit: 15
+    description: ''
+    name: DUDL
+  - bit: 48
+    description: ''
+    name: DUVT
+  description: Battery Protection Deep Under Voltage Register
+  name: BPDUV
+- address: 242
+  bit_fields:
+  - bit: 16
+    description: ''
+    name: SCIF
+  - bit: 4
+    description: ''
+    name: COCIE
+  - bit: 128
+    description: Deep Under-voltage Early Warning Interrupt Flag
+    name: DUVIF
+  - bit: 64
+    description: Charge Over-current Protection Activated Interrupt Flag
+    name: COCIF
+  - bit: 32
+    description: ''
+    name: DOCIF
+  - bit: 2
+    description: ''
+    name: DOCIE
+  - bit: 1
+    description: ''
+    name: SCIE
+  - bit: 8
+    description: Deep Under-voltage Early Warning Interrupt Enable
+    name: DUVIE
+  description: Battery Protection Interrupt Register
+  name: BPIR
+- address: 240
+  bit_fields:
+  - bit: 16
+    description: Pulse Width Modulation Modulation of OPC output
+    name: PWMOPC
+  - bit: 4
+    description: Discharge FET Enable
+    name: DFE
+  - bit: 1
+    description: Precharge FET disable
+    name: PFD
+  - bit: 32
+    description: Pulse Width Modulation of OC output
+    name: PWMOC
+  - bit: 2
+    description: Charge FET Enable
+    name: CFE
+  - bit: 8
+    description: Current Protection Status
+    name: CPS
+  description: ''
+  name: FCSR
+- address: 228
+  bit_fields:
+  - bit: 24
+    description: CC_ADC Accumulate Current Select Bits
+    name: CADAS
+  - bit: 1
+    description: When the CADSE bit is written to one, the ongoing CC-ADC conversion
+      is aborted, and the CC-ADC enters Regular Current detection mode.
+    name: CADSE
+  - bit: 32
+    description: CC_ADC Update Busy
+    name: CADUB
+  - bit: 128
+    description: When the CADEN bit is cleared (zero), the CC-ADC is disabled. When
+      the CADEN bit is set (one), the CC-ADC will continuously measure the voltage
+      drop over the external sense resistor RSENSE. In Power-down, only the Regular
+      Current detection is active. In Power-off, the CC-ADC is always disabled.
+    name: CADEN
+  - bit: 6
+    description: The CADSI bits determine the current sampling interval for the Regular
+      Current detection in Power-down mode. The actual settings remain to be determined.
+    name: CADSI
+  description: CC-ADC Control and Status Register A
+  name: CADCSRA
+- address: 229
+  bit_fields:
+  - bit: 64
+    description: ''
+    name: CADACIE
+  - bit: 32
+    description: Regular Current Interrupt Enable
+    name: CADRCIE
+  - bit: 2
+    description: CC-ADC Accumulate Current Interrupt Flag
+    name: CADRCIF
+  - bit: 4
+    description: CC-ADC Accumulate Current Interrupt Flag
+    name: CADACIF
+  - bit: 1
+    description: CC-ADC Instantaneous Current Interrupt Flag
+    name: CADICIF
+  - bit: 16
+    description: CAD Instantenous Current Interrupt Enable
+    name: CADICIE
+  description: CC-ADC Control and Status Register B
+  name: CADCSRB
+- address: 232
+  bit_fields: []
+  description: CC-ADC Instantaneous Current
+  name: CADIC
+- address: 227
+  bit_fields: []
+  description: ADC Accumulate Current
+  name: CADAC3
+- address: 226
+  bit_fields: []
+  description: ADC Accumulate Current
+  name: CADAC2
+- address: 225
+  bit_fields: []
+  description: ADC Accumulate Current
+  name: CADAC1
+- address: 224
+  bit_fields: []
+  description: ADC Accumulate Current
+  name: CADAC0
+- address: 230
+  bit_fields: []
+  description: CC-ADC Regular Charge Current
+  name: CADRCC
+- address: 231
+  bit_fields: []
+  description: CC-ADC Regular Discharge Current
+  name: CADRDC
+- address: 241
+  bit_fields:
+  - bit: 15
+    description: Cell Balancing Enables
+    name: CBE
+  description: Cell Balancing Control Register
+  name: CBCR
+- address: 95
+  bit_fields:
+  - bit: 1
+    description: Carry Flag
+    name: C
+  - bit: 4
+    description: Negative Flag
+    name: N
+  - bit: 64
+    description: Bit Copy Storage
+    name: T
+  - bit: 2
+    description: Zero Flag
+    name: Z
+  - bit: 16
+    description: Sign Bit
+    name: S
+  - bit: 8
+    description: Two's Complement Overflow Flag
+    name: V
+  - bit: 128
+    description: Global Interrupt Enable
+    name: I
+  - bit: 32
+    description: Half Carry Flag
+    name: H
+  description: Status Register
+  name: SREG
+- address: 93
+  bit_fields: []
+  description: Stack Pointer
+  name: SP
+- address: 85
+  bit_fields:
+  - bit: 16
+    description: Pull-up disable
+    name: PUD
+  - bit: 1
+    description: Interrupt Vector Change Enable
+    name: IVCE
+  - bit: 2
+    description: Interrupt Vector Select
+    name: IVSEL
+  - bit: 128
+    description: JTAG Disable
+    name: JTD
+  description: MCU Control Register
+  name: MCUCR
+- address: 84
+  bit_fields:
+  - bit: 4
+    description: Brown-out Reset Flag
+    name: BODRF
+  - bit: 8
+    description: Watchdog Reset Flag
+    name: WDRF
+  - bit: 1
+    description: Power-on reset flag
+    name: PORF
+  - bit: 2
+    description: External Reset Flag
+    name: EXTRF
+  - bit: 16
+    description: JTAG Reset Flag
+    name: JTRF
+  description: MCU Status Register
+  name: MCUSR
+- address: 102
+  bit_fields: []
+  description: Fast Oscillator Calibration Value
+  name: FOSCCAL
+- address: 83
+  bit_fields:
+  - bit: 14
+    description: Sleep Mode Select bits
+    name: SM
+  - bit: 1
+    description: Sleep Enable
+    name: SE
+  description: Sleep Mode Control Register
+  name: SMCR
+- address: 75
+  bit_fields: []
+  description: General Purpose IO Register 2
+  name: GPIOR2
+- address: 74
+  bit_fields: []
+  description: General Purpose IO Register 1
+  name: GPIOR1
+- address: 62
+  bit_fields: []
+  description: General Purpose IO Register 0
+  name: GPIOR0
+- address: 192
+  bit_fields:
+  - bit: 1
+    description: Asynchronous Clock Select
+    name: ACS
+  - bit: 2
+    description: 32 kHz Crystal Oscillator Enable
+    name: XOE
+  description: Clock Control and Status Register
+  name: CCSR
+- address: 126
+  bit_fields: []
+  description: Digital Input Disable Register
+  name: DIDR0
+- address: 100
+  bit_fields:
+  - bit: 2
+    description: Power Reduction Timer/Counter0
+    name: PRTIM0
+  - bit: 1
+    description: Power Reduction V-ADC
+    name: PRVADC
+  - bit: 4
+    description: Power Reduction Timer/Counter1
+    name: PRTIM1
+  - bit: 8
+    description: Power Reduction TWI
+    name: PRTWI
+  description: Power Reduction Register 0
+  name: PRR0
+- address: 96
+  bit_fields:
+  - bit: 39
+    description: Watchdog Timer Prescaler Bits
+    name: WDP
+  - bit: 16
+    description: Watchdog Change Enable
+    name: WDCE
+  - bit: 8
+    description: Watch Dog Enable
+    name: WDE
+  - bit: 64
+    description: Watchdog Timeout Interrupt Enable
+    name: WDIE
+  - bit: 128
+    description: Watchdog Timeout Interrupt Flag
+    name: WDIF
+  description: Watchdog Timer Control Register
+  name: WDTCSR
+- address: 68
+  bit_fields:
+  - bit: 3
+    description: Clock Select0 bits
+    name: WGM0
+  - bit: 48
+    description: ''
+    name: COM0B
+  - bit: 192
+    description: Force Output Compare
+    name: COM0A
+  description: Timer/Counter0 Control Register
+  name: TCCR0A
+- address: 69
+  bit_fields:
+  - bit: 64
+    description: Waveform Generation Mode
+    name: FOC0B
+  - bit: 7
+    description: Clock Select0 bits
+    name: CS0
+  - bit: 8
+    description: ''
+    name: WGM02
+  - bit: 128
+    description: Force Output Compare
+    name: FOC0A
+  description: Timer/Counter0 Control Register
+  name: TCCR0B
+- address: 70
+  bit_fields: []
+  description: Timer Counter 0
+  name: TCNT0
+- address: 71
+  bit_fields:
+  - bit: 255
+    description: ''
+    name: OCR0A
+  description: Output compare Register A
+  name: OCR0A
+- address: 72
+  bit_fields:
+  - bit: 255
+    description: ''
+    name: OCR0B
+  description: Output compare Register B
+  name: OCR0B
+- address: 110
+  bit_fields:
+  - bit: 4
+    description: Output Compare Interrupt Enable
+    name: OCIE0B
+  - bit: 1
+    description: Overflow Interrupt Enable
+    name: TOIE0
+  - bit: 2
+    description: Output Compare Interrupt Enable
+    name: OCIE0A
+  description: Timer/Counter Interrupt Mask Register
+  name: TIMSK0
+- address: 53
+  bit_fields:
+  - bit: 2
+    description: Output Compare Flag
+    name: OCF0A
+  - bit: 1
+    description: Overflow Flag
+    name: TOV0
+  - bit: 4
+    description: Output Compare Flag
+    name: OCF0B
+  description: Timer/Counter Interrupt Flag register
+  name: TIFR0
+- address: 34
+  bit_fields: []
+  description: Port A Data Register
+  name: PORTA
+- address: 33
+  bit_fields: []
+  description: Port A Data Direction Register
+  name: DDRA
+- address: 32
+  bit_fields: []
+  description: Port A Input Pins
+  name: PINA
+- address: 37
+  bit_fields: []
+  description: Port B Data Register
+  name: PORTB
+- address: 36
+  bit_fields: []
+  description: Port B Data Direction Register
+  name: DDRB
+- address: 35
+  bit_fields: []
+  description: Port B Input Pins
+  name: PINB
+- address: 40
+  bit_fields: []
+  description: Port C Data Register
+  name: PORTC
+- address: 43
+  bit_fields: []
+  description: Data Register, Port D
+  name: PORTD
+- address: 42
+  bit_fields: []
+  description: Data Direction Register, Port D
+  name: DDRD
+- address: 41
+  bit_fields: []
+  description: Input Pins, Port D
+  name: PIND
+- address: 87
+  bit_fields:
+  - bit: 32
+    description: Signature Row Read
+    name: SIGRD
+  - bit: 16
+    description: Read While Write section read enable
+    name: RWWSRE
+  - bit: 64
+    description: Read While Write Section Busy
+    name: RWWSB
+  - bit: 8
+    description: Boot Lock Bit Set
+    name: BLBSET
+  - bit: 4
+    description: Page Write
+    name: PGWRT
+  - bit: 2
+    description: Page Erase
+    name: PGERS
+  - bit: 128
+    description: SPM Interrupt Enable
+    name: SPMIE
+  - bit: 1
+    description: Store Program Memory Enable
+    name: SPMEN
+  description: Store Program Memory Control Register
+  name: SPMCSR
+- address: 190
+  bit_fields:
+  - bit: 128
+    description: TWI Bus Connect/Disconnect Interrupt Flag
+    name: TWBCIF
+  - bit: 6
+    description: TWI Bus Disconnect Time-out Period
+    name: TWBDT
+  - bit: 1
+    description: TWI Bus Connect/Disconnect Interrupt Polarity
+    name: TWBCIP
+  - bit: 64
+    description: TWI Bus Connect/Disconnect Interrupt Enable
+    name: TWBCIE
+  description: TWI Bus Control and Status Register
+  name: TWBCSR
+- address: 189
+  bit_fields:
+  - bit: 254
+    description: ''
+    name: TWAM
+  description: TWI (Slave) Address Mask Register
+  name: TWAMR
+- address: 184
+  bit_fields: []
+  description: TWI Bit Rate register
+  name: TWBR
+- address: 188
+  bit_fields:
+  - bit: 1
+    description: TWI Interrupt Enable
+    name: TWIE
+  - bit: 128
+    description: TWI Interrupt Flag
+    name: TWINT
+  - bit: 16
+    description: TWI Stop Condition Bit
+    name: TWSTO
+  - bit: 64
+    description: TWI Enable Acknowledge Bit
+    name: TWEA
+  - bit: 32
+    description: TWI Start Condition Bit
+    name: TWSTA
+  - bit: 8
+    description: TWI Write Collition Flag
+    name: TWWC
+  - bit: 4
+    description: TWI Enable Bit
+    name: TWEN
+  description: TWI Control Register
+  name: TWCR
+- address: 185
+  bit_fields:
+  - bit: 248
+    description: TWI Status
+    name: TWS
+  - bit: 3
+    description: TWI Prescaler
+    name: TWPS
+  description: TWI Status Register
+  name: TWSR
+- address: 187
+  bit_fields: []
+  description: TWI Data register
+  name: TWDR
+- address: 186
+  bit_fields:
+  - bit: 1
+    description: TWI General Call Recognition Enable Bit
+    name: TWGCE
+  - bit: 254
+    description: TWI (Slave) Address register Bits
+    name: TWA
+  description: TWI (Slave) Address register
+  name: TWAR
+- address: 209
+  bit_fields: []
+  description: Bandgap Calibration of Resistor Ladder
+  name: BGCRR
+- address: 208
+  bit_fields:
+  - bit: 63
+    description: BG Calibration of PTAT Current Bits
+    name: BGCC
+  - bit: 128
+    description: Setting the BGD bit to one will disable the bandgap voltage reference.
+      This bit must be cleared before enabling CC-ADC or V-ADC, and must remain unset
+      while either ADC is enabled.
+    name: BGD
+  description: Bandgap Calibration Register
+  name: BGCCR
+- address: 65
+  bit_fields: []
+  description: EEPROM Address Register  Bytes
+  name: EEAR
+- address: 64
+  bit_fields: []
+  description: EEPROM Data Register
+  name: EEDR
+- address: 63
+  bit_fields:
+  - bit: 1
+    description: EEPROM Read Enable
+    name: EERE
+  - bit: 4
+    description: EEPROM Master Programming Enable
+    name: EEMPE
+  - bit: 48
+    description: EEPROM Programming Mode Bits
+    name: EEPM
+  - bit: 8
+    description: EEPROM Ready Interrupt Enable
+    name: EERIE
+  - bit: 2
+    description: EEPROM Programming Enable
+    name: EEPE
+  description: EEPROM Control Register
+  name: EECR
