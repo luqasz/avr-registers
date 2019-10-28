@@ -4,7 +4,7 @@
     <variant ordercode="ATmega16L-8AU" tempmin="-40" tempmax="85" speedmax="8000000" pinout="TQFPQFN44" package="TQFP44" vccmin="2.7" vccmax="5.5"/>
     <variant ordercode="ATmega16L-8PU" tempmin="-40" tempmax="85" speedmax="8000000" pinout="PDIP40" package="PDIP40" vccmin="2.7" vccmax="5.5"/>
     <variant ordercode="ATmega16L-8MU" tempmin="-40" tempmax="85" speedmax="8000000" pinout="TQFPQFN44" package="QFN44" vccmin="2.7" vccmax="5.5"/>
-    
+
     <variant ordercode="ATmega16-16AU" tempmin="-40" tempmax="85" speedmax="16000000" pinout="TQFPQFN44" package="TQFP44" vccmin="4.5" vccmax="5.5"/>
     <variant ordercode="ATmega16-16PU" tempmin="-40" tempmax="85" speedmax="16000000" pinout="PDIP40" package="PDIP40" vccmin="4.5" vccmax="5.5"/>
     <variant ordercode="ATmega16-16MU" tempmin="-40" tempmax="85" speedmax="16000000" pinout="TQFPQFN44" package="QFN44" vccmin="4.5" vccmax="5.5"/>
@@ -941,7 +941,6 @@
     <module caption="JTAG Interface" name="JTAG">
       <register-group caption="JTAG Interface" name="JTAG">
         <register caption="On-Chip Debug Related Register in I/O Memory" name="OCDR" offset="0x51" size="1" ocd-rw="">
-          <bitfield caption="On-Chip Debug Register Bits" mask="0xFF" name="OCDR"/>
         </register>
         <register caption="MCU Control And Status Register" name="MCUCSR" offset="0x54" size="1">
           <bitfield caption="JTAG Interface Disable" mask="0x80" name="JTD"/>

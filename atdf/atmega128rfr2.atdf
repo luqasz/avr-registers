@@ -2000,7 +2000,6 @@
     <module caption="JTAG Interface" name="JTAG">
       <register-group caption="JTAG Interface" name="JTAG">
         <register caption="On-Chip Debug Register" name="OCDR" offset="0x51" size="1" ocd-rw="">
-          <bitfield caption="On-Chip Debug Register Data" mask="0xFF" name="OCDR" values="OCDR_DATA_BITF"/>
         </register>
         <register caption="MCU Control Register" name="MCUCR" offset="0x55" size="1">
           <bitfield caption="JTAG Interface Disable" mask="0x80" name="JTD"/>

@@ -809,7 +809,6 @@
     <module caption="JTAG Interface" name="JTAG">
       <register-group caption="JTAG Interface" name="JTAG">
         <register caption="On-Chip Debug Related Register in I/O Memory" name="OCDR" offset="0x24" size="1" ocd-rw="">
-          <bitfield caption="On-Chip Debug Register Bits" mask="0xFF" name="OCDR"/>
         </register>
         <register caption="MCU Control And Status Register" name="MCUCSR" offset="0x54" size="1">
           <bitfield caption="JTAG Interface Disable" mask="0x80" name="JTD"/>
