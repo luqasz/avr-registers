@@ -593,12 +593,14 @@
           <bitfield caption="Compare Output Mode 1B, bits" mask="0x30" name="COM1B"/>
           <bitfield caption="Force Output Compare 1A" mask="0x08" name="FOC1A"/>
           <bitfield caption="Force Output Compare 1B" mask="0x04" name="FOC1B"/>
-          <bitfield caption="Waveform Generation Mode" mask="0x03" name="WGM1"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x01" name="WGM10"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x02" name="WGM11"/>
         </register>
         <register caption="Timer/Counter1 Control Register B" name="TCCR1B" offset="0x4E" size="1">
           <bitfield caption="Input Capture 1 Noise Canceler" mask="0x80" name="ICNC1"/>
           <bitfield caption="Input Capture 1 Edge Select" mask="0x40" name="ICES1"/>
-          <bitfield caption="Waveform Generation Mode" mask="0x18" name="WGM1" lsb="2"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x08" name="WGM12" lsb="2"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x10" name="WGM13" lsb="2"/>
           <bitfield caption="Prescaler source of Timer/Counter 1" mask="0x07" name="CS1" values="CLK_SEL_3BIT_EXT"/>
         </register>
         <register caption="Timer/Counter1  Bytes" name="TCNT1" offset="0x4C" size="2" mask="0xFFFF"/>

@@ -981,13 +981,15 @@
           <bitfield caption="Compare Output Mode for Channel A" mask="0xC0" name="COM5A" values="TC4_COMNX_BITF"/>
           <bitfield caption="Compare Output Mode for Channel B" mask="0x30" name="COM5B" values="TC4_COMNX_BITF"/>
           <bitfield caption="Compare Output Mode for Channel C" mask="0x0C" name="COM5C" values="TC4_COMNX_BITF"/>
-          <bitfield caption="Waveform Generation Mode" mask="0x03" name="WGM5" values="TC1_WGMX_BITF"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x01" name="WGM50"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x02" name="WGM51"/>
         </register>
         <register caption="Timer/Counter5 Control Register B" name="TCCR5B" offset="0x121" size="1">
           <bitfield caption="Input Capture 5 Noise Canceller" mask="0x80" name="ICNC5"/>
           <bitfield caption="Input Capture 5 Edge Select" mask="0x40" name="ICES5"/>
           <bitfield caption="Reserved Bit" mask="0x20" name="Res"/>
-          <bitfield caption="Waveform Generation Mode" mask="0x18" name="WGM5" values="TC1_WGMX_BITF" lsb="2"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x08" name="WGM52" lsb="2"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x10" name="WGM53" lsb="2"/>
           <bitfield caption="Clock Select" mask="0x07" name="CS5" values="CLK_SEL_3BIT_NOEXT_MEGARF"/>
         </register>
         <register caption="Timer/Counter5 Control Register C" name="TCCR5C" offset="0x122" size="1">
@@ -1020,13 +1022,15 @@
           <bitfield caption="Compare Output Mode for Channel A" mask="0xC0" name="COM4A" values="TC4_COMNX_BITF"/>
           <bitfield caption="Compare Output Mode for Channel B" mask="0x30" name="COM4B" values="TC4_COMNX_BITF"/>
           <bitfield caption="Compare Output Mode for Channel C" mask="0x0C" name="COM4C" values="TC4_COMNX_BITF"/>
-          <bitfield caption="Waveform Generation Mode" mask="0x03" name="WGM4" values="TC1_WGMX_BITF"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x01" name="WGM40"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x02" name="WGM41"/>
         </register>
         <register caption="Timer/Counter4 Control Register B" name="TCCR4B" offset="0xA1" size="1">
           <bitfield caption="Input Capture 4 Noise Canceller" mask="0x80" name="ICNC4"/>
           <bitfield caption="Input Capture 4 Edge Select" mask="0x40" name="ICES4"/>
           <bitfield caption="Reserved Bit" mask="0x20" name="Res"/>
-          <bitfield caption="Waveform Generation Mode" mask="0x18" name="WGM4" values="TC1_WGMX_BITF" lsb="2"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x08" name="WGM42" lsb="2"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x10" name="WGM43" lsb="2"/>
           <bitfield caption="Clock Select" mask="0x07" name="CS4" values="CLK_SEL_3BIT_NOEXT_MEGARF"/>
         </register>
         <register caption="Timer/Counter4 Control Register C" name="TCCR4C" offset="0xA2" size="1">
@@ -1059,13 +1063,15 @@
           <bitfield caption="Compare Output Mode for Channel A" mask="0xC0" name="COM3A" values="TC1_COMNX_BITF"/>
           <bitfield caption="Compare Output Mode for Channel B" mask="0x30" name="COM3B" values="TC1_COMNX_BITF"/>
           <bitfield caption="Compare Output Mode for Channel C" mask="0x0C" name="COM3C" values="TC1_COMNX_BITF"/>
-          <bitfield caption="Waveform Generation Mode" mask="0x03" name="WGM3" values="TC1_WGMX_BITF"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x01" name="WGM30"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x02" name="WGM31"/>
         </register>
         <register caption="Timer/Counter3 Control Register B" name="TCCR3B" offset="0x91" size="1">
           <bitfield caption="Input Capture 3 Noise Canceller" mask="0x80" name="ICNC3"/>
           <bitfield caption="Input Capture 3 Edge Select" mask="0x40" name="ICES3"/>
           <bitfield caption="Reserved Bit" mask="0x20" name="Res"/>
-          <bitfield caption="Waveform Generation Mode" mask="0x18" name="WGM3" values="TC1_WGMX_BITF" lsb="2"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x08" name="WGM32" lsb="2"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x10" name="WGM33" lsb="2"/>
           <bitfield caption="Clock Select" mask="0x07" name="CS3" values="CLK_SEL_3BIT_EXT_MEGARF"/>
         </register>
         <register caption="Timer/Counter3 Control Register C" name="TCCR3C" offset="0x92" size="1">
@@ -1098,13 +1104,15 @@
           <bitfield caption="Compare Output Mode for Channel A" mask="0xC0" name="COM1A" values="TC1_COMNX_BITF"/>
           <bitfield caption="Compare Output Mode for Channel B" mask="0x30" name="COM1B" values="TC1_COMNX_BITF"/>
           <bitfield caption="Compare Output Mode for Channel C" mask="0x0C" name="COM1C" values="TC1_COMNX_BITF"/>
-          <bitfield caption="Waveform Generation Mode" mask="0x03" name="WGM1" values="TC1_WGMX_BITF"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x01" name="WGM10"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x02" name="WGM11"/>
         </register>
         <register caption="Timer/Counter1 Control Register B" name="TCCR1B" offset="0x81" size="1">
           <bitfield caption="Input Capture 1 Noise Canceller" mask="0x80" name="ICNC1"/>
           <bitfield caption="Input Capture 1 Edge Select" mask="0x40" name="ICES1"/>
           <bitfield caption="Reserved Bit" mask="0x20" name="Res"/>
-          <bitfield caption="Waveform Generation Mode" mask="0x18" name="WGM1" values="TC1_WGMX_BITF" lsb="2"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x08" name="WGM12" lsb="2"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x10" name="WGM13" lsb="2"/>
           <bitfield caption="Clock Select" mask="0x07" name="CS1" values="CLK_SEL_3BIT_EXT_MEGARF"/>
         </register>
         <register caption="Timer/Counter1 Control Register C" name="TCCR1C" offset="0x82" size="1">
@@ -1137,24 +1145,6 @@
         <value caption="Reserved" name="VAL_1" value="1"/>
         <value caption="Reserved" name="VAL_2" value="2"/>
         <value caption="Reserved" name="VAL_3" value="3"/>
-      </value-group>
-      <value-group caption="" name="TC1_WGMX_BITF">
-        <value caption="Normal mode of operation" name="VAL_0x0" value="0x0"/>
-        <value caption="PWM, phase correct, 8-bit" name="VAL_0x1" value="0x1"/>
-        <value caption="PWM, phase correct, 9-bit" name="VAL_0x2" value="0x2"/>
-        <value caption="PWM, phase correct, 10-bit" name="VAL_0x3" value="0x3"/>
-        <value caption="CTC, TOP = OCRnA" name="VAL_0x4" value="0x4"/>
-        <value caption="Fast PWM, 8-bit" name="VAL_0x5" value="0x5"/>
-        <value caption="Fast PWM, 9-bit" name="VAL_0x6" value="0x6"/>
-        <value caption="Fast PWM, 10-bit" name="VAL_0x7" value="0x7"/>
-        <value caption="PWM, Phase and frequency correct, TOP = ICRn" name="VAL_0x8" value="0x8"/>
-        <value caption="PWM, Phase and frequency correct, TOP = OCRnA" name="VAL_0x9" value="0x9"/>
-        <value caption="PWM, Phase correct, TOP = ICRn" name="VAL_0xA" value="0xA"/>
-        <value caption="PWM, Phase correct, TOP = OCRnA" name="VAL_0xB" value="0xB"/>
-        <value caption="CTC, TOP = OCRnA" name="VAL_0xC" value="0xC"/>
-        <value caption="Reserved" name="VAL_0xD" value="0xD"/>
-        <value caption="Fast PWM, TOP = ICRn" name="VAL_0xE" value="0xE"/>
-        <value caption="Fast PWM, TOP = OCRnA" name="VAL_0xF" value="0xF"/>
       </value-group>
       <value-group caption="" name="CLK_SEL_3BIT_NOEXT_MEGARF">
         <value caption="No clock source (Timer/Counter stopped)" name="VAL_0x00" value="0x00"/>

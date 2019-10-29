@@ -640,12 +640,14 @@
         <register caption="Timer/Counter1 Control Register A" name="TCCR1A" offset="0x80" size="1">
           <bitfield caption="Compare Output Mode 1A, bits" mask="0xC0" name="COM1A"/>
           <bitfield caption="Compare Output Mode 1B, bits" mask="0x30" name="COM1B"/>
-          <bitfield caption="Waveform Generation Mode" mask="0x03" name="WGM1"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x01" name="WGM10"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x02" name="WGM11"/>
         </register>
         <register caption="Timer/Counter1 Control Register B" name="TCCR1B" offset="0x81" size="1">
           <bitfield caption="Input Capture 1 Noise Canceler" mask="0x80" name="ICNC1"/>
           <bitfield caption="Input Capture 1 Edge Select" mask="0x40" name="ICES1"/>
-          <bitfield caption="Waveform Generation Mode" mask="0x18" name="WGM1" lsb="2"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x08" name="WGM12" lsb="2"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x10" name="WGM13" lsb="2"/>
           <bitfield caption="Prescaler source of Timer/Counter 1" mask="0x07" name="CS1" values="CLK_SEL_3BIT_EXT"/>
         </register>
         <register caption="Timer/Counter1 Control Register C" name="TCCR1C" offset="0x82" size="1" ocd-rw="">

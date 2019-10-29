@@ -1164,12 +1164,14 @@
           <bitfield caption="Compare Output Mode 1A, bits" mask="0xC0" name="COM5A"/>
           <bitfield caption="Compare Output Mode 5B, bits" mask="0x30" name="COM5B"/>
           <bitfield caption="Compare Output Mode 5C, bits" mask="0x0C" name="COM5C"/>
-          <bitfield caption="Waveform Generation Mode" mask="0x03" name="WGM5"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x01" name="WGM50"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x02" name="WGM51"/>
         </register>
         <register caption="Timer/Counter5 Control Register B" name="TCCR5B" offset="0x121" size="1">
           <bitfield caption="Input Capture 5 Noise Canceler" mask="0x80" name="ICNC5"/>
           <bitfield caption="Input Capture 5 Edge Select" mask="0x40" name="ICES5"/>
-          <bitfield caption="Waveform Generation Mode" mask="0x18" name="WGM5" lsb="2"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x08" name="WGM52" lsb="2"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x10" name="WGM53" lsb="2"/>
           <bitfield caption="Prescaler source of Timer/Counter 5" mask="0x07" name="CS5" values="CLK_SEL_3BIT_EXT"/>
         </register>
         <register caption="Timer/Counter 5 Control Register C" name="TCCR5C" offset="0x122" size="1">
@@ -1202,12 +1204,14 @@
           <bitfield caption="Compare Output Mode 1A, bits" mask="0xC0" name="COM4A"/>
           <bitfield caption="Compare Output Mode 4B, bits" mask="0x30" name="COM4B"/>
           <bitfield caption="Compare Output Mode 4C, bits" mask="0x0C" name="COM4C"/>
-          <bitfield caption="Waveform Generation Mode" mask="0x03" name="WGM4"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x01" name="WGM40"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x02" name="WGM41"/>
         </register>
         <register caption="Timer/Counter4 Control Register B" name="TCCR4B" offset="0xA1" size="1">
           <bitfield caption="Input Capture 4 Noise Canceler" mask="0x80" name="ICNC4"/>
           <bitfield caption="Input Capture 4 Edge Select" mask="0x40" name="ICES4"/>
-          <bitfield caption="Waveform Generation Mode" mask="0x18" name="WGM4" lsb="2"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x08" name="WGM42" lsb="2"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x10" name="WGM43" lsb="2"/>
           <bitfield caption="Prescaler source of Timer/Counter 4" mask="0x07" name="CS4" values="CLK_SEL_3BIT_EXT"/>
         </register>
         <register caption="Timer/Counter 4 Control Register C" name="TCCR4C" offset="0xA2" size="1">
@@ -1240,12 +1244,14 @@
           <bitfield caption="Compare Output Mode 1A, bits" mask="0xC0" name="COM3A"/>
           <bitfield caption="Compare Output Mode 3B, bits" mask="0x30" name="COM3B"/>
           <bitfield caption="Compare Output Mode 3C, bits" mask="0x0C" name="COM3C"/>
-          <bitfield caption="Waveform Generation Mode" mask="0x03" name="WGM3"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x01" name="WGM30"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x02" name="WGM31"/>
         </register>
         <register caption="Timer/Counter3 Control Register B" name="TCCR3B" offset="0x91" size="1">
           <bitfield caption="Input Capture 3 Noise Canceler" mask="0x80" name="ICNC3"/>
           <bitfield caption="Input Capture 3 Edge Select" mask="0x40" name="ICES3"/>
-          <bitfield caption="Waveform Generation Mode" mask="0x18" name="WGM3" lsb="2"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x08" name="WGM32" lsb="2"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x10" name="WGM33" lsb="2"/>
           <bitfield caption="Prescaler source of Timer/Counter 3" mask="0x07" name="CS3" values="CLK_SEL_3BIT_EXT"/>
         </register>
         <register caption="Timer/Counter 3 Control Register C" name="TCCR3C" offset="0x92" size="1">
@@ -1278,12 +1284,14 @@
           <bitfield caption="Compare Output Mode 1A, bits" mask="0xC0" name="COM1A"/>
           <bitfield caption="Compare Output Mode 1B, bits" mask="0x30" name="COM1B"/>
           <bitfield caption="Compare Output Mode 1C, bits" mask="0x0C" name="COM1C"/>
-          <bitfield caption="Waveform Generation Mode" mask="0x03" name="WGM1"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x01" name="WGM10"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x02" name="WGM11"/>
         </register>
         <register caption="Timer/Counter1 Control Register B" name="TCCR1B" offset="0x81" size="1">
           <bitfield caption="Input Capture 1 Noise Canceler" mask="0x80" name="ICNC1"/>
           <bitfield caption="Input Capture 1 Edge Select" mask="0x40" name="ICES1"/>
-          <bitfield caption="Waveform Generation Mode" mask="0x18" name="WGM1" lsb="2"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x08" name="WGM12" lsb="2"/>
+          <bitfield caption="Waveform Generation Mode" mask="0x10" name="WGM13" lsb="2"/>
           <bitfield caption="Prescaler source of Timer/Counter 1" mask="0x07" name="CS1" values="CLK_SEL_3BIT_EXT"/>
         </register>
         <register caption="Timer/Counter 1 Control Register C" name="TCCR1C" offset="0x82" size="1">
@@ -1607,7 +1615,7 @@
         <value caption="ADC Differential Inputs Postive pin 11 Negative pin 10 1x Gain" name="ADC11_ADC10_1X" value="0x3B"/>
         <value caption="ADC Differential Inputs Postive pin 12 Negative pin 10 1x Gain" name="ADC12_ADC10_1X" value="0x3C"/>
         <value caption="ADC Differential Inputs Postive pin 13 Negative pin 10 1x Gain" name="ADC13_ADC10_1X" value="0x3D"/>
-      </value-group>  
+      </value-group>
       <value-group caption="" name="ANALOG_ADC_PRESCALER">
         <value caption="2" name="VAL_0x00" value="0x00"/>
         <value caption="2" name="VAL_0x01" value="0x01"/>
