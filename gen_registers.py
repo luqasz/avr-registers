@@ -13,9 +13,9 @@ def parse():
 
 def bit_field(field):
     return dict(
-        name = field['name'],
-        bit = field['mask'],
-        description = field['caption'],
+        name = field.name,
+        bit = field.mask,
+        description = field.caption,
     )
 
 
@@ -28,17 +28,9 @@ def register(reg):
     )
 
 
-def generate():
-    for device in parse():
-        yml = dict()
-        yml['name'] = device['name'].lower()
-        yml['registers'] = list(register(reg) for reg in device.registers)
-        yield yml
-
-
-def filterDevices(yml):
+def filterDevices(device):
     # No datasheet available
-    return yml['name'] not in (
+    return device['name'].lower() not in (
         'atmega64hve2',
         'atmega8hva',
         'atmega16hva',
@@ -50,9 +42,14 @@ def filterDevices(yml):
     )
 
 
+def generate():
+    for device in filter(filterDevices, parse()):
+        yield device['name'].lower(), list(register(reg) for reg in device.registers)
+
+
 if __name__ == '__main__':
-    for device in filter(filterDevices, generate()):
-        dst = Path('./registers') / (device['name'].lower() + '.yml')
+    for dev_name, registers in generate():
+        dst = Path('./registers') / (dev_name + '.yml')
         dst.touch()
         with dst.open('wt') as dst:
-            yaml.dump(device, dst)
+            yaml.dump(registers, dst)

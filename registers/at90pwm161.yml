@@ -1,5 +1,3 @@
-name: at90pwm161
-registers:
 - address: 37
   bit_fields: []
   description: Port B Data Register
@@ -38,102 +36,102 @@ registers:
   name: PINE
 - address: 89
   bit_fields:
+  - bit: 32
+    description: DAC Data Register High Byte Bits
+    name: DACH5
   - bit: 1
     description: DAC Data Register High Byte Bits
     name: DACH0
   - bit: 2
     description: DAC Data Register High Byte Bits
     name: DACH1
+  - bit: 64
+    description: DAC Data Register High Byte Bits
+    name: DACH6
   - bit: 4
     description: DAC Data Register High Byte Bits
     name: DACH2
+  - bit: 128
+    description: DAC Data Register High Byte Bits
+    name: DACH7
   - bit: 8
     description: DAC Data Register High Byte Bits
     name: DACH3
   - bit: 16
     description: DAC Data Register High Byte Bits
     name: DACH4
-  - bit: 32
-    description: DAC Data Register High Byte Bits
-    name: DACH5
-  - bit: 64
-    description: DAC Data Register High Byte Bits
-    name: DACH6
-  - bit: 128
-    description: DAC Data Register High Byte Bits
-    name: DACH7
   description: DAC Data Register High Byte
   name: DACH
 - address: 88
   bit_fields:
+  - bit: 32
+    description: DAC Data Register Low Byte Bits
+    name: DACL5
   - bit: 1
     description: DAC Data Register Low Byte Bits
     name: DACL0
   - bit: 2
     description: DAC Data Register Low Byte Bits
     name: DACL1
+  - bit: 64
+    description: DAC Data Register Low Byte Bits
+    name: DACL6
   - bit: 4
     description: DAC Data Register Low Byte Bits
     name: DACL2
+  - bit: 128
+    description: DAC Data Register Low Byte Bits
+    name: DACL7
   - bit: 8
     description: DAC Data Register Low Byte Bits
     name: DACL3
   - bit: 16
     description: DAC Data Register Low Byte Bits
     name: DACL4
-  - bit: 32
-    description: DAC Data Register Low Byte Bits
-    name: DACL5
-  - bit: 64
-    description: DAC Data Register Low Byte Bits
-    name: DACL6
-  - bit: 128
-    description: DAC Data Register Low Byte Bits
-    name: DACL7
   description: DAC Data Register Low Byte
   name: DACL
 - address: 118
   bit_fields:
-  - bit: 4
-    description: DAC Left Adjust
-    name: DALA
+  - bit: 128
+    description: DAC Auto Trigger Enable Bit
+    name: DAATE
   - bit: 1
     description: DAC Enable Bit
     name: DAEN
-  - bit: 16
-    description: DAC Trigger Selection Bits
-    name: DATS0
   - bit: 32
     description: DAC Trigger Selection Bits
     name: DATS1
   - bit: 64
     description: DAC Trigger Selection Bits
     name: DATS2
-  - bit: 128
-    description: DAC Auto Trigger Enable Bit
-    name: DAATE
+  - bit: 4
+    description: DAC Left Adjust
+    name: DALA
+  - bit: 16
+    description: DAC Trigger Selection Bits
+    name: DATS0
   description: DAC Control Register
   name: DACON
 - address: 55
   bit_fields:
-  - bit: 64
-    description: SPI Enable
-    name: SPE
-  - bit: 128
-    description: SPI Interrupt Enable
-    name: SPIE
   - bit: 32
     description: Data Order
     name: DORD
-  - bit: 4
-    description: Clock Phase
-    name: CPHA
-  - bit: 1
-    description: SPI Clock Rate Selects
-    name: SPR0
+  - bit: 128
+    description: SPI Interrupt Enable
+    name: SPIE
   - bit: 2
     description: SPI Clock Rate Selects
     name: SPR1
+  - bit: 1
+    description: SPI Clock Rate Selects
+    name: SPR0
+  - bit: 64
+    description: SPI Enable
+    name: SPE
+  - bit: 4
+    description: Clock Phase
+    name: CPHA
   - bit: 8
     description: Clock polarity
     name: CPOL
@@ -144,15 +142,15 @@ registers:
   name: SPCR
 - address: 56
   bit_fields:
-  - bit: 64
-    description: Write Collision Flag
-    name: WCOL
-  - bit: 1
-    description: Double SPI Speed Bit
-    name: SPI2X
   - bit: 128
     description: SPI Interrupt Flag
     name: SPIF
+  - bit: 1
+    description: Double SPI Speed Bit
+    name: SPI2X
+  - bit: 64
+    description: Write Collision Flag
+    name: WCOL
   description: SPI Status Register
   name: SPSR
 - address: 86
@@ -161,52 +159,52 @@ registers:
   name: SPDR
 - address: 130
   bit_fields:
+  - bit: 128
+    description: Watchdog Timeout Interrupt Flag
+    name: WDIF
   - bit: 1
     description: Watchdog Timer Prescaler Bits
     name: WDP0
   - bit: 2
     description: Watchdog Timer Prescaler Bits
     name: WDP1
-  - bit: 4
-    description: Watchdog Timer Prescaler Bits
-    name: WDP2
   - bit: 32
     description: Watchdog Timer Prescaler Bits
     name: WDP3
-  - bit: 16
-    description: Watchdog Change Enable
-    name: WDCE
+  - bit: 4
+    description: Watchdog Timer Prescaler Bits
+    name: WDP2
   - bit: 64
     description: Watchdog Timeout Interrupt Enable
     name: WDIE
-  - bit: 128
-    description: Watchdog Timeout Interrupt Flag
-    name: WDIF
   - bit: 8
     description: Watch Dog Enable
     name: WDE
+  - bit: 16
+    description: Watchdog Change Enable
+    name: WDCE
   description: Watchdog Timer Control Register
   name: WDTCSR
 - address: 137
   bit_fields:
-  - bit: 16
-    description: External Interrupt Sense Control Bit
-    name: ISC20
   - bit: 32
     description: External Interrupt Sense Control Bit
     name: ISC21
-  - bit: 4
-    description: External Interrupt Sense Control Bit
-    name: ISC10
-  - bit: 8
-    description: External Interrupt Sense Control Bit
-    name: ISC11
   - bit: 1
     description: External Interrupt Sense Control Bit
     name: ISC00
   - bit: 2
     description: External Interrupt Sense Control Bit
     name: ISC01
+  - bit: 4
+    description: External Interrupt Sense Control Bit
+    name: ISC10
+  - bit: 8
+    description: External Interrupt Sense Control Bit
+    name: ISC11
+  - bit: 16
+    description: External Interrupt Sense Control Bit
+    name: ISC20
   description: External Interrupt Control Register A
   name: EICRA
 - address: 65
@@ -237,55 +235,55 @@ registers:
   name: EIFR
 - address: 40
   bit_fields:
+  - bit: 32
+    description: Left Adjust Result
+    name: ADLAR
   - bit: 1
     description: Analog Channel and Gain Selection Bits
     name: MUX0
   - bit: 2
     description: Analog Channel and Gain Selection Bits
     name: MUX1
-  - bit: 4
-    description: Analog Channel and Gain Selection Bits
-    name: MUX2
-  - bit: 8
-    description: Analog Channel and Gain Selection Bits
-    name: MUX3
-  - bit: 32
-    description: Left Adjust Result
-    name: ADLAR
   - bit: 64
     description: Reference Selection Bits
     name: REFS0
   - bit: 128
     description: Reference Selection Bits
     name: REFS1
+  - bit: 4
+    description: Analog Channel and Gain Selection Bits
+    name: MUX2
+  - bit: 8
+    description: Analog Channel and Gain Selection Bits
+    name: MUX3
   description: The ADC multiplexer Selection Register
   name: ADMUX
 - address: 38
   bit_fields:
+  - bit: 64
+    description: ADC Start Conversion
+    name: ADSC
   - bit: 1
     description: ADC  Prescaler Select Bits
     name: ADPS0
   - bit: 2
     description: ADC  Prescaler Select Bits
     name: ADPS1
-  - bit: 4
-    description: ADC  Prescaler Select Bits
-    name: ADPS2
-  - bit: 8
-    description: ADC Interrupt Enable
-    name: ADIE
-  - bit: 64
-    description: ADC Start Conversion
-    name: ADSC
-  - bit: 16
-    description: ADC Interrupt Flag
-    name: ADIF
   - bit: 32
     description: ADC Auto Trigger Enable
     name: ADATE
+  - bit: 4
+    description: ADC  Prescaler Select Bits
+    name: ADPS2
   - bit: 128
     description: ADC Enable
     name: ADEN
+  - bit: 8
+    description: ADC Interrupt Enable
+    name: ADIE
+  - bit: 16
+    description: ADC Interrupt Flag
+    name: ADIF
   description: The ADC Control and Status register
   name: ADCSRA
 - address: 76
@@ -294,62 +292,59 @@ registers:
   name: ADC
 - address: 39
   bit_fields:
-  - bit: 16
-    description: ADC Single Shot Enable on PSC's Synchronisation Signals
-    name: ADSSEN
+  - bit: 128
+    description: ADC High Speed Mode
+    name: ADHSM
   - bit: 1
     description: ADC Auto Trigger Sources
     name: ADTS0
   - bit: 2
     description: ADC Auto Trigger Sources
     name: ADTS1
+  - bit: 64
+    description: ADC Noise Canceller Disable
+    name: ADNCDIS
   - bit: 4
     description: ADC Auto Trigger Sources
     name: ADTS2
   - bit: 8
     description: ADC Auto Trigger Sources
     name: ADTS3
-  - bit: 128
-    description: ADC High Speed Mode
-    name: ADHSM
-  - bit: 64
-    description: ADC Noise Canceller Disable
-    name: ADNCDIS
+  - bit: 16
+    description: ADC Single Shot Enable on PSC's Synchronisation Signals
+    name: ADSSEN
   description: ADC Control and Status Register B
   name: ADCSRB
 - address: 119
   bit_fields:
-  - bit: 1
-    description: ADC0 Digital input Disable
-    name: ADC0D
-  - bit: 64
-    description: ADC7 Digital input Disable
-    name: ADC6D
-  - bit: 16
-    description: ADC4 Digital input Disable
-    name: ADC4D
-  - bit: 2
-    description: ADC1 Digital input Disable
-    name: ADC1D
   - bit: 32
     description: ADC5 Digital input Disable
     name: ADC5D
-  - bit: 8
-    description: ADC3 Digital input Disable
-    name: ADC3D
+  - bit: 64
+    description: ADC7 Digital input Disable
+    name: ADC6D
+  - bit: 2
+    description: ADC1 Digital input Disable
+    name: ADC1D
   - bit: 128
     description: ''
     name: ADC7D
   - bit: 4
     description: ADC2 Digital input Disable
     name: ADC2D
+  - bit: 1
+    description: ADC0 Digital input Disable
+    name: ADC0D
+  - bit: 8
+    description: ADC3 Digital input Disable
+    name: ADC3D
+  - bit: 16
+    description: ADC4 Digital input Disable
+    name: ADC4D
   description: Digital Input Disable Register 0
   name: DIDR0
 - address: 120
   bit_fields:
-  - bit: 4
-    description: ''
-    name: AMP0POSD
   - bit: 8
     description: ''
     name: ACMP1MD
@@ -359,72 +354,66 @@ registers:
   - bit: 2
     description: ''
     name: ADC10D
+  - bit: 4
+    description: ''
+    name: AMP0POSD
   description: Digital Input Disable Register 0
   name: DIDR1
 - address: 121
   bit_fields:
+  - bit: 64
+    description: ''
+    name: AMP0IS
+  - bit: 32
+    description: ''
+    name: AMP0G1
+  - bit: 128
+    description: ''
+    name: AMP0EN
   - bit: 1
     description: ''
     name: AMP0TS0
   - bit: 2
     description: ''
     name: AMP0TS1
-  - bit: 64
-    description: ''
-    name: AMP0IS
-  - bit: 128
-    description: ''
-    name: AMP0EN
   - bit: 8
     description: ''
     name: AMP0GS
   - bit: 16
     description: ''
     name: AMP0G0
-  - bit: 32
-    description: ''
-    name: AMP0G1
   description: ''
   name: AMP0CSR
 - address: 127
   bit_fields:
+  - bit: 64
+    description: Analog Comparator 3 Interrupt Enable Bit
+    name: AC3IE
   - bit: 1
     description: Analog Comparator 3 Multiplexer Register
     name: AC3M0
   - bit: 2
     description: Analog Comparator 3 Multiplexer Register
     name: AC3M1
-  - bit: 4
-    description: Analog Comparator 3 Multiplexer Register
-    name: AC3M2
   - bit: 128
     description: Analog Comparator3 Enable Bit
     name: AC3EN
-  - bit: 16
-    description: Analog Comparator 3  Interrupt Select Bit
-    name: AC3IS0
+  - bit: 4
+    description: Analog Comparator 3 Multiplexer Register
+    name: AC3M2
   - bit: 32
     description: Analog Comparator 3  Interrupt Select Bit
     name: AC3IS1
   - bit: 8
     description: Analog Comparator 3 Alternate Output Enable
     name: AC3OEA
-  - bit: 64
-    description: Analog Comparator 3 Interrupt Enable Bit
-    name: AC3IE
+  - bit: 16
+    description: Analog Comparator 3  Interrupt Select Bit
+    name: AC3IS0
   description: Analog Comparator3 Control Register
   name: AC3CON
 - address: 125
   bit_fields:
-  - bit: 64
-    description: Analog Comparator 1 Interrupt Enable Bit
-    name: AC1IE
-  - bit: 128
-    description: Analog Comparator 1 Enable Bit
-    name: AC1EN
-  - bit: 16
-    description: Analog Comparator 1  Interrupt Select Bit
-    name: AC1IS0
   - bit: 32
     description: Analog Comparator 1  Interrupt Select Bit
     name: AC1IS1
@@ -434,9 +423,18 @@ registers:
   - bit: 2
     description: Analog Comparator 1 Multiplexer Register
     name: AC1M1
+  - bit: 64
+    description: Analog Comparator 1 Interrupt Enable Bit
+    name: AC1IE
   - bit: 4
     description: Analog Comparator 1 Multiplexer Register
     name: AC1M2
+  - bit: 128
+    description: Analog Comparator 1 Enable Bit
+    name: AC1EN
+  - bit: 16
+    description: Analog Comparator 1  Interrupt Select Bit
+    name: AC1IS0
   description: Analog Comparator 1 Control Register
   name: AC1CON
 - address: 126
@@ -444,12 +442,15 @@ registers:
   - bit: 64
     description: Analog Comparator 2 Interrupt Enable Bit
     name: AC2IE
-  - bit: 1
-    description: Analog Comparator 2 Multiplexer Register
-    name: AC2M0
+  - bit: 32
+    description: Analog Comparator 2  Interrupt Select Bit
+    name: AC2IS1
   - bit: 2
     description: Analog Comparator 2 Multiplexer Register
     name: AC2M1
+  - bit: 1
+    description: Analog Comparator 2 Multiplexer Register
+    name: AC2M0
   - bit: 4
     description: Analog Comparator 2 Multiplexer Register
     name: AC2M2
@@ -459,35 +460,35 @@ registers:
   - bit: 16
     description: Analog Comparator 2  Interrupt Select Bit
     name: AC2IS0
-  - bit: 32
-    description: Analog Comparator 2  Interrupt Select Bit
-    name: AC2IS1
   description: Analog Comparator 2 Control Register
   name: AC2CON
 - address: 32
   bit_fields:
-  - bit: 32
-    description: Analog Comparator 1  Interrupt Flag Bit
-    name: AC1IF
-  - bit: 8
-    description: Analog Comparator 3 Output Bit
-    name: AC3O
+  - bit: 64
+    description: Analog Comparator 2 Interrupt Flag Bit
+    name: AC2IF
   - bit: 128
     description: Analog Comparator 3 Interrupt Flag Bit
     name: AC3IF
   - bit: 2
     description: Analog Comparator 1 Output Bit
     name: AC1O
+  - bit: 32
+    description: Analog Comparator 1  Interrupt Flag Bit
+    name: AC1IF
   - bit: 4
     description: Analog Comparator 2 Output Bit
     name: AC2O
-  - bit: 64
-    description: Analog Comparator 2 Interrupt Flag Bit
-    name: AC2IF
+  - bit: 8
+    description: Analog Comparator 3 Output Bit
+    name: AC3O
   description: Analog Comparator Status Register
   name: ACSR
 - address: 124
   bit_fields:
+  - bit: 32
+    description: Analog Comparator Ouput Invert
+    name: AC3OI
   - bit: 1
     description: Analog Comparator Hysteresis Select
     name: AC3H0
@@ -497,9 +498,6 @@ registers:
   - bit: 4
     description: Analog Comparator Hysteresis Select
     name: AC3H2
-  - bit: 32
-    description: Analog Comparator Ouput Invert
-    name: AC3OI
   - bit: 16
     description: Analog Comparator Ouput Enable
     name: AC3OE
@@ -526,6 +524,9 @@ registers:
   name: AC2ECON
 - address: 122
   bit_fields:
+  - bit: 32
+    description: Analog Comparator Ouput Invert
+    name: AC1OI
   - bit: 1
     description: Analog Comparator Hysteresis Select
     name: AC1H0
@@ -538,9 +539,6 @@ registers:
   - bit: 8
     description: Analog Comparator Interrupt Capture Enable
     name: AC1ICE
-  - bit: 32
-    description: Analog Comparator Ouput Invert
-    name: AC1OI
   - bit: 16
     description: Analog Comparator Ouput Enable
     name: AC1OE
@@ -551,27 +549,27 @@ registers:
   - bit: 32
     description: Half Carry Flag
     name: H
-  - bit: 16
-    description: Sign Bit
-    name: S
-  - bit: 128
-    description: Global Interrupt Enable
-    name: I
-  - bit: 8
-    description: Two's Complement Overflow Flag
-    name: V
-  - bit: 4
-    description: Negative Flag
-    name: N
-  - bit: 2
-    description: Zero Flag
-    name: Z
   - bit: 1
     description: Carry Flag
     name: C
+  - bit: 2
+    description: Zero Flag
+    name: Z
   - bit: 64
     description: Bit Copy Storage
     name: T
+  - bit: 128
+    description: Global Interrupt Enable
+    name: I
+  - bit: 4
+    description: Negative Flag
+    name: N
+  - bit: 8
+    description: Two's Complement Overflow Flag
+    name: V
+  - bit: 16
+    description: Sign Bit
+    name: S
   description: Status Register
   name: SREG
 - address: 93
@@ -580,65 +578,65 @@ registers:
   name: SP
 - address: 85
   bit_fields:
-  - bit: 2
-    description: Interrupt Vector Select
-    name: IVSEL
   - bit: 1
     description: Interrupt Vector Change Enable
     name: IVCE
+  - bit: 2
+    description: Interrupt Vector Select
+    name: IVSEL
+  - bit: 4
+    description: Frequency Selection of the Calibrated RC Oscillator
+    name: CKRC81
   - bit: 8
     description: Reset Pin Disable
     name: RSTDIS
   - bit: 16
     description: Pull-up disable
     name: PUD
-  - bit: 4
-    description: Frequency Selection of the Calibrated RC Oscillator
-    name: CKRC81
   description: MCU Control Register
   name: MCUCR
 - address: 84
   bit_fields:
-  - bit: 4
-    description: Brown-out Reset Flag
-    name: BORF
-  - bit: 1
-    description: Power-on reset flag
-    name: PORF
   - bit: 8
     description: Watchdog Reset Flag
     name: WDRF
+  - bit: 1
+    description: Power-on reset flag
+    name: PORF
   - bit: 2
     description: External Reset Flag
     name: EXTRF
+  - bit: 4
+    description: Brown-out Reset Flag
+    name: BORF
   description: MCU Status Register
   name: MCUSR
 - address: 136
   bit_fields:
+  - bit: 32
+    description: Oscillator Calibration
+    name: OSCCAL5
   - bit: 1
     description: Oscillator Calibration
     name: OSCCAL0
   - bit: 2
     description: Oscillator Calibration
     name: OSCCAL1
+  - bit: 64
+    description: Oscillator Calibration
+    name: OSCCAL6
   - bit: 4
     description: Oscillator Calibration
     name: OSCCAL2
+  - bit: 128
+    description: Oscillator Calibration
+    name: OSCCAL7
   - bit: 8
     description: Oscillator Calibration
     name: OSCCAL3
   - bit: 16
     description: Oscillator Calibration
     name: OSCCAL4
-  - bit: 32
-    description: Oscillator Calibration
-    name: OSCCAL5
-  - bit: 64
-    description: Oscillator Calibration
-    name: OSCCAL6
-  - bit: 128
-    description: Oscillator Calibration
-    name: OSCCAL7
   description: Oscillator Calibration Value
   name: OSCCAL
 - address: 131
@@ -662,84 +660,78 @@ registers:
   name: CLKPR
 - address: 83
   bit_fields:
-  - bit: 2
-    description: Sleep Mode Select bits
-    name: SM0
-  - bit: 4
-    description: Sleep Mode Select bits
-    name: SM1
   - bit: 8
     description: Sleep Mode Select bits
     name: SM2
   - bit: 1
     description: Sleep Enable
     name: SE
+  - bit: 2
+    description: Sleep Mode Select bits
+    name: SM0
+  - bit: 4
+    description: Sleep Mode Select bits
+    name: SM1
   description: Sleep Mode Control Register
   name: SMCR
 - address: 59
   bit_fields:
+  - bit: 32
+    description: General Purpose IO Register 2 bis
+    name: GPIOR5
   - bit: 1
     description: General Purpose IO Register 2 bis
     name: GPIOR0
   - bit: 2
     description: General Purpose IO Register 2 bis
     name: GPIOR1
+  - bit: 64
+    description: General Purpose IO Register 2 bis
+    name: GPIOR6
   - bit: 4
     description: General Purpose IO Register 2 bis
     name: GPIOR2
+  - bit: 128
+    description: General Purpose IO Register 2 bis
+    name: GPIOR7
   - bit: 8
     description: General Purpose IO Register 2 bis
     name: GPIOR3
   - bit: 16
     description: General Purpose IO Register 2 bis
     name: GPIOR4
-  - bit: 32
-    description: General Purpose IO Register 2 bis
-    name: GPIOR5
-  - bit: 64
-    description: General Purpose IO Register 2 bis
-    name: GPIOR6
-  - bit: 128
-    description: General Purpose IO Register 2 bis
-    name: GPIOR7
   description: General Purpose IO Register 2
   name: GPIOR2
 - address: 58
   bit_fields:
+  - bit: 32
+    description: General Purpose IO Register 1 bis
+    name: GPIOR5
   - bit: 1
     description: General Purpose IO Register 1 bis
     name: GPIOR0
   - bit: 2
     description: General Purpose IO Register 1 bis
     name: GPIOR1
+  - bit: 64
+    description: General Purpose IO Register 1 bis
+    name: GPIOR6
   - bit: 4
     description: General Purpose IO Register 1 bis
     name: GPIOR2
+  - bit: 128
+    description: General Purpose IO Register 1 bis
+    name: GPIOR7
   - bit: 8
     description: General Purpose IO Register 1 bis
     name: GPIOR3
   - bit: 16
     description: General Purpose IO Register 1 bis
     name: GPIOR4
-  - bit: 32
-    description: General Purpose IO Register 1 bis
-    name: GPIOR5
-  - bit: 64
-    description: General Purpose IO Register 1 bis
-    name: GPIOR6
-  - bit: 128
-    description: General Purpose IO Register 1 bis
-    name: GPIOR7
   description: General Purpose IO Register 1
   name: GPIOR1
 - address: 57
   bit_fields:
-  - bit: 8
-    description: General Purpose IO Register 0 bit 3
-    name: GPIOR03
-  - bit: 1
-    description: General Purpose IO Register 0 bit 0
-    name: GPIOR00
   - bit: 32
     description: General Purpose IO Register 0 bit 5
     name: GPIOR05
@@ -749,19 +741,34 @@ registers:
   - bit: 2
     description: General Purpose IO Register 0 bit 1
     name: GPIOR01
-  - bit: 16
-    description: General Purpose IO Register 0 bit 4
-    name: GPIOR04
-  - bit: 4
-    description: General Purpose IO Register 0 bit 2
-    name: GPIOR02
   - bit: 64
     description: General Purpose IO Register 0 bit 6
     name: GPIOR06
+  - bit: 4
+    description: General Purpose IO Register 0 bit 2
+    name: GPIOR02
+  - bit: 1
+    description: General Purpose IO Register 0 bit 0
+    name: GPIOR00
+  - bit: 8
+    description: General Purpose IO Register 0 bit 3
+    name: GPIOR03
+  - bit: 16
+    description: General Purpose IO Register 0 bit 4
+    name: GPIOR04
   description: General Purpose IO Register 0
   name: GPIOR0
 - address: 135
   bit_fields:
+  - bit: 32
+    description: ''
+    name: PLLF3
+  - bit: 1
+    description: PLL Lock Detector
+    name: PLOCK
+  - bit: 2
+    description: PLL Enable
+    name: PLLE
   - bit: 4
     description: ''
     name: PLLF0
@@ -771,31 +778,22 @@ registers:
   - bit: 16
     description: ''
     name: PLLF2
-  - bit: 32
-    description: ''
-    name: PLLF3
-  - bit: 2
-    description: PLL Enable
-    name: PLLE
-  - bit: 1
-    description: PLL Lock Detector
-    name: PLOCK
   description: PLL Control And Status Register
   name: PLLCSR
 - address: 134
   bit_fields:
-  - bit: 1
-    description: Power Reduction ADC
-    name: PRADC
   - bit: 128
     description: Power Reduction PSC2
     name: PRPSC2
-  - bit: 4
-    description: Power Reduction Serial Peripheral Interface
-    name: PRSPI
+  - bit: 1
+    description: Power Reduction ADC
+    name: PRADC
   - bit: 32
     description: Power Reduction PSC0
     name: PRPSCR
+  - bit: 4
+    description: Power Reduction Serial Peripheral Interface
+    name: PRSPI
   - bit: 16
     description: Power Reduction Timer/Counter1
     name: PRTIM1
@@ -803,6 +801,9 @@ registers:
   name: PRR
 - address: 132
   bit_fields:
+  - bit: 128
+    description: Clock Control Change Enable
+    name: CLKCCE
   - bit: 1
     description: Clock Control
     name: CLKC0
@@ -818,38 +819,38 @@ registers:
   - bit: 16
     description: Clock Ready Flag
     name: CLKRDY
-  - bit: 128
-    description: Clock Control Change Enable
-    name: CLKCCE
   description: ''
   name: CLKCSR
 - address: 133
   bit_fields:
+  - bit: 32
+    description: Clock Start up Time
+    name: CSUT1
   - bit: 1
     description: Clock Source Select
     name: CKSEL0
   - bit: 2
     description: Clock Source Select
     name: CKSEL1
+  - bit: 64
+    description: Clock OUT
+    name: COUT
   - bit: 4
     description: Clock Source Select
     name: CKSEL2
   - bit: 8
     description: Clock Source Select
     name: CKSEL3
-  - bit: 64
-    description: Clock OUT
-    name: COUT
   - bit: 16
     description: Clock Start up Time
     name: CSUT0
-  - bit: 32
-    description: Clock Start up Time
-    name: CSUT1
   description: ''
   name: CLKSELR
 - address: 129
   bit_fields:
+  - bit: 8
+    description: ''
+    name: BGCC3
   - bit: 1
     description: ''
     name: BGCC0
@@ -859,13 +860,13 @@ registers:
   - bit: 4
     description: ''
     name: BGCC2
-  - bit: 8
-    description: ''
-    name: BGCC3
   description: BandGap Current Calibration Register
   name: BGCCR
 - address: 128
   bit_fields:
+  - bit: 8
+    description: ''
+    name: BGCR3
   - bit: 1
     description: ''
     name: BGCR0
@@ -875,9 +876,6 @@ registers:
   - bit: 4
     description: ''
     name: BGCR2
-  - bit: 8
-    description: ''
-    name: BGCR3
   description: BandGap Resistor Calibration Register
   name: BGCRR
 - address: 62
@@ -890,30 +888,30 @@ registers:
   name: EEDR
 - address: 60
   bit_fields:
-  - bit: 4
-    description: EEPROM Master Write Enable
-    name: EEMWE
-  - bit: 2
-    description: EEPROM Write Enable
-    name: EEWE
-  - bit: 128
-    description: None Volatile Busy Memory Busy
-    name: NVMBSY
-  - bit: 1
-    description: EEPROM Read Enable
-    name: EERE
-  - bit: 64
-    description: EEPROM Page Access
-    name: EEPAGE
-  - bit: 16
-    description: EEPROM Programming Mode
-    name: EEPM0
   - bit: 32
     description: EEPROM Programming Mode
     name: EEPM1
+  - bit: 128
+    description: None Volatile Busy Memory Busy
+    name: NVMBSY
+  - bit: 2
+    description: EEPROM Write Enable
+    name: EEWE
+  - bit: 1
+    description: EEPROM Read Enable
+    name: EERE
+  - bit: 4
+    description: EEPROM Master Write Enable
+    name: EEMWE
+  - bit: 64
+    description: EEPROM Page Access
+    name: EEPAGE
   - bit: 8
     description: EEPROM Ready Interrupt Enable
     name: EERIE
+  - bit: 16
+    description: EEPROM Programming Mode
+    name: EEPM0
   description: EEPROM Control Register
   name: EECR
 - address: 104
@@ -922,30 +920,30 @@ registers:
   name: PICR0
 - address: 99
   bit_fields:
+  - bit: 64
+    description: PSC 0 Input Select for Part B
+    name: PISEL0B
   - bit: 1
     description: PSC 0 Retrigger and Fault Mode for Part B
     name: PRFM0B0
   - bit: 2
     description: PSC 0 Retrigger and Fault Mode for Part B
     name: PRFM0B1
-  - bit: 4
-    description: PSC 0 Retrigger and Fault Mode for Part B
-    name: PRFM0B2
-  - bit: 8
-    description: PSC 0 Retrigger and Fault Mode for Part B
-    name: PRFM0B3
   - bit: 32
     description: PSC 0 Edge Level Selector on Input Part B
     name: PELEV0B
-  - bit: 16
-    description: PSC 0 Filter Enable on Input Part B
-    name: PFLTE0B
+  - bit: 4
+    description: PSC 0 Retrigger and Fault Mode for Part B
+    name: PRFM0B2
   - bit: 128
     description: PSC 0 Capture Enable Input Part B
     name: PCAE0B
-  - bit: 64
-    description: PSC 0 Input Select for Part B
-    name: PISEL0B
+  - bit: 8
+    description: PSC 0 Retrigger and Fault Mode for Part B
+    name: PRFM0B3
+  - bit: 16
+    description: PSC 0 Filter Enable on Input Part B
+    name: PFLTE0B
   description: PSC 0 Input B Control
   name: PFRC0B
 - address: 98
@@ -953,80 +951,80 @@ registers:
   - bit: 32
     description: PSC 0 Edge Level Selector on Input Part A
     name: PELEV0A
-  - bit: 16
-    description: PSC 0 Filter Enable on Input Part A
-    name: PFLTE0A
-  - bit: 128
-    description: PSC 0 Capture Enable Input Part A
-    name: PCAE0A
-  - bit: 64
-    description: PSC 0 Input Select for Part A
-    name: PISEL0A
   - bit: 1
     description: PSC 0 Retrigger and Fault Mode for Part A
     name: PRFM0A0
   - bit: 2
     description: PSC 0 Retrigger and Fault Mode for Part A
     name: PRFM0A1
+  - bit: 128
+    description: PSC 0 Capture Enable Input Part A
+    name: PCAE0A
   - bit: 4
     description: PSC 0 Retrigger and Fault Mode for Part A
     name: PRFM0A2
+  - bit: 64
+    description: PSC 0 Input Select for Part A
+    name: PISEL0A
   - bit: 8
     description: PSC 0 Retrigger and Fault Mode for Part A
     name: PRFM0A3
+  - bit: 16
+    description: PSC 0 Filter Enable on Input Part A
+    name: PFLTE0A
   description: PSC 0 Input A Control
   name: PFRC0A
 - address: 50
   bit_fields:
-  - bit: 16
-    description: PSC 0 Asynchronous Output Control B
-    name: PAOC0B
   - bit: 64
     description: PSC 0 Prescaler Selects
     name: PPRE00
-  - bit: 128
-    description: PSC 0 Prescaler Selects
-    name: PPRE01
-  - bit: 8
-    description: PSC 0 Asynchronous Output Control A
-    name: PAOC0A
-  - bit: 2
-    description: PSC0 Complete Cycle
-    name: PCCYC0
-  - bit: 4
-    description: PSC 0 Balance Flank Width Modulation
-    name: PBFM00
-  - bit: 32
-    description: PSC 0 Balance Flank Width Modulation
-    name: PBFM01
   - bit: 1
     description: PSC 0 Run
     name: PRUN0
+  - bit: 128
+    description: PSC 0 Prescaler Selects
+    name: PPRE01
+  - bit: 32
+    description: PSC 0 Balance Flank Width Modulation
+    name: PBFM01
+  - bit: 4
+    description: PSC 0 Balance Flank Width Modulation
+    name: PBFM00
+  - bit: 2
+    description: PSC0 Complete Cycle
+    name: PCCYC0
+  - bit: 8
+    description: PSC 0 Asynchronous Output Control A
+    name: PAOC0A
+  - bit: 16
+    description: PSC 0 Asynchronous Output Control B
+    name: PAOC0B
   description: PSC 0 Control Register
   name: PCTL0
 - address: 49
   bit_fields:
-  - bit: 2
-    description: PSC 0 Input Clock Select
-    name: PCLKSEL0
   - bit: 128
     description: PSC 0 Fifty
     name: PFIFTY0
   - bit: 64
     description: PSC 0 Autolock
     name: PALOCK0
+  - bit: 2
+    description: PSC 0 Input Clock Select
+    name: PCLKSEL0
   - bit: 32
     description: PSC 0 Lock
     name: PLOCK0
+  - bit: 4
+    description: PSC 0 Output Polarity
+    name: POP0
   - bit: 8
     description: PSC 0 Mode
     name: PMODE00
   - bit: 16
     description: PSC 0 Mode
     name: PMODE01
-  - bit: 4
-    description: PSC 0 Output Polarity
-    name: POP0
   description: PSC 0 Configuration Register
   name: PCNF0
 - address: 68
@@ -1047,15 +1045,9 @@ registers:
   name: OCR0SA
 - address: 106
   bit_fields:
-  - bit: 16
-    description: Synchronisation out for ADC selection
-    name: PSYNC00
   - bit: 32
     description: Synchronisation out for ADC selection
     name: PSYNC01
-  - bit: 4
-    description: PSCOUT01 Output Enable
-    name: POEN0B
   - bit: 1
     description: PSCOUT00 Output Enable
     name: POEN0A
@@ -1065,47 +1057,53 @@ registers:
   - bit: 64
     description: PSC Input Select
     name: PISEL0B1
+  - bit: 4
+    description: PSCOUT01 Output Enable
+    name: POEN0B
+  - bit: 16
+    description: Synchronisation out for ADC selection
+    name: PSYNC00
   description: PSC0 Synchro and Output Configuration
   name: PSOC0
 - address: 47
   bit_fields:
-  - bit: 1
-    description: End of Cycle Interrupt Enable
-    name: PEOPE0
-  - bit: 16
-    description: External Event B Interrupt Enable
-    name: PEVE0B
-  - bit: 2
-    description: End of Enhanced Cycle Enable
-    name: PEOEPE0
   - bit: 8
     description: External Event A Interrupt Enable
     name: PEVE0A
+  - bit: 1
+    description: End of Cycle Interrupt Enable
+    name: PEOPE0
+  - bit: 2
+    description: End of Enhanced Cycle Enable
+    name: PEOEPE0
+  - bit: 16
+    description: External Event B Interrupt Enable
+    name: PEVE0B
   description: PSC0 Interrupt Mask Register
   name: PIM0
 - address: 48
   bit_fields:
-  - bit: 1
-    description: End of PSC0 Interrupt
-    name: PEOP0
   - bit: 128
     description: PSC 0 Output A Activity
     name: POAC0B
-  - bit: 64
-    description: PSC 0 Output A Activity
-    name: POAC0A
-  - bit: 16
-    description: External Event B Interrupt
-    name: PEV0B
-  - bit: 8
-    description: External Event A Interrupt
-    name: PEV0A
+  - bit: 1
+    description: End of PSC0 Interrupt
+    name: PEOP0
   - bit: 2
     description: Ramp Number
     name: PRN00
+  - bit: 64
+    description: PSC 0 Output A Activity
+    name: POAC0A
   - bit: 4
     description: Ramp Number
     name: PRN01
+  - bit: 8
+    description: External Event A Interrupt
+    name: PEV0A
+  - bit: 16
+    description: External Event B Interrupt
+    name: PEV0B
   description: PSC0 Interrupt Flag Register
   name: PIFR0
 - address: 109
@@ -1133,15 +1131,15 @@ registers:
   name: PICR2L
 - address: 103
   bit_fields:
-  - bit: 16
-    description: PSC 2 Filter Enable on Input Part B
-    name: PFLTE2B
-  - bit: 128
-    description: PSC 2 Capture Enable Input Part B
-    name: PCAE2B
+  - bit: 32
+    description: PSC 2 Edge Level Selector on Input Part B
+    name: PELEV2B
   - bit: 64
     description: PSC 2 Input Select for Part B
     name: PISEL2B
+  - bit: 128
+    description: PSC 2 Capture Enable Input Part B
+    name: PCAE2B
   - bit: 1
     description: PSC 2 Retrigger and Fault Mode for Part B
     name: PRFM2B0
@@ -1154,9 +1152,9 @@ registers:
   - bit: 8
     description: PSC 2 Retrigger and Fault Mode for Part B
     name: PRFM2B3
-  - bit: 32
-    description: PSC 2 Edge Level Selector on Input Part B
-    name: PELEV2B
+  - bit: 16
+    description: PSC 2 Filter Enable on Input Part B
+    name: PFLTE2B
   description: PSC 2 Input B Control
   name: PFRC2B
 - address: 102
@@ -1164,15 +1162,12 @@ registers:
   - bit: 32
     description: PSC 2 Edge Level Selector on Input Part A
     name: PELEV2A
-  - bit: 16
-    description: PSC 2 Filter Enable on Input Part A
-    name: PFLTE2A
-  - bit: 128
-    description: PSC 2 Capture Enable Input Part A
-    name: PCAE2A
   - bit: 64
     description: PSC 2 Input Select for Part A
     name: PISEL2A
+  - bit: 128
+    description: PSC 2 Capture Enable Input Part A
+    name: PCAE2A
   - bit: 1
     description: PSC 2 Retrigger and Fault Mode for Part A
     name: PRFM2A0
@@ -1185,90 +1180,93 @@ registers:
   - bit: 8
     description: PSC 2 Retrigger and Fault Mode for Part A
     name: PRFM2A3
+  - bit: 16
+    description: PSC 2 Filter Enable on Input Part A
+    name: PFLTE2A
   description: PSC 2 Input B Control
   name: PFRC2A
 - address: 54
   bit_fields:
+  - bit: 32
+    description: Balance Flank Width Modulation
+    name: PBFM2
   - bit: 64
     description: PSC 2 Prescaler Selects
     name: PPRE20
   - bit: 128
     description: PSC 2 Prescaler Selects
     name: PPRE21
-  - bit: 1
-    description: PSC 2 Run
-    name: PRUN2
-  - bit: 4
-    description: PSC2 Auto Run
-    name: PARUN2
-  - bit: 16
-    description: PSC 2 Asynchronous Output Control B
-    name: PAOC2B
   - bit: 2
     description: PSC2 Complete Cycle
     name: PCCYC2
+  - bit: 4
+    description: PSC2 Auto Run
+    name: PARUN2
+  - bit: 1
+    description: PSC 2 Run
+    name: PRUN2
   - bit: 8
     description: PSC 2 Asynchronous Output Control A
     name: PAOC2A
-  - bit: 32
-    description: Balance Flank Width Modulation
-    name: PBFM2
+  - bit: 16
+    description: PSC 2 Asynchronous Output Control B
+    name: PAOC2B
   description: PSC 2 Control Register
   name: PCTL2
 - address: 53
   bit_fields:
+  - bit: 128
+    description: PSC 2 Fifty
+    name: PFIFTY2
+  - bit: 1
+    description: PSC 2 Output Matrix Enable
+    name: POME2
+  - bit: 2
+    description: PSC 2 Input Clock Select
+    name: PCLKSEL2
   - bit: 64
     description: PSC 2 Autolock
     name: PALOCK2
+  - bit: 32
+    description: PSC 2 Lock
+    name: PLOCK2
+  - bit: 4
+    description: PSC 2 Output Polarity
+    name: POP2
   - bit: 8
     description: PSC 2 Mode
     name: PMODE20
   - bit: 16
     description: PSC 2 Mode
     name: PMODE21
-  - bit: 32
-    description: PSC 2 Lock
-    name: PLOCK2
-  - bit: 128
-    description: PSC 2 Fifty
-    name: PFIFTY2
-  - bit: 2
-    description: PSC 2 Input Clock Select
-    name: PCLKSEL2
-  - bit: 4
-    description: PSC 2 Output Polarity
-    name: POP2
-  - bit: 1
-    description: PSC 2 Output Matrix Enable
-    name: POME2
   description: PSC 2 Configuration Register
   name: PCNF2
 - address: 112
   bit_fields:
-  - bit: 8
+  - bit: 32
     description: ''
-    name: PELEV2A1
-  - bit: 16
-    description: ''
-    name: PBFM21
+    name: PASDLK20
   - bit: 1
     description: ''
     name: PISEL2B1
   - bit: 2
     description: ''
     name: PISEL2A1
-  - bit: 32
-    description: ''
-    name: PASDLK20
   - bit: 64
     description: ''
     name: PASDLK21
-  - bit: 128
-    description: ''
-    name: PASDLK22
   - bit: 4
     description: ''
     name: PELEV2B1
+  - bit: 128
+    description: ''
+    name: PASDLK22
+  - bit: 8
+    description: ''
+    name: PELEV2A1
+  - bit: 16
+    description: ''
+    name: PBFM21
   description: PSC 2 Enhanced Configuration Register
   name: PCNFE2
 - address: 72
@@ -1289,58 +1287,58 @@ registers:
   name: OCR2SA
 - address: 111
   bit_fields:
-  - bit: 16
-    description: Output Matrix Output B Ramps
-    name: POMV2B0
   - bit: 32
     description: Output Matrix Output B Ramps
     name: POMV2B1
-  - bit: 64
-    description: Output Matrix Output B Ramps
-    name: POMV2B2
-  - bit: 128
-    description: Output Matrix Output B Ramps
-    name: POMV2B3
   - bit: 1
     description: Output Matrix Output A Ramps
     name: POMV2A0
   - bit: 2
     description: Output Matrix Output A Ramps
     name: POMV2A1
+  - bit: 64
+    description: Output Matrix Output B Ramps
+    name: POMV2B2
   - bit: 4
     description: Output Matrix Output A Ramps
     name: POMV2A2
+  - bit: 128
+    description: Output Matrix Output B Ramps
+    name: POMV2B3
   - bit: 8
     description: Output Matrix Output A Ramps
     name: POMV2A3
+  - bit: 16
+    description: Output Matrix Output B Ramps
+    name: POMV2B0
   description: PSC 2 Output Matrix
   name: POM2
 - address: 110
   bit_fields:
-  - bit: 8
-    description: PSCOUT23 Output Enable
-    name: POEN2D
-  - bit: 4
-    description: PSCOUT21 Output Enable
-    name: POEN2B
-  - bit: 2
-    description: PSCOUT22 Output Enable
-    name: POEN2C
-  - bit: 64
-    description: PSC 2 Output 23 Select
-    name: POS20
-  - bit: 128
-    description: PSC 2 Output 23 Select
-    name: POS21
-  - bit: 1
-    description: PSCOUT20 Output Enable
-    name: POEN2A
-  - bit: 16
-    description: Synchronization Out for ADC Selection
-    name: PSYNC20
   - bit: 32
     description: Synchronization Out for ADC Selection
     name: PSYNC21
+  - bit: 64
+    description: PSC 2 Output 23 Select
+    name: POS20
+  - bit: 2
+    description: PSCOUT22 Output Enable
+    name: POEN2C
+  - bit: 128
+    description: PSC 2 Output 23 Select
+    name: POS21
+  - bit: 4
+    description: PSCOUT21 Output Enable
+    name: POEN2B
+  - bit: 1
+    description: PSCOUT20 Output Enable
+    name: POEN2A
+  - bit: 8
+    description: PSCOUT23 Output Enable
+    name: POEN2D
+  - bit: 16
+    description: Synchronization Out for ADC Selection
+    name: PSYNC20
   description: PSC2 Synchro and Output Configuration
   name: PSOC2
 - address: 51
@@ -1348,46 +1346,46 @@ registers:
   - bit: 32
     description: PSC 2 Synchro Error Interrupt Enable
     name: PSEIE2
-  - bit: 2
-    description: End of Enhanced Cycle Interrupt Enable
-    name: PEOEPE2
   - bit: 1
     description: End of Cycle Interrupt Enable
     name: PEOPE2
-  - bit: 16
-    description: External Event B Interrupt Enable
-    name: PEVE2B
+  - bit: 2
+    description: End of Enhanced Cycle Interrupt Enable
+    name: PEOEPE2
   - bit: 8
     description: External Event A Interrupt Enable
     name: PEVE2A
+  - bit: 16
+    description: External Event B Interrupt Enable
+    name: PEVE2B
   description: PSC2 Interrupt Mask Register
   name: PIM2
 - address: 52
   bit_fields:
-  - bit: 1
-    description: End of PSC2 Interrupt
-    name: PEOP2
-  - bit: 64
-    description: PSC 2 Output A Activity
-    name: POAC2A
-  - bit: 32
-    description: PSC 2 Synchro Error Interrupt
-    name: PSEI2
-  - bit: 16
-    description: External Event B Interrupt
-    name: PEV2B
-  - bit: 8
-    description: External Event A Interrupt
-    name: PEV2A
-  - bit: 2
-    description: Ramp Number
-    name: PRN20
-  - bit: 4
-    description: Ramp Number
-    name: PRN21
   - bit: 128
     description: PSC 2 Output A Activity
     name: POAC2B
+  - bit: 1
+    description: End of PSC2 Interrupt
+    name: PEOP2
+  - bit: 2
+    description: Ramp Number
+    name: PRN20
+  - bit: 64
+    description: PSC 2 Output A Activity
+    name: POAC2A
+  - bit: 4
+    description: Ramp Number
+    name: PRN21
+  - bit: 32
+    description: PSC 2 Synchro Error Interrupt
+    name: PSEI2
+  - bit: 8
+    description: External Event A Interrupt
+    name: PEV2A
+  - bit: 16
+    description: External Event B Interrupt
+    name: PEV2B
   description: PSC2 Interrupt Flag Register
   name: PIFR2
 - address: 113
@@ -1406,19 +1404,16 @@ registers:
   name: TIMSK1
 - address: 34
   bit_fields:
-  - bit: 1
-    description: Timer/Counter1 Overflow Flag
-    name: TOV1
   - bit: 32
     description: Input Capture Flag 1
     name: ICF1
+  - bit: 1
+    description: Timer/Counter1 Overflow Flag
+    name: TOV1
   description: Timer/Counter Interrupt Flag register
   name: TIFR1
 - address: 138
   bit_fields:
-  - bit: 64
-    description: Input Capture 1 Edge Select
-    name: ICES1
   - bit: 128
     description: Input Capture 1 Noise Canceler
     name: ICNC1
@@ -1428,6 +1423,9 @@ registers:
   - bit: 2
     description: Prescaler source of Timer/Counter 1
     name: CS11
+  - bit: 64
+    description: Input Capture 1 Edge Select
+    name: ICES1
   - bit: 4
     description: Prescaler source of Timer/Counter 1
     name: CS12
@@ -1446,29 +1444,29 @@ registers:
   name: ICR1
 - address: 87
   bit_fields:
-  - bit: 16
-    description: Read While Write section read enable
-    name: RWWSRE
-  - bit: 8
-    description: Boot Lock Bit Set
-    name: BLBSET
-  - bit: 128
-    description: SPM Interrupt Enable
-    name: SPMIE
-  - bit: 4
-    description: Page Write
-    name: PGWRT
   - bit: 64
     description: Read While Write Section Busy
     name: RWWSB
-  - bit: 2
-    description: Page Erase
-    name: PGERS
-  - bit: 32
-    description: Signature Row Read
-    name: SIGRD
   - bit: 1
     description: Store Program Memory Enable
     name: SPMEN
+  - bit: 128
+    description: SPM Interrupt Enable
+    name: SPMIE
+  - bit: 32
+    description: Signature Row Read
+    name: SIGRD
+  - bit: 4
+    description: Page Write
+    name: PGWRT
+  - bit: 2
+    description: Page Erase
+    name: PGERS
+  - bit: 8
+    description: Boot Lock Bit Set
+    name: BLBSET
+  - bit: 16
+    description: Read While Write section read enable
+    name: RWWSRE
   description: Store Program Memory Control Register
   name: SPMCSR

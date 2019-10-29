@@ -7,7 +7,7 @@ import yaml
 def parsed():
     for yml in Path('./registers').glob('*.yml'):
         with yml.open('rt') as fobj:
-            yield yaml.load(fobj, Loader=yaml.FullLoader)
+            yield yml.name.rstrip('.yml'), yaml.load(fobj, Loader=yaml.FullLoader)
 
 
 def device_reg(devices, needle):
@@ -17,22 +17,20 @@ def device_reg(devices, needle):
                 yield device['name'], reg
 
 
-def id_name(param):
-    return param['name']
-
-
 def id_device_reg(param):
     dev_name, reg = param
     return dev_name
 
 
-all_devices = tuple(parsed())
+all_devices = tuple(dict(name=name, registers=regs) for name,regs in parsed())
 
 
-@pytest.fixture(ids=id_name, params=all_devices)
+@pytest.fixture(
+        ids=lambda x: x['name'],
+        params=all_devices,
+    )
 def device(request):
     yield request.param
-
 
 
 @pytest.fixture(

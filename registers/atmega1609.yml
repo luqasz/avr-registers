@@ -1,345 +1,82 @@
-name: atmega1609
-registers:
 - address: 0
   bit_fields:
-  - bit: 128
-    description: Reset CRC scan
-    name: RESET
-  - bit: 2
-    description: Prescaler
-    name: PRESC0
-  - bit: 4
-    description: Prescaler
-    name: PRESC1
-  - bit: 4
-    description: ADC Resolution
-    name: RESSEL
-  - bit: 32
-    description: Data Register Empty Interrupt Enable
-    name: DREIE
-  - bit: 2
-    description: ADC Freerun mode
-    name: FREERUN
-  - bit: 8
-    description: Loop-back Mode Enable
-    name: LBME
-  - bit: 64
-    description: Output Buffer Enable
-    name: OUTEN
-  - bit: 1
-    description: Enable Module
-    name: ENABLE
-  - bit: 128
-    description: Run in Standby Mode
-    name: RUNSTDBY
-  - bit: 32
-    description: Compact Vector Table
-    name: CVT
-  - bit: 1
-    description: RS485 Mode internal transmitter
-    name: RS4850
-  - bit: 2
-    description: RS485 Mode internal transmitter
-    name: RS4851
-  - bit: 2
-    description: Clock Select
-    name: CLKSEL0
-  - bit: 4
-    description: Clock Select
-    name: CLKSEL1
-  - bit: 64
-    description: Interrupt Vector Select
-    name: IVSEL
-  - bit: 1
-    description: Enable
-    name: ENABLE
-  - bit: 1
-    description: Round-robin Scheduling Enable
-    name: LVL0RR
-  - bit: 16
-    description: Sample frequency
-    name: SAMPFREQ
-  - bit: 128
-    description: Receive Complete Interrupt Enable
-    name: RXCIE
   - bit: 64
     description: Run Standby
     name: RUNSTDBY
-  - bit: 4
-    description: Operation in active mode
-    name: ACTIVE0
-  - bit: 8
-    description: Operation in active mode
-    name: ACTIVE1
-  - bit: 16
-    description: Synchronize Update
-    name: SYNCUPD
-  - bit: 16
-    description: Receiver Start Frame Interrupt Enable
-    name: RXSIE
-  - bit: 1
-    description: Enable
-    name: ENABLE
-  - bit: 1
-    description: Operation in sleep mode
-    name: SLEEP0
-  - bit: 2
-    description: Operation in sleep mode
-    name: SLEEP1
-  - bit: 8
-    description: Prescaling Factor
-    name: PRESCALER0
-  - bit: 16
-    description: Prescaling Factor
-    name: PRESCALER1
-  - bit: 32
-    description: Prescaling Factor
-    name: PRESCALER2
-  - bit: 64
-    description: Prescaling Factor
-    name: PRESCALER3
-  - bit: 32
-    description: Master Operation Enable
-    name: MASTER
-  - bit: 1
-    description: Enable
-    name: RTCEN
-  - bit: 1
-    description: ADC Enable
-    name: ENABLE
-  - bit: 1
-    description: Sleep enable
-    name: SEN
-  - bit: 2
-    description: Clock Selection
-    name: CLKSEL0
-  - bit: 4
-    description: Clock Selection
-    name: CLKSEL1
-  - bit: 8
-    description: Clock Selection
-    name: CLKSEL2
-  - bit: 64
-    description: Transmit Complete Interrupt Enable
-    name: TXCIE
-  - bit: 128
-    description: Run In Standby
-    name: RUNSTDBY
-  - bit: 2
-    description: Sleep mode
-    name: SMODE0
-  - bit: 4
-    description: Sleep mode
-    name: SMODE1
-  - bit: 1
-    description: Module Enable
-    name: ENABLE
-  - bit: 2
-    description: Hysteresis Mode
-    name: HYSMODE0
-  - bit: 4
-    description: Hysteresis Mode
-    name: HYSMODE1
-  - bit: 1
-    description: Period
-    name: PERIOD0
-  - bit: 2
-    description: Period
-    name: PERIOD1
-  - bit: 4
-    description: Period
-    name: PERIOD2
-  - bit: 8
-    description: Period
-    name: PERIOD3
-  - bit: 1
-    description: AC0 reference select
-    name: AC0REFSEL0
-  - bit: 2
-    description: AC0 reference select
-    name: AC0REFSEL1
-  - bit: 4
-    description: AC0 reference select
-    name: AC0REFSEL2
-  - bit: 64
-    description: Run in Standby
-    name: RUNSTDBY
-  - bit: 16
-    description: Window
-    name: WINDOW0
-  - bit: 32
-    description: Window
-    name: WINDOW1
-  - bit: 64
-    description: Window
-    name: WINDOW2
-  - bit: 128
-    description: Window
-    name: WINDOW3
-  - bit: 16
-    description: ADC0 reference select
-    name: ADC0REFSEL0
-  - bit: 32
-    description: ADC0 reference select
-    name: ADC0REFSEL1
-  - bit: 64
-    description: ADC0 reference select
-    name: ADC0REFSEL2
-  - bit: 1
-    description: Enable
-    name: ENABLE
-  - bit: 1
-    description: Command
-    name: CMD0
-  - bit: 2
-    description: Command
-    name: CMD1
-  - bit: 4
-    description: Command
-    name: CMD2
-  - bit: 16
-    description: Interrupt Mode
-    name: INTMODE0
   - bit: 32
     description: Interrupt Mode
     name: INTMODE1
-  - bit: 128
-    description: Run standby mode
-    name: RUNSTBY
   - bit: 2
-    description: Clock Selection
-    name: CLKSEL0
+    description: Enable NMI Trigger
+    name: NMIEN
+  - bit: 128
+    description: Receive Complete Interrupt Enable
+    name: RXCIE
+  - bit: 1
+    description: Sleep enable
+    name: SEN
   - bit: 4
     description: Clock Selection
     name: CLKSEL1
   - bit: 8
-    description: Clock Selection
-    name: CLKSEL2
-  - bit: 16
-    description: Enable Double Speed
-    name: CLK2X
-  - bit: 1
-    description: Module Enable
-    name: ENABLE
-  - bit: 64
-    description: Data Order Setting
-    name: DORD
-  - bit: 8
     description: Low Power Mode
     name: LPMODE
-  - bit: 4
-    description: Auto-baud Error Interrupt Enable
-    name: ABEIE
-  - bit: 1
-    description: Enable CRC scan
-    name: ENABLE
-  - bit: 2
-    description: Enable NMI Trigger
-    name: NMIEN
+  - bit: 16
+    description: Receiver Start Frame Interrupt Enable
+    name: RXSIE
   description: Control A
   name: CTRLA
 - address: 4
   bit_fields:
+  - bit: 32
+    description: DAC voltage reference
+    name: DATA5
   - bit: 1
     description: DAC voltage reference
     name: DATA0
   - bit: 2
     description: DAC voltage reference
     name: DATA1
+  - bit: 64
+    description: DAC voltage reference
+    name: DATA6
   - bit: 4
     description: DAC voltage reference
     name: DATA2
+  - bit: 128
+    description: DAC voltage reference
+    name: DATA7
   - bit: 8
     description: DAC voltage reference
     name: DATA3
   - bit: 16
     description: DAC voltage reference
     name: DATA4
-  - bit: 32
-    description: DAC voltage reference
-    name: DATA5
-  - bit: 64
-    description: DAC voltage reference
-    name: DATA6
-  - bit: 128
-    description: DAC voltage reference
-    name: DATA7
   description: Referance scale control
   name: DACREF
 - address: 6
   bit_fields:
-  - bit: 1
-    description: Low Underflow Interrupt Enable
-    name: LUNF
-  - bit: 1
-    description: Analog Comparator 0 Interrupt Enable
-    name: CMP
-  - bit: 2
-    description: Window Comparator Interrupt Enable
-    name: WCMP
-  - bit: 1
-    description: Result Ready Interrupt Enable
-    name: RESRDY
   - bit: 32
     description: Data Register Empty Interrupt Enable
     name: DREIE
   - bit: 1
-    description: Interrupt Enable
-    name: IE
-  - bit: 1
     description: voltage level monitor interrrupt enable
     name: VLMIE
-  - bit: 128
-    description: Receive Complete Interrupt Enable
-    name: RXCIE
   - bit: 2
     description: Compare Match Interrupt enable
     name: CMP
-  - bit: 16
-    description: Compare 0 Interrupt
-    name: CMP0
-  - bit: 16
-    description: Slave Select Trigger Interrupt Enable
-    name: SSIE
-  - bit: 32
-    description: Compare 1 Interrupt
-    name: CMP1
-  - bit: 1
-    description: Overflow Interrupt enable
-    name: OVF
-  - bit: 64
-    description: Compare 2 Interrupt
-    name: CMP2
-  - bit: 64
-    description: Transfer Complete Interrupt Enable
-    name: TXCIE
-  - bit: 1
-    description: Overflow Interrupt
-    name: OVF
-  - bit: 1
-    description: Capture or Timeout
-    name: CAPT
-  - bit: 2
-    description: High Underflow Interrupt Enable
-    name: HUNF
-  - bit: 16
-    description: Low Compare 0 Interrupt Enable
-    name: LCMP0
-  - bit: 2
-    description: Configuration
-    name: VLMCFG0
+  - bit: 128
+    description: Receive Complete Interrupt Enable
+    name: RXCIE
   - bit: 4
     description: Configuration
     name: VLMCFG1
-  - bit: 1
-    description: EEPROM Ready
-    name: EEREADY
-  - bit: 32
-    description: Low Compare 1 Interrupt Enable
-    name: LCMP1
   - bit: 64
-    description: Low Compare 2 Interrupt Enable
-    name: LCMP2
+    description: Compare 2 Interrupt
+    name: CMP2
+  - bit: 16
+    description: Compare 0 Interrupt
+    name: CMP0
   description: Interrupt Control
   name: INTCTRL
 - address: 2
@@ -347,97 +84,46 @@ registers:
   - bit: 128
     description: Invert AC Output
     name: INVERT
-  - bit: 8
-    description: Positive Input MUX Selection
-    name: MUXPOS0
-  - bit: 16
-    description: Positive Input MUX Selection
-    name: MUXPOS1
   - bit: 1
     description: Negative Input MUX Selection
     name: MUXNEG0
   - bit: 2
     description: Negative Input MUX Selection
     name: MUXNEG1
+  - bit: 8
+    description: Positive Input MUX Selection
+    name: MUXPOS0
+  - bit: 16
+    description: Positive Input MUX Selection
+    name: MUXPOS1
   description: Mux Control A
   name: MUXCTRLA
 - address: 7
   bit_fields:
-  - bit: 2
-    description: EEPROM busy
-    name: EEBUSY
-  - bit: 1
-    description: Run
-    name: RUN
-  - bit: 1
-    description: Flash busy
-    name: FBUSY
-  - bit: 4
-    description: Write error
-    name: WRERROR
-  - bit: 2
-    description: Break Detected Flag
-    name: BDF
-  - bit: 1
-    description: CRC Busy
-    name: BUSY
   - bit: 32
     description: Data Register Empty Flag
     name: DREIF
+  - bit: 1
+    description: CRC Busy
+    name: BUSY
   - bit: 2
     description: CRC Ok
     name: OK
-  - bit: 8
-    description: Inconsistent Sync Field Interrupt Flag
-    name: ISFIF
   - bit: 128
     description: Receive Complete Interrupt Flag
     name: RXCIF
-  - bit: 16
-    description: Receive Start Interrupt
-    name: RXSIF
   - bit: 64
     description: Transmit Interrupt Flag
     name: TXCIF
-  - bit: 8
-    description: Comparator Synchronization Busy Flag
-    name: CMPBUSY
-  - bit: 1
-    description: Wait For Break
-    name: WFB
-  - bit: 1
-    description: Level 0 Interrupt Executing
-    name: LVL0EX
-  - bit: 2
-    description: Count Synchronization Busy Flag
-    name: CNTBUSY
-  - bit: 2
-    description: Level 1 Interrupt Executing
-    name: LVL1EX
-  - bit: 1
-    description: CTRLA Synchronization Busy Flag
-    name: CTRLABUSY
-  - bit: 1
-    description: Analog Comparator Interrupt Flag
-    name: CMP
-  - bit: 128
-    description: Lock enable
-    name: LOCK
-  - bit: 16
-    description: Analog Comparator State
-    name: STATE
-  - bit: 1
-    description: Syncronization busy
-    name: SYNCBUSY
   - bit: 4
     description: Period Synchronization Busy Flag
     name: PERBUSY
-  - bit: 128
-    description: Non-maskable Interrupt Executing
-    name: NMIEX
-  - bit: 1
-    description: Voltage level monitor status
-    name: VLMS
+  - bit: 8
+    description: Inconsistent Sync Field Interrupt Flag
+    name: ISFIF
+  - bit: 16
+    description: Analog Comparator State
+    name: STATE
   description: Status
   name: STATUS
 - address: 22
@@ -446,29 +132,26 @@ registers:
     description: Error Correction Sign Bit
     name: SIGN
   - bit: 1
-    description: Error Correction Value
-    name: ERROR0
+    description: Duty Cycle
+    name: DUTYCYC
   - bit: 2
     description: Error Correction Value
     name: ERROR1
+  - bit: 32
+    description: Error Correction Value
+    name: ERROR5
   - bit: 4
     description: Error Correction Value
     name: ERROR2
+  - bit: 64
+    description: Error Correction Value
+    name: ERROR6
   - bit: 8
     description: Error Correction Value
     name: ERROR3
   - bit: 16
     description: Error Correction Value
     name: ERROR4
-  - bit: 32
-    description: Error Correction Value
-    name: ERROR5
-  - bit: 64
-    description: Error Correction Value
-    name: ERROR6
-  - bit: 1
-    description: Duty Cycle
-    name: DUTYCYC
   description: Calibration
   name: CALIB
 - address: 8
@@ -480,221 +163,68 @@ registers:
   name: COMMAND
 - address: 1
   bit_fields:
-  - bit: 16
-    description: Compare 0 Enable
-    name: CMP0EN
-  - bit: 32
-    description: Compare 1 Enable
-    name: CMP1EN
-  - bit: 16
-    description: CRC Flash Access Mode
-    name: MODE0
   - bit: 32
     description: CRC Flash Access Mode
     name: MODE1
-  - bit: 128
-    description: Buffer Mode Enable
-    name: BUFEN
-  - bit: 64
-    description: Compare 2 Enable
-    name: CMP2EN
   - bit: 1
     description: CRC Source
     name: SRC0
-  - bit: 2
-    description: CRC Source
-    name: SRC1
-  - bit: 64
-    description: Buffer Write Mode
-    name: BUFWR
-  - bit: 1
-    description: Waveform generation mode
-    name: WGMODE0
-  - bit: 2
-    description: Waveform generation mode
-    name: WGMODE1
-  - bit: 4
-    description: Waveform generation mode
-    name: WGMODE2
-  - bit: 1
-    description: SPI Mode
-    name: MODE0
-  - bit: 2
-    description: SPI Mode
-    name: MODE1
-  - bit: 4
-    description: Slave Select Disable
-    name: SSD
   - bit: 64
     description: Asynchronous Enable
     name: ASYNC
-  - bit: 16
-    description: Pin Output Enable
-    name: CCMPEN
-  - bit: 1
-    description: Accumulation Samples
-    name: SAMPNUM0
   - bit: 2
-    description: Accumulation Samples
-    name: SAMPNUM1
+    description: CRC Source
+    name: SRC1
   - bit: 4
-    description: Accumulation Samples
-    name: SAMPNUM2
-  - bit: 32
-    description: Pin Initial State
-    name: CCMPINIT
-  - bit: 1
-    description: Bod level
-    name: LVL0
-  - bit: 2
-    description: Bod level
-    name: LVL1
-  - bit: 4
-    description: Bod level
-    name: LVL2
-  - bit: 1
-    description: Timer Mode
-    name: CNTMODE0
-  - bit: 2
-    description: Timer Mode
-    name: CNTMODE1
-  - bit: 4
-    description: Timer Mode
-    name: CNTMODE2
-  - bit: 16
-    description: High Compare 0 Enable
-    name: HCMP0EN
-  - bit: 1
-    description: Multi-processor Communication Mode
-    name: MPCM
-  - bit: 32
-    description: High Compare 1 Enable
-    name: HCMP1EN
-  - bit: 8
-    description: Open Drain Mode Enable
-    name: ODME
-  - bit: 64
-    description: High Compare 2 Enable
-    name: HCMP2EN
+    description: Slave Select Disable
+    name: SSD
   - bit: 128
     description: Reciever enable
     name: RXEN
-  - bit: 1
-    description: Low Compare 0 Enable
-    name: LCMP0EN
-  - bit: 2
-    description: Receiver Mode
-    name: RXMODE0
-  - bit: 4
-    description: Receiver Mode
-    name: RXMODE1
-  - bit: 1
-    description: AC0 DACREF reference enable
-    name: AC0REFEN
-  - bit: 1
-    description: Application code write protect
-    name: APCWP
-  - bit: 2
-    description: Low Compare 1 Enable
-    name: LCMP1EN
-  - bit: 16
-    description: Start Frame Detection Enable
-    name: SFDEN
-  - bit: 2
-    description: ADC0 reference enable
-    name: ADC0REFEN
-  - bit: 2
-    description: Boot Lock
-    name: BOOTLOCK
-  - bit: 4
-    description: Low Compare 2 Enable
-    name: LCMP2EN
-  - bit: 64
-    description: Transmitter Enable
-    name: TXEN
   - bit: 8
-    description: Auto Lock Update
-    name: ALUPD
+    description: Open Drain Mode Enable
+    name: ODME
+  - bit: 16
+    description: CRC Flash Access Mode
+    name: MODE0
   description: Control B
   name: CTRLB
 - address: 2
   bit_fields:
-  - bit: 1
-    description: Compare 0 Waveform Output Value
-    name: CMP0OV
-  - bit: 1
-    description: Low Compare 0 Output Value
-    name: LCMP0OV
-  - bit: 2
-    description: Compare 1 Waveform Output Value
-    name: CMP1OV
-  - bit: 2
-    description: Low Compare 1 Output Value
-    name: LCMP1OV
   - bit: 64
     description: Sample Capacitance Selection
     name: SAMPCAP
-  - bit: 32
-    description: High Compare 1 Output Value
-    name: HCMP1OV
-  - bit: 4
-    description: Compare 2 Waveform Output Value
-    name: CMP2OV
-  - bit: 4
-    description: Low Compare 2 Output Value
-    name: LCMP2OV
-  - bit: 16
-    description: High Compare 0 Output Value
-    name: HCMP0OV
   - bit: 1
-    description: Clock Pre-scaler
-    name: PRESC0
+    description: Compare 0 Waveform Output Value
+    name: CMP0OV
   - bit: 2
-    description: Clock Pre-scaler
-    name: PRESC1
-  - bit: 4
-    description: Clock Pre-scaler
-    name: PRESC2
-  - bit: 16
-    description: Reference Selection
-    name: REFSEL0
+    description: Compare 1 Waveform Output Value
+    name: CMP1OV
   - bit: 32
     description: Reference Selection
     name: REFSEL1
-  - bit: 64
-    description: High Compare 2 Output Value
-    name: HCMP2OV
+  - bit: 4
+    description: Compare 2 Waveform Output Value
+    name: CMP2OV
+  - bit: 16
+    description: Reference Selection
+    name: REFSEL0
   description: Control C
   name: CTRLC
 - address: 3
   bit_fields:
-  - bit: 16
-    description: Automatic Sampling Delay Variation
-    name: ASDV
-  - bit: 1
-    description: Split Mode Enable
-    name: SPLITM
-  - bit: 64
-    description: Auto Baud Window
-    name: ABW0
-  - bit: 128
-    description: Auto Baud Window
-    name: ABW1
-  - bit: 1
-    description: Split Mode Enable
-    name: SPLITM
   - bit: 32
     description: Initial Delay Selection
     name: INITDLY0
+  - bit: 1
+    description: Split Mode Enable
+    name: SPLITM
   - bit: 64
     description: Initial Delay Selection
     name: INITDLY1
   - bit: 128
     description: Initial Delay Selection
     name: INITDLY2
-  - bit: 1
-    description: Sampling Delay Selection
-    name: SAMPDLY0
   - bit: 2
     description: Sampling Delay Selection
     name: SAMPDLY1
@@ -704,6 +234,9 @@ registers:
   - bit: 8
     description: Sampling Delay Selection
     name: SAMPDLY3
+  - bit: 16
+    description: Automatic Sampling Delay Variation
+    name: ASDV
   description: Control D
   name: CTRLD
 - address: 4
@@ -721,21 +254,6 @@ registers:
   name: CTRLE
 - address: 12
   bit_fields:
-  - bit: 1
-    description: Debug Run
-    name: DBGRUN
-  - bit: 1
-    description: Run in debug
-    name: DBGRUN
-  - bit: 1
-    description: Debug run
-    name: DBGRUN
-  - bit: 1
-    description: Debug Run
-    name: DBGRUN
-  - bit: 1
-    description: Debug Run
-    name: DBGRUN
   - bit: 128
     description: Autobaud majority voter bypass
     name: ABMBP
@@ -746,142 +264,49 @@ registers:
   name: DBGCTRL
 - address: 9
   bit_fields:
-  - bit: 16
-    description: Event Edge
-    name: EDGE
-  - bit: 2
-    description: Event Action
-    name: EVACT0
-  - bit: 4
-    description: Event Action
-    name: EVACT1
-  - bit: 1
-    description: IrDA Event Input Enable
-    name: IREI
-  - bit: 1
-    description: Start Event Input Enable
-    name: STARTEI
   - bit: 64
     description: Input Capture Noise Cancellation Filter
     name: FILTER
   - bit: 1
     description: Event Input Enable
     name: CAPTEI
-  - bit: 1
-    description: Count on Event Input
-    name: CNTEI
+  - bit: 2
+    description: Event Action
+    name: EVACT0
+  - bit: 4
+    description: Event Action
+    name: EVACT1
+  - bit: 16
+    description: Event Edge
+    name: EDGE
   description: Event Control
   name: EVCTRL
 - address: 11
   bit_fields:
-  - bit: 1
-    description: EEPROM Ready
-    name: EEREADY
-  - bit: 1
-    description: Overflow Interrupt
-    name: OVF
-  - bit: 1
-    description: Pin Interrupt
-    name: INT0
-  - bit: 2
-    description: Pin Interrupt
-    name: INT1
-  - bit: 4
-    description: Pin Interrupt
-    name: INT2
-  - bit: 8
-    description: Pin Interrupt
-    name: INT3
-  - bit: 16
-    description: Pin Interrupt
-    name: INT4
-  - bit: 32
-    description: Pin Interrupt
-    name: INT5
-  - bit: 64
-    description: Pin Interrupt
-    name: INT6
-  - bit: 128
-    description: Pin Interrupt
-    name: INT7
-  - bit: 1
-    description: Capture or Timeout
-    name: CAPT
-  - bit: 2
-    description: High Underflow Interrupt Flag
-    name: HUNF
-  - bit: 16
-    description: Low Compare 2 Interrupt Flag
-    name: LCMP0
-  - bit: 32
-    description: Low Compare 1 Interrupt Flag
-    name: LCMP1
   - bit: 64
     description: Low Compare 0 Interrupt Flag
     name: LCMP2
   - bit: 1
     description: Low Underflow Interrupt Flag
     name: LUNF
-  - bit: 1
-    description: Pin Interrupt
-    name: INT0
   - bit: 2
     description: Pin Interrupt
     name: INT1
+  - bit: 32
+    description: Pin Interrupt
+    name: INT5
   - bit: 4
     description: Pin Interrupt
     name: INT2
+  - bit: 128
+    description: Pin Interrupt
+    name: INT7
   - bit: 8
     description: Pin Interrupt
     name: INT3
   - bit: 16
     description: Pin Interrupt
     name: INT4
-  - bit: 32
-    description: Pin Interrupt
-    name: INT5
-  - bit: 64
-    description: Pin Interrupt
-    name: INT6
-  - bit: 128
-    description: Pin Interrupt
-    name: INT7
-  - bit: 1
-    description: Interrupt Flags
-    name: INT0
-  - bit: 2
-    description: Interrupt Flags
-    name: INT1
-  - bit: 4
-    description: Interrupt Flags
-    name: INT2
-  - bit: 8
-    description: Interrupt Flags
-    name: INT3
-  - bit: 1
-    description: Result Ready Flag
-    name: RESRDY
-  - bit: 1
-    description: Voltage level monitor interrupt flag
-    name: VLMIF
-  - bit: 2
-    description: Window Comparator Flag
-    name: WCMP
-  - bit: 2
-    description: Compare Match Interrupt
-    name: CMP
-  - bit: 1
-    description: Overflow Interrupt Flag
-    name: OVF
-  - bit: 16
-    description: Compare 0 Interrupt
-    name: CMP0
-  - bit: 32
-    description: Compare 1 Interrupt
-    name: CMP1
-  - bit: 64
-    description: Compare 2 Interrupt
-    name: CMP2
   description: Interrupt Flags
   name: INTFLAGS
 - address: 6
@@ -928,30 +353,30 @@ registers:
   name: SAMPCTRL
 - address: 13
   bit_fields:
+  - bit: 32
+    description: Temporary
+    name: TEMP5
   - bit: 1
     description: Temporary
     name: TEMP0
   - bit: 2
     description: Temporary
     name: TEMP1
+  - bit: 64
+    description: Temporary
+    name: TEMP6
   - bit: 4
     description: Temporary
     name: TEMP2
+  - bit: 128
+    description: Temporary
+    name: TEMP7
   - bit: 8
     description: Temporary
     name: TEMP3
   - bit: 16
     description: Temporary
     name: TEMP4
-  - bit: 32
-    description: Temporary
-    name: TEMP5
-  - bit: 64
-    description: Temporary
-    name: TEMP6
-  - bit: 128
-    description: Temporary
-    name: TEMP7
   description: Temporary Data
   name: TEMP
 - address: 20
@@ -974,65 +399,74 @@ registers:
   name: VLMCTRLA
 - address: 5
   bit_fields:
-  - bit: 4
-    description: Interrupt Mode for LUT1
-    name: INTMODE10
-  - bit: 8
-    description: Interrupt Mode for LUT1
-    name: INTMODE11
+  - bit: 64
+    description: Interrupt Mode for LUT3
+    name: INTMODE30
   - bit: 1
     description: Interrupt Mode for LUT0
     name: INTMODE00
   - bit: 2
     description: Interrupt Mode for LUT0
     name: INTMODE01
-  - bit: 16
-    description: Interrupt Mode for LUT2
-    name: INTMODE20
-  - bit: 32
-    description: Interrupt Mode for LUT2
-    name: INTMODE21
-  - bit: 64
-    description: Interrupt Mode for LUT3
-    name: INTMODE30
   - bit: 128
     description: Interrupt Mode for LUT3
     name: INTMODE31
+  - bit: 32
+    description: Interrupt Mode for LUT2
+    name: INTMODE21
+  - bit: 4
+    description: Interrupt Mode for LUT1
+    name: INTMODE10
+  - bit: 8
+    description: Interrupt Mode for LUT1
+    name: INTMODE11
+  - bit: 16
+    description: Interrupt Mode for LUT2
+    name: INTMODE20
   description: Interrupt Control 0
   name: INTCTRL0
 - address: 8
   bit_fields:
-  - bit: 128
-    description: Edge Detection Enable
-    name: EDGEDET
-  - bit: 1
-    description: LUT Enable
-    name: ENABLE
-  - bit: 16
-    description: Filter Selection
-    name: FILTSEL0
-  - bit: 32
-    description: Filter Selection
-    name: FILTSEL1
   - bit: 64
     description: Output Enable
     name: OUTEN
+  - bit: 128
+    description: Edge Detection Enable
+    name: EDGEDET
   - bit: 2
     description: Clock Source Selection
     name: CLKSRC0
+  - bit: 1
+    description: LUT Enable
+    name: ENABLE
   - bit: 4
     description: Clock Source Selection
     name: CLKSRC1
+  - bit: 32
+    description: Filter Selection
+    name: FILTSEL1
   - bit: 8
     description: Clock Source Selection
     name: CLKSRC2
+  - bit: 16
+    description: Filter Selection
+    name: FILTSEL0
   description: LUT Control 0 A
   name: LUT0CTRLA
 - address: 9
   bit_fields:
+  - bit: 32
+    description: LUT Input 1 Source Selection
+    name: INSEL11
   - bit: 1
     description: LUT Input 0 Source Selection
     name: INSEL00
+  - bit: 64
+    description: LUT Input 1 Source Selection
+    name: INSEL12
+  - bit: 128
+    description: LUT Input 1 Source Selection
+    name: INSEL13
   - bit: 2
     description: LUT Input 0 Source Selection
     name: INSEL01
@@ -1045,19 +479,13 @@ registers:
   - bit: 16
     description: LUT Input 1 Source Selection
     name: INSEL10
-  - bit: 32
-    description: LUT Input 1 Source Selection
-    name: INSEL11
-  - bit: 64
-    description: LUT Input 1 Source Selection
-    name: INSEL12
-  - bit: 128
-    description: LUT Input 1 Source Selection
-    name: INSEL13
   description: LUT Control 0 B
   name: LUT0CTRLB
 - address: 10
   bit_fields:
+  - bit: 8
+    description: LUT Input 2 Source Selection
+    name: INSEL23
   - bit: 1
     description: LUT Input 2 Source Selection
     name: INSEL20
@@ -1067,9 +495,6 @@ registers:
   - bit: 4
     description: LUT Input 2 Source Selection
     name: INSEL22
-  - bit: 8
-    description: LUT Input 2 Source Selection
-    name: INSEL23
   description: LUT Control 0 C
   name: LUT0CTRLC
 - address: 12
@@ -1077,59 +502,62 @@ registers:
   - bit: 64
     description: Output Enable
     name: OUTEN
-  - bit: 2
-    description: Clock Source Selection
-    name: CLKSRC0
-  - bit: 4
-    description: Clock Source Selection
-    name: CLKSRC1
-  - bit: 8
-    description: Clock Source Selection
-    name: CLKSRC2
   - bit: 128
     description: Edge Detection Enable
     name: EDGEDET
+  - bit: 2
+    description: Clock Source Selection
+    name: CLKSRC0
   - bit: 1
     description: LUT Enable
     name: ENABLE
-  - bit: 16
-    description: Filter Selection
-    name: FILTSEL0
+  - bit: 4
+    description: Clock Source Selection
+    name: CLKSRC1
   - bit: 32
     description: Filter Selection
     name: FILTSEL1
+  - bit: 8
+    description: Clock Source Selection
+    name: CLKSRC2
+  - bit: 16
+    description: Filter Selection
+    name: FILTSEL0
   description: LUT Control 1 A
   name: LUT1CTRLA
 - address: 13
   bit_fields:
-  - bit: 16
-    description: LUT Input 1 Source Selection
-    name: INSEL10
   - bit: 32
     description: LUT Input 1 Source Selection
     name: INSEL11
-  - bit: 64
-    description: LUT Input 1 Source Selection
-    name: INSEL12
-  - bit: 128
-    description: LUT Input 1 Source Selection
-    name: INSEL13
   - bit: 1
     description: LUT Input 0 Source Selection
     name: INSEL00
   - bit: 2
     description: LUT Input 0 Source Selection
     name: INSEL01
+  - bit: 64
+    description: LUT Input 1 Source Selection
+    name: INSEL12
   - bit: 4
     description: LUT Input 0 Source Selection
     name: INSEL02
+  - bit: 128
+    description: LUT Input 1 Source Selection
+    name: INSEL13
   - bit: 8
     description: LUT Input 0 Source Selection
     name: INSEL03
+  - bit: 16
+    description: LUT Input 1 Source Selection
+    name: INSEL10
   description: LUT Control 1 B
   name: LUT1CTRLB
 - address: 14
   bit_fields:
+  - bit: 8
+    description: LUT Input 2 Source Selection
+    name: INSEL23
   - bit: 1
     description: LUT Input 2 Source Selection
     name: INSEL20
@@ -1139,56 +567,50 @@ registers:
   - bit: 4
     description: LUT Input 2 Source Selection
     name: INSEL22
-  - bit: 8
-    description: LUT Input 2 Source Selection
-    name: INSEL23
   description: LUT Control 1 C
   name: LUT1CTRLC
 - address: 16
   bit_fields:
-  - bit: 2
-    description: Clock Source Selection
-    name: CLKSRC0
-  - bit: 4
-    description: Clock Source Selection
-    name: CLKSRC1
-  - bit: 8
-    description: Clock Source Selection
-    name: CLKSRC2
-  - bit: 64
-    description: Output Enable
-    name: OUTEN
-  - bit: 128
-    description: Edge Detection Enable
-    name: EDGEDET
-  - bit: 1
-    description: LUT Enable
-    name: ENABLE
-  - bit: 16
-    description: Filter Selection
-    name: FILTSEL0
   - bit: 32
     description: Filter Selection
     name: FILTSEL1
+  - bit: 64
+    description: Output Enable
+    name: OUTEN
+  - bit: 2
+    description: Clock Source Selection
+    name: CLKSRC0
+  - bit: 128
+    description: Edge Detection Enable
+    name: EDGEDET
+  - bit: 4
+    description: Clock Source Selection
+    name: CLKSRC1
+  - bit: 1
+    description: LUT Enable
+    name: ENABLE
+  - bit: 8
+    description: Clock Source Selection
+    name: CLKSRC2
+  - bit: 16
+    description: Filter Selection
+    name: FILTSEL0
   description: LUT Control 2 A
   name: LUT2CTRLA
 - address: 17
   bit_fields:
-  - bit: 16
-    description: LUT Input 1 Source Selection
-    name: INSEL10
   - bit: 32
     description: LUT Input 1 Source Selection
     name: INSEL11
+  - bit: 1
+    description: LUT Input 0 Source Selection
+    name: INSEL00
   - bit: 64
     description: LUT Input 1 Source Selection
     name: INSEL12
   - bit: 128
     description: LUT Input 1 Source Selection
     name: INSEL13
-  - bit: 1
-    description: LUT Input 0 Source Selection
-    name: INSEL00
   - bit: 2
     description: LUT Input 0 Source Selection
     name: INSEL01
@@ -1198,10 +620,16 @@ registers:
   - bit: 8
     description: LUT Input 0 Source Selection
     name: INSEL03
+  - bit: 16
+    description: LUT Input 1 Source Selection
+    name: INSEL10
   description: LUT Control 2 B
   name: LUT2CTRLB
 - address: 18
   bit_fields:
+  - bit: 8
+    description: LUT Input 2 Source Selection
+    name: INSEL23
   - bit: 1
     description: LUT Input 2 Source Selection
     name: INSEL20
@@ -1211,69 +639,69 @@ registers:
   - bit: 4
     description: LUT Input 2 Source Selection
     name: INSEL22
-  - bit: 8
-    description: LUT Input 2 Source Selection
-    name: INSEL23
   description: LUT Control 2 C
   name: LUT2CTRLC
 - address: 20
   bit_fields:
-  - bit: 64
-    description: Output Enable
-    name: OUTEN
+  - bit: 32
+    description: Filter Selection
+    name: FILTSEL1
   - bit: 1
     description: LUT Enable
     name: ENABLE
+  - bit: 64
+    description: Output Enable
+    name: OUTEN
   - bit: 2
     description: Clock Source Selection
     name: CLKSRC0
   - bit: 4
     description: Clock Source Selection
     name: CLKSRC1
-  - bit: 8
-    description: Clock Source Selection
-    name: CLKSRC2
   - bit: 128
     description: Edge Detection Enable
     name: EDGEDET
+  - bit: 8
+    description: Clock Source Selection
+    name: CLKSRC2
   - bit: 16
     description: Filter Selection
     name: FILTSEL0
-  - bit: 32
-    description: Filter Selection
-    name: FILTSEL1
   description: LUT Control 3 A
   name: LUT3CTRLA
 - address: 21
   bit_fields:
+  - bit: 32
+    description: LUT Input 1 Source Selection
+    name: INSEL11
   - bit: 1
     description: LUT Input 0 Source Selection
     name: INSEL00
   - bit: 2
     description: LUT Input 0 Source Selection
     name: INSEL01
+  - bit: 64
+    description: LUT Input 1 Source Selection
+    name: INSEL12
   - bit: 4
     description: LUT Input 0 Source Selection
     name: INSEL02
+  - bit: 128
+    description: LUT Input 1 Source Selection
+    name: INSEL13
   - bit: 8
     description: LUT Input 0 Source Selection
     name: INSEL03
   - bit: 16
     description: LUT Input 1 Source Selection
     name: INSEL10
-  - bit: 32
-    description: LUT Input 1 Source Selection
-    name: INSEL11
-  - bit: 64
-    description: LUT Input 1 Source Selection
-    name: INSEL12
-  - bit: 128
-    description: LUT Input 1 Source Selection
-    name: INSEL13
   description: LUT Control 3 B
   name: LUT3CTRLB
 - address: 22
   bit_fields:
+  - bit: 8
+    description: LUT Input 2 Source Selection
+    name: INSEL23
   - bit: 1
     description: LUT Input 2 Source Selection
     name: INSEL20
@@ -1283,9 +711,6 @@ registers:
   - bit: 4
     description: LUT Input 2 Source Selection
     name: INSEL22
-  - bit: 8
-    description: LUT Input 2 Source Selection
-    name: INSEL23
   description: LUT Control 3 C
   name: LUT3CTRLC
 - address: 1
@@ -1371,15 +796,15 @@ registers:
   name: MCLKLOCK
 - address: 3
   bit_fields:
-  - bit: 64
-    description: 32.768 kHz Crystal Oscillator status
-    name: XOSC32KS
   - bit: 128
     description: External Clock status
     name: EXTS
   - bit: 32
     description: 32KHz oscillator status
     name: OSC32KS
+  - bit: 64
+    description: 32.768 kHz Crystal Oscillator status
+    name: XOSC32KS
   - bit: 1
     description: System Oscillator changing
     name: SOSC
@@ -1390,12 +815,18 @@ registers:
   name: MCLKSTATUS
 - address: 17
   bit_fields:
+  - bit: 32
+    description: Calibration
+    name: CAL20M5
   - bit: 1
     description: Calibration
     name: CAL20M0
   - bit: 2
     description: Calibration
     name: CAL20M1
+  - bit: 64
+    description: Calibration
+    name: CAL20M6
   - bit: 4
     description: Calibration
     name: CAL20M2
@@ -1405,16 +836,13 @@ registers:
   - bit: 16
     description: Calibration
     name: CAL20M4
-  - bit: 32
-    description: Calibration
-    name: CAL20M5
-  - bit: 64
-    description: Calibration
-    name: CAL20M6
   description: OSC20M Calibration A
   name: OSC20MCALIBA
 - address: 18
   bit_fields:
+  - bit: 128
+    description: Lock
+    name: LOCK
   - bit: 1
     description: Oscillator temperature coefficient
     name: TEMPCAL20M0
@@ -1427,9 +855,6 @@ registers:
   - bit: 8
     description: Oscillator temperature coefficient
     name: TEMPCAL20M3
-  - bit: 128
-    description: Lock
-    name: LOCK
   description: OSC20M Calibration B
   name: OSC20MCALIBB
 - address: 16
@@ -1448,49 +873,49 @@ registers:
   name: OSC32KCTRLA
 - address: 28
   bit_fields:
-  - bit: 2
-    description: Run standby
-    name: RUNSTDBY
-  - bit: 16
-    description: Crystal startup time
-    name: CSUT0
   - bit: 32
     description: Crystal startup time
     name: CSUT1
-  - bit: 4
-    description: Select
-    name: SEL
   - bit: 1
     description: Enable
     name: ENABLE
+  - bit: 2
+    description: Run standby
+    name: RUNSTDBY
+  - bit: 4
+    description: Select
+    name: SEL
+  - bit: 16
+    description: Crystal startup time
+    name: CSUT0
   description: XOSC32K Control A
   name: XOSC32KCTRLA
 - address: 4
   bit_fields:
+  - bit: 32
+    description: CCP signature
+    name: CCP5
   - bit: 1
     description: CCP signature
     name: CCP0
   - bit: 2
     description: CCP signature
     name: CCP1
+  - bit: 64
+    description: CCP signature
+    name: CCP6
   - bit: 4
     description: CCP signature
     name: CCP2
+  - bit: 128
+    description: CCP signature
+    name: CCP7
   - bit: 8
     description: CCP signature
     name: CCP3
   - bit: 16
     description: CCP signature
     name: CCP4
-  - bit: 32
-    description: CCP signature
-    name: CCP5
-  - bit: 64
-    description: CCP signature
-    name: CCP6
-  - bit: 128
-    description: CCP signature
-    name: CCP7
   description: Configuration Change Protection
   name: CCP
 - address: 14
@@ -1503,1010 +928,1010 @@ registers:
   name: SPL
 - address: 15
   bit_fields:
-  - bit: 2
-    description: Zero Flag
-    name: Z
-  - bit: 128
-    description: Global Interrupt Enable Flag
-    name: I
-  - bit: 4
-    description: Negative Flag
-    name: N
-  - bit: 16
-    description: N Exclusive Or V Flag
-    name: S
   - bit: 64
     description: Transfer Bit
     name: T
+  - bit: 128
+    description: Global Interrupt Enable Flag
+    name: I
+  - bit: 2
+    description: Zero Flag
+    name: Z
   - bit: 1
     description: Carry Flag
     name: C
-  - bit: 8
-    description: Two's Complement Overflow Flag
-    name: V
+  - bit: 4
+    description: Negative Flag
+    name: N
   - bit: 32
     description: Half Carry Flag
     name: H
+  - bit: 8
+    description: Two's Complement Overflow Flag
+    name: V
+  - bit: 16
+    description: N Exclusive Or V Flag
+    name: S
   description: Status Register
   name: SREG
 - address: 2
   bit_fields:
+  - bit: 32
+    description: Interrupt Level Priority
+    name: LVL0PRI5
   - bit: 1
     description: Interrupt Level Priority
     name: LVL0PRI0
   - bit: 2
     description: Interrupt Level Priority
     name: LVL0PRI1
+  - bit: 64
+    description: Interrupt Level Priority
+    name: LVL0PRI6
   - bit: 4
     description: Interrupt Level Priority
     name: LVL0PRI2
+  - bit: 128
+    description: Interrupt Level Priority
+    name: LVL0PRI7
   - bit: 8
     description: Interrupt Level Priority
     name: LVL0PRI3
   - bit: 16
     description: Interrupt Level Priority
     name: LVL0PRI4
-  - bit: 32
-    description: Interrupt Level Priority
-    name: LVL0PRI5
-  - bit: 64
-    description: Interrupt Level Priority
-    name: LVL0PRI6
-  - bit: 128
-    description: Interrupt Level Priority
-    name: LVL0PRI7
   description: Interrupt Level 0 Priority
   name: LVL0PRI
 - address: 3
   bit_fields:
+  - bit: 32
+    description: Interrupt Vector with High Priority
+    name: LVL1VEC5
   - bit: 1
     description: Interrupt Vector with High Priority
     name: LVL1VEC0
   - bit: 2
     description: Interrupt Vector with High Priority
     name: LVL1VEC1
+  - bit: 64
+    description: Interrupt Vector with High Priority
+    name: LVL1VEC6
   - bit: 4
     description: Interrupt Vector with High Priority
     name: LVL1VEC2
+  - bit: 128
+    description: Interrupt Vector with High Priority
+    name: LVL1VEC7
   - bit: 8
     description: Interrupt Vector with High Priority
     name: LVL1VEC3
   - bit: 16
     description: Interrupt Vector with High Priority
     name: LVL1VEC4
-  - bit: 32
-    description: Interrupt Vector with High Priority
-    name: LVL1VEC5
-  - bit: 64
-    description: Interrupt Vector with High Priority
-    name: LVL1VEC6
-  - bit: 128
-    description: Interrupt Vector with High Priority
-    name: LVL1VEC7
   description: Interrupt Level 1 Priority Vector
   name: LVL1VEC
 - address: 16
   bit_fields:
+  - bit: 32
+    description: Generator selector
+    name: GENERATOR5
   - bit: 1
     description: Generator selector
     name: GENERATOR0
   - bit: 2
     description: Generator selector
     name: GENERATOR1
+  - bit: 64
+    description: Generator selector
+    name: GENERATOR6
   - bit: 4
     description: Generator selector
     name: GENERATOR2
+  - bit: 128
+    description: Generator selector
+    name: GENERATOR7
   - bit: 8
     description: Generator selector
     name: GENERATOR3
   - bit: 16
     description: Generator selector
     name: GENERATOR4
-  - bit: 32
-    description: Generator selector
-    name: GENERATOR5
-  - bit: 64
-    description: Generator selector
-    name: GENERATOR6
-  - bit: 128
-    description: Generator selector
-    name: GENERATOR7
   description: Multiplexer Channel 0
   name: CHANNEL0
 - address: 17
   bit_fields:
+  - bit: 32
+    description: Generator selector
+    name: GENERATOR5
   - bit: 1
     description: Generator selector
     name: GENERATOR0
   - bit: 2
     description: Generator selector
     name: GENERATOR1
+  - bit: 64
+    description: Generator selector
+    name: GENERATOR6
   - bit: 4
     description: Generator selector
     name: GENERATOR2
+  - bit: 128
+    description: Generator selector
+    name: GENERATOR7
   - bit: 8
     description: Generator selector
     name: GENERATOR3
   - bit: 16
     description: Generator selector
     name: GENERATOR4
-  - bit: 32
-    description: Generator selector
-    name: GENERATOR5
-  - bit: 64
-    description: Generator selector
-    name: GENERATOR6
-  - bit: 128
-    description: Generator selector
-    name: GENERATOR7
   description: Multiplexer Channel 1
   name: CHANNEL1
 - address: 18
   bit_fields:
+  - bit: 32
+    description: Generator selector
+    name: GENERATOR5
   - bit: 1
     description: Generator selector
     name: GENERATOR0
   - bit: 2
     description: Generator selector
     name: GENERATOR1
+  - bit: 64
+    description: Generator selector
+    name: GENERATOR6
   - bit: 4
     description: Generator selector
     name: GENERATOR2
+  - bit: 128
+    description: Generator selector
+    name: GENERATOR7
   - bit: 8
     description: Generator selector
     name: GENERATOR3
   - bit: 16
     description: Generator selector
     name: GENERATOR4
-  - bit: 32
-    description: Generator selector
-    name: GENERATOR5
-  - bit: 64
-    description: Generator selector
-    name: GENERATOR6
-  - bit: 128
-    description: Generator selector
-    name: GENERATOR7
   description: Multiplexer Channel 2
   name: CHANNEL2
 - address: 19
   bit_fields:
+  - bit: 32
+    description: Generator selector
+    name: GENERATOR5
   - bit: 1
     description: Generator selector
     name: GENERATOR0
   - bit: 2
     description: Generator selector
     name: GENERATOR1
+  - bit: 64
+    description: Generator selector
+    name: GENERATOR6
   - bit: 4
     description: Generator selector
     name: GENERATOR2
+  - bit: 128
+    description: Generator selector
+    name: GENERATOR7
   - bit: 8
     description: Generator selector
     name: GENERATOR3
   - bit: 16
     description: Generator selector
     name: GENERATOR4
-  - bit: 32
-    description: Generator selector
-    name: GENERATOR5
-  - bit: 64
-    description: Generator selector
-    name: GENERATOR6
-  - bit: 128
-    description: Generator selector
-    name: GENERATOR7
   description: Multiplexer Channel 3
   name: CHANNEL3
 - address: 20
   bit_fields:
+  - bit: 32
+    description: Generator selector
+    name: GENERATOR5
   - bit: 1
     description: Generator selector
     name: GENERATOR0
   - bit: 2
     description: Generator selector
     name: GENERATOR1
+  - bit: 64
+    description: Generator selector
+    name: GENERATOR6
   - bit: 4
     description: Generator selector
     name: GENERATOR2
+  - bit: 128
+    description: Generator selector
+    name: GENERATOR7
   - bit: 8
     description: Generator selector
     name: GENERATOR3
   - bit: 16
     description: Generator selector
     name: GENERATOR4
-  - bit: 32
-    description: Generator selector
-    name: GENERATOR5
-  - bit: 64
-    description: Generator selector
-    name: GENERATOR6
-  - bit: 128
-    description: Generator selector
-    name: GENERATOR7
   description: Multiplexer Channel 4
   name: CHANNEL4
 - address: 21
   bit_fields:
+  - bit: 32
+    description: Generator selector
+    name: GENERATOR5
   - bit: 1
     description: Generator selector
     name: GENERATOR0
   - bit: 2
     description: Generator selector
     name: GENERATOR1
+  - bit: 64
+    description: Generator selector
+    name: GENERATOR6
   - bit: 4
     description: Generator selector
     name: GENERATOR2
+  - bit: 128
+    description: Generator selector
+    name: GENERATOR7
   - bit: 8
     description: Generator selector
     name: GENERATOR3
   - bit: 16
     description: Generator selector
     name: GENERATOR4
-  - bit: 32
-    description: Generator selector
-    name: GENERATOR5
-  - bit: 64
-    description: Generator selector
-    name: GENERATOR6
-  - bit: 128
-    description: Generator selector
-    name: GENERATOR7
   description: Multiplexer Channel 5
   name: CHANNEL5
 - address: 22
   bit_fields:
+  - bit: 32
+    description: Generator selector
+    name: GENERATOR5
   - bit: 1
     description: Generator selector
     name: GENERATOR0
   - bit: 2
     description: Generator selector
     name: GENERATOR1
+  - bit: 64
+    description: Generator selector
+    name: GENERATOR6
   - bit: 4
     description: Generator selector
     name: GENERATOR2
+  - bit: 128
+    description: Generator selector
+    name: GENERATOR7
   - bit: 8
     description: Generator selector
     name: GENERATOR3
   - bit: 16
     description: Generator selector
     name: GENERATOR4
-  - bit: 32
-    description: Generator selector
-    name: GENERATOR5
-  - bit: 64
-    description: Generator selector
-    name: GENERATOR6
-  - bit: 128
-    description: Generator selector
-    name: GENERATOR7
   description: Multiplexer Channel 6
   name: CHANNEL6
 - address: 23
   bit_fields:
+  - bit: 32
+    description: Generator selector
+    name: GENERATOR5
   - bit: 1
     description: Generator selector
     name: GENERATOR0
   - bit: 2
     description: Generator selector
     name: GENERATOR1
+  - bit: 64
+    description: Generator selector
+    name: GENERATOR6
   - bit: 4
     description: Generator selector
     name: GENERATOR2
+  - bit: 128
+    description: Generator selector
+    name: GENERATOR7
   - bit: 8
     description: Generator selector
     name: GENERATOR3
   - bit: 16
     description: Generator selector
     name: GENERATOR4
-  - bit: 32
-    description: Generator selector
-    name: GENERATOR5
-  - bit: 64
-    description: Generator selector
-    name: GENERATOR6
-  - bit: 128
-    description: Generator selector
-    name: GENERATOR7
   description: Multiplexer Channel 7
   name: CHANNEL7
 - address: 0
   bit_fields:
+  - bit: 32
+    description: Software event on channels
+    name: STROBE05
   - bit: 1
     description: Software event on channels
     name: STROBE00
   - bit: 2
     description: Software event on channels
     name: STROBE01
+  - bit: 64
+    description: Software event on channels
+    name: STROBE06
   - bit: 4
     description: Software event on channels
     name: STROBE02
+  - bit: 128
+    description: Software event on channels
+    name: STROBE07
   - bit: 8
     description: Software event on channels
     name: STROBE03
   - bit: 16
     description: Software event on channels
     name: STROBE04
-  - bit: 32
-    description: Software event on channels
-    name: STROBE05
-  - bit: 64
-    description: Software event on channels
-    name: STROBE06
-  - bit: 128
-    description: Software event on channels
-    name: STROBE07
   description: Channel Strobe
   name: STROBE
 - address: 40
   bit_fields:
+  - bit: 32
+    description: Channel selector
+    name: CHANNEL5
   - bit: 1
     description: Channel selector
     name: CHANNEL0
   - bit: 2
     description: Channel selector
     name: CHANNEL1
+  - bit: 64
+    description: Channel selector
+    name: CHANNEL6
   - bit: 4
     description: Channel selector
     name: CHANNEL2
+  - bit: 128
+    description: Channel selector
+    name: CHANNEL7
   - bit: 8
     description: Channel selector
     name: CHANNEL3
   - bit: 16
     description: Channel selector
     name: CHANNEL4
-  - bit: 32
-    description: Channel selector
-    name: CHANNEL5
-  - bit: 64
-    description: Channel selector
-    name: CHANNEL6
-  - bit: 128
-    description: Channel selector
-    name: CHANNEL7
   description: User ADC0
   name: USERADC0
 - address: 32
   bit_fields:
+  - bit: 32
+    description: Channel selector
+    name: CHANNEL5
   - bit: 1
     description: Channel selector
     name: CHANNEL0
   - bit: 2
     description: Channel selector
     name: CHANNEL1
+  - bit: 64
+    description: Channel selector
+    name: CHANNEL6
   - bit: 4
     description: Channel selector
     name: CHANNEL2
+  - bit: 128
+    description: Channel selector
+    name: CHANNEL7
   - bit: 8
     description: Channel selector
     name: CHANNEL3
   - bit: 16
     description: Channel selector
     name: CHANNEL4
-  - bit: 32
-    description: Channel selector
-    name: CHANNEL5
-  - bit: 64
-    description: Channel selector
-    name: CHANNEL6
-  - bit: 128
-    description: Channel selector
-    name: CHANNEL7
   description: User CCL LUT0 Event A
   name: USERCCLLUT0A
 - address: 33
   bit_fields:
+  - bit: 32
+    description: Channel selector
+    name: CHANNEL5
   - bit: 1
     description: Channel selector
     name: CHANNEL0
   - bit: 2
     description: Channel selector
     name: CHANNEL1
+  - bit: 64
+    description: Channel selector
+    name: CHANNEL6
   - bit: 4
     description: Channel selector
     name: CHANNEL2
+  - bit: 128
+    description: Channel selector
+    name: CHANNEL7
   - bit: 8
     description: Channel selector
     name: CHANNEL3
   - bit: 16
     description: Channel selector
     name: CHANNEL4
-  - bit: 32
-    description: Channel selector
-    name: CHANNEL5
-  - bit: 64
-    description: Channel selector
-    name: CHANNEL6
-  - bit: 128
-    description: Channel selector
-    name: CHANNEL7
   description: User CCL LUT0 Event B
   name: USERCCLLUT0B
 - address: 34
   bit_fields:
+  - bit: 32
+    description: Channel selector
+    name: CHANNEL5
   - bit: 1
     description: Channel selector
     name: CHANNEL0
   - bit: 2
     description: Channel selector
     name: CHANNEL1
+  - bit: 64
+    description: Channel selector
+    name: CHANNEL6
   - bit: 4
     description: Channel selector
     name: CHANNEL2
+  - bit: 128
+    description: Channel selector
+    name: CHANNEL7
   - bit: 8
     description: Channel selector
     name: CHANNEL3
   - bit: 16
     description: Channel selector
     name: CHANNEL4
-  - bit: 32
-    description: Channel selector
-    name: CHANNEL5
-  - bit: 64
-    description: Channel selector
-    name: CHANNEL6
-  - bit: 128
-    description: Channel selector
-    name: CHANNEL7
   description: User CCL LUT1 Event A
   name: USERCCLLUT1A
 - address: 35
   bit_fields:
+  - bit: 32
+    description: Channel selector
+    name: CHANNEL5
   - bit: 1
     description: Channel selector
     name: CHANNEL0
   - bit: 2
     description: Channel selector
     name: CHANNEL1
+  - bit: 64
+    description: Channel selector
+    name: CHANNEL6
   - bit: 4
     description: Channel selector
     name: CHANNEL2
+  - bit: 128
+    description: Channel selector
+    name: CHANNEL7
   - bit: 8
     description: Channel selector
     name: CHANNEL3
   - bit: 16
     description: Channel selector
     name: CHANNEL4
-  - bit: 32
-    description: Channel selector
-    name: CHANNEL5
-  - bit: 64
-    description: Channel selector
-    name: CHANNEL6
-  - bit: 128
-    description: Channel selector
-    name: CHANNEL7
   description: User CCL LUT1 Event B
   name: USERCCLLUT1B
 - address: 36
   bit_fields:
+  - bit: 32
+    description: Channel selector
+    name: CHANNEL5
   - bit: 1
     description: Channel selector
     name: CHANNEL0
   - bit: 2
     description: Channel selector
     name: CHANNEL1
+  - bit: 64
+    description: Channel selector
+    name: CHANNEL6
   - bit: 4
     description: Channel selector
     name: CHANNEL2
+  - bit: 128
+    description: Channel selector
+    name: CHANNEL7
   - bit: 8
     description: Channel selector
     name: CHANNEL3
   - bit: 16
     description: Channel selector
     name: CHANNEL4
-  - bit: 32
-    description: Channel selector
-    name: CHANNEL5
-  - bit: 64
-    description: Channel selector
-    name: CHANNEL6
-  - bit: 128
-    description: Channel selector
-    name: CHANNEL7
   description: User CCL LUT2 Event A
   name: USERCCLLUT2A
 - address: 37
   bit_fields:
+  - bit: 32
+    description: Channel selector
+    name: CHANNEL5
   - bit: 1
     description: Channel selector
     name: CHANNEL0
   - bit: 2
     description: Channel selector
     name: CHANNEL1
+  - bit: 64
+    description: Channel selector
+    name: CHANNEL6
   - bit: 4
     description: Channel selector
     name: CHANNEL2
+  - bit: 128
+    description: Channel selector
+    name: CHANNEL7
   - bit: 8
     description: Channel selector
     name: CHANNEL3
   - bit: 16
     description: Channel selector
     name: CHANNEL4
-  - bit: 32
-    description: Channel selector
-    name: CHANNEL5
-  - bit: 64
-    description: Channel selector
-    name: CHANNEL6
-  - bit: 128
-    description: Channel selector
-    name: CHANNEL7
   description: User CCL LUT2 Event B
   name: USERCCLLUT2B
 - address: 38
   bit_fields:
+  - bit: 32
+    description: Channel selector
+    name: CHANNEL5
   - bit: 1
     description: Channel selector
     name: CHANNEL0
   - bit: 2
     description: Channel selector
     name: CHANNEL1
+  - bit: 64
+    description: Channel selector
+    name: CHANNEL6
   - bit: 4
     description: Channel selector
     name: CHANNEL2
+  - bit: 128
+    description: Channel selector
+    name: CHANNEL7
   - bit: 8
     description: Channel selector
     name: CHANNEL3
   - bit: 16
     description: Channel selector
     name: CHANNEL4
-  - bit: 32
-    description: Channel selector
-    name: CHANNEL5
-  - bit: 64
-    description: Channel selector
-    name: CHANNEL6
-  - bit: 128
-    description: Channel selector
-    name: CHANNEL7
   description: User CCL LUT3 Event A
   name: USERCCLLUT3A
 - address: 39
   bit_fields:
+  - bit: 32
+    description: Channel selector
+    name: CHANNEL5
   - bit: 1
     description: Channel selector
     name: CHANNEL0
   - bit: 2
     description: Channel selector
     name: CHANNEL1
+  - bit: 64
+    description: Channel selector
+    name: CHANNEL6
   - bit: 4
     description: Channel selector
     name: CHANNEL2
+  - bit: 128
+    description: Channel selector
+    name: CHANNEL7
   - bit: 8
     description: Channel selector
     name: CHANNEL3
   - bit: 16
     description: Channel selector
     name: CHANNEL4
-  - bit: 32
-    description: Channel selector
-    name: CHANNEL5
-  - bit: 64
-    description: Channel selector
-    name: CHANNEL6
-  - bit: 128
-    description: Channel selector
-    name: CHANNEL7
   description: User CCL LUT3 Event B
   name: USERCCLLUT3B
 - address: 41
   bit_fields:
+  - bit: 32
+    description: Channel selector
+    name: CHANNEL5
   - bit: 1
     description: Channel selector
     name: CHANNEL0
   - bit: 2
     description: Channel selector
     name: CHANNEL1
+  - bit: 64
+    description: Channel selector
+    name: CHANNEL6
   - bit: 4
     description: Channel selector
     name: CHANNEL2
+  - bit: 128
+    description: Channel selector
+    name: CHANNEL7
   - bit: 8
     description: Channel selector
     name: CHANNEL3
   - bit: 16
     description: Channel selector
     name: CHANNEL4
-  - bit: 32
-    description: Channel selector
-    name: CHANNEL5
-  - bit: 64
-    description: Channel selector
-    name: CHANNEL6
-  - bit: 128
-    description: Channel selector
-    name: CHANNEL7
   description: User EVOUT Port A
   name: USEREVOUTA
 - address: 42
   bit_fields:
+  - bit: 32
+    description: Channel selector
+    name: CHANNEL5
   - bit: 1
     description: Channel selector
     name: CHANNEL0
   - bit: 2
     description: Channel selector
     name: CHANNEL1
+  - bit: 64
+    description: Channel selector
+    name: CHANNEL6
   - bit: 4
     description: Channel selector
     name: CHANNEL2
+  - bit: 128
+    description: Channel selector
+    name: CHANNEL7
   - bit: 8
     description: Channel selector
     name: CHANNEL3
   - bit: 16
     description: Channel selector
     name: CHANNEL4
-  - bit: 32
-    description: Channel selector
-    name: CHANNEL5
-  - bit: 64
-    description: Channel selector
-    name: CHANNEL6
-  - bit: 128
-    description: Channel selector
-    name: CHANNEL7
   description: User EVOUT Port B
   name: USEREVOUTB
 - address: 43
   bit_fields:
+  - bit: 32
+    description: Channel selector
+    name: CHANNEL5
   - bit: 1
     description: Channel selector
     name: CHANNEL0
   - bit: 2
     description: Channel selector
     name: CHANNEL1
+  - bit: 64
+    description: Channel selector
+    name: CHANNEL6
   - bit: 4
     description: Channel selector
     name: CHANNEL2
+  - bit: 128
+    description: Channel selector
+    name: CHANNEL7
   - bit: 8
     description: Channel selector
     name: CHANNEL3
   - bit: 16
     description: Channel selector
     name: CHANNEL4
-  - bit: 32
-    description: Channel selector
-    name: CHANNEL5
-  - bit: 64
-    description: Channel selector
-    name: CHANNEL6
-  - bit: 128
-    description: Channel selector
-    name: CHANNEL7
   description: User EVOUT Port C
   name: USEREVOUTC
 - address: 44
   bit_fields:
+  - bit: 32
+    description: Channel selector
+    name: CHANNEL5
   - bit: 1
     description: Channel selector
     name: CHANNEL0
   - bit: 2
     description: Channel selector
     name: CHANNEL1
+  - bit: 64
+    description: Channel selector
+    name: CHANNEL6
   - bit: 4
     description: Channel selector
     name: CHANNEL2
+  - bit: 128
+    description: Channel selector
+    name: CHANNEL7
   - bit: 8
     description: Channel selector
     name: CHANNEL3
   - bit: 16
     description: Channel selector
     name: CHANNEL4
-  - bit: 32
-    description: Channel selector
-    name: CHANNEL5
-  - bit: 64
-    description: Channel selector
-    name: CHANNEL6
-  - bit: 128
-    description: Channel selector
-    name: CHANNEL7
   description: User EVOUT Port D
   name: USEREVOUTD
 - address: 45
   bit_fields:
+  - bit: 32
+    description: Channel selector
+    name: CHANNEL5
   - bit: 1
     description: Channel selector
     name: CHANNEL0
   - bit: 2
     description: Channel selector
     name: CHANNEL1
+  - bit: 64
+    description: Channel selector
+    name: CHANNEL6
   - bit: 4
     description: Channel selector
     name: CHANNEL2
+  - bit: 128
+    description: Channel selector
+    name: CHANNEL7
   - bit: 8
     description: Channel selector
     name: CHANNEL3
   - bit: 16
     description: Channel selector
     name: CHANNEL4
-  - bit: 32
-    description: Channel selector
-    name: CHANNEL5
-  - bit: 64
-    description: Channel selector
-    name: CHANNEL6
-  - bit: 128
-    description: Channel selector
-    name: CHANNEL7
   description: User EVOUT Port E
   name: USEREVOUTE
 - address: 46
   bit_fields:
+  - bit: 32
+    description: Channel selector
+    name: CHANNEL5
   - bit: 1
     description: Channel selector
     name: CHANNEL0
   - bit: 2
     description: Channel selector
     name: CHANNEL1
+  - bit: 64
+    description: Channel selector
+    name: CHANNEL6
   - bit: 4
     description: Channel selector
     name: CHANNEL2
+  - bit: 128
+    description: Channel selector
+    name: CHANNEL7
   - bit: 8
     description: Channel selector
     name: CHANNEL3
   - bit: 16
     description: Channel selector
     name: CHANNEL4
-  - bit: 32
-    description: Channel selector
-    name: CHANNEL5
-  - bit: 64
-    description: Channel selector
-    name: CHANNEL6
-  - bit: 128
-    description: Channel selector
-    name: CHANNEL7
   description: User EVOUT Port F
   name: USEREVOUTF
 - address: 51
   bit_fields:
+  - bit: 32
+    description: Channel selector
+    name: CHANNEL5
   - bit: 1
     description: Channel selector
     name: CHANNEL0
   - bit: 2
     description: Channel selector
     name: CHANNEL1
+  - bit: 64
+    description: Channel selector
+    name: CHANNEL6
   - bit: 4
     description: Channel selector
     name: CHANNEL2
+  - bit: 128
+    description: Channel selector
+    name: CHANNEL7
   - bit: 8
     description: Channel selector
     name: CHANNEL3
   - bit: 16
     description: Channel selector
     name: CHANNEL4
-  - bit: 32
-    description: Channel selector
-    name: CHANNEL5
-  - bit: 64
-    description: Channel selector
-    name: CHANNEL6
-  - bit: 128
-    description: Channel selector
-    name: CHANNEL7
   description: User TCA0
   name: USERTCA0
 - address: 52
   bit_fields:
+  - bit: 32
+    description: Channel selector
+    name: CHANNEL5
   - bit: 1
     description: Channel selector
     name: CHANNEL0
   - bit: 2
     description: Channel selector
     name: CHANNEL1
+  - bit: 64
+    description: Channel selector
+    name: CHANNEL6
   - bit: 4
     description: Channel selector
     name: CHANNEL2
+  - bit: 128
+    description: Channel selector
+    name: CHANNEL7
   - bit: 8
     description: Channel selector
     name: CHANNEL3
   - bit: 16
     description: Channel selector
     name: CHANNEL4
-  - bit: 32
-    description: Channel selector
-    name: CHANNEL5
-  - bit: 64
-    description: Channel selector
-    name: CHANNEL6
-  - bit: 128
-    description: Channel selector
-    name: CHANNEL7
   description: User TCB0
   name: USERTCB0
 - address: 53
   bit_fields:
+  - bit: 32
+    description: Channel selector
+    name: CHANNEL5
   - bit: 1
     description: Channel selector
     name: CHANNEL0
   - bit: 2
     description: Channel selector
     name: CHANNEL1
+  - bit: 64
+    description: Channel selector
+    name: CHANNEL6
   - bit: 4
     description: Channel selector
     name: CHANNEL2
+  - bit: 128
+    description: Channel selector
+    name: CHANNEL7
   - bit: 8
     description: Channel selector
     name: CHANNEL3
   - bit: 16
     description: Channel selector
     name: CHANNEL4
-  - bit: 32
-    description: Channel selector
-    name: CHANNEL5
-  - bit: 64
-    description: Channel selector
-    name: CHANNEL6
-  - bit: 128
-    description: Channel selector
-    name: CHANNEL7
   description: User TCB1
   name: USERTCB1
 - address: 54
   bit_fields:
+  - bit: 32
+    description: Channel selector
+    name: CHANNEL5
   - bit: 1
     description: Channel selector
     name: CHANNEL0
   - bit: 2
     description: Channel selector
     name: CHANNEL1
+  - bit: 64
+    description: Channel selector
+    name: CHANNEL6
   - bit: 4
     description: Channel selector
     name: CHANNEL2
+  - bit: 128
+    description: Channel selector
+    name: CHANNEL7
   - bit: 8
     description: Channel selector
     name: CHANNEL3
   - bit: 16
     description: Channel selector
     name: CHANNEL4
-  - bit: 32
-    description: Channel selector
-    name: CHANNEL5
-  - bit: 64
-    description: Channel selector
-    name: CHANNEL6
-  - bit: 128
-    description: Channel selector
-    name: CHANNEL7
   description: User TCB2
   name: USERTCB2
 - address: 55
   bit_fields:
+  - bit: 32
+    description: Channel selector
+    name: CHANNEL5
   - bit: 1
     description: Channel selector
     name: CHANNEL0
   - bit: 2
     description: Channel selector
     name: CHANNEL1
+  - bit: 64
+    description: Channel selector
+    name: CHANNEL6
   - bit: 4
     description: Channel selector
     name: CHANNEL2
+  - bit: 128
+    description: Channel selector
+    name: CHANNEL7
   - bit: 8
     description: Channel selector
     name: CHANNEL3
   - bit: 16
     description: Channel selector
     name: CHANNEL4
-  - bit: 32
-    description: Channel selector
-    name: CHANNEL5
-  - bit: 64
-    description: Channel selector
-    name: CHANNEL6
-  - bit: 128
-    description: Channel selector
-    name: CHANNEL7
   description: User TCB3
   name: USERTCB3
 - address: 47
   bit_fields:
+  - bit: 32
+    description: Channel selector
+    name: CHANNEL5
   - bit: 1
     description: Channel selector
     name: CHANNEL0
   - bit: 2
     description: Channel selector
     name: CHANNEL1
+  - bit: 64
+    description: Channel selector
+    name: CHANNEL6
   - bit: 4
     description: Channel selector
     name: CHANNEL2
+  - bit: 128
+    description: Channel selector
+    name: CHANNEL7
   - bit: 8
     description: Channel selector
     name: CHANNEL3
   - bit: 16
     description: Channel selector
     name: CHANNEL4
-  - bit: 32
-    description: Channel selector
-    name: CHANNEL5
-  - bit: 64
-    description: Channel selector
-    name: CHANNEL6
-  - bit: 128
-    description: Channel selector
-    name: CHANNEL7
   description: User USART0
   name: USERUSART0
 - address: 48
   bit_fields:
+  - bit: 32
+    description: Channel selector
+    name: CHANNEL5
   - bit: 1
     description: Channel selector
     name: CHANNEL0
   - bit: 2
     description: Channel selector
     name: CHANNEL1
+  - bit: 64
+    description: Channel selector
+    name: CHANNEL6
   - bit: 4
     description: Channel selector
     name: CHANNEL2
+  - bit: 128
+    description: Channel selector
+    name: CHANNEL7
   - bit: 8
     description: Channel selector
     name: CHANNEL3
   - bit: 16
     description: Channel selector
     name: CHANNEL4
-  - bit: 32
-    description: Channel selector
-    name: CHANNEL5
-  - bit: 64
-    description: Channel selector
-    name: CHANNEL6
-  - bit: 128
-    description: Channel selector
-    name: CHANNEL7
   description: User USART1
   name: USERUSART1
 - address: 49
   bit_fields:
+  - bit: 32
+    description: Channel selector
+    name: CHANNEL5
   - bit: 1
     description: Channel selector
     name: CHANNEL0
   - bit: 2
     description: Channel selector
     name: CHANNEL1
+  - bit: 64
+    description: Channel selector
+    name: CHANNEL6
   - bit: 4
     description: Channel selector
     name: CHANNEL2
+  - bit: 128
+    description: Channel selector
+    name: CHANNEL7
   - bit: 8
     description: Channel selector
     name: CHANNEL3
   - bit: 16
     description: Channel selector
     name: CHANNEL4
-  - bit: 32
-    description: Channel selector
-    name: CHANNEL5
-  - bit: 64
-    description: Channel selector
-    name: CHANNEL6
-  - bit: 128
-    description: Channel selector
-    name: CHANNEL7
   description: User USART2
   name: USERUSART2
 - address: 50
   bit_fields:
+  - bit: 32
+    description: Channel selector
+    name: CHANNEL5
   - bit: 1
     description: Channel selector
     name: CHANNEL0
   - bit: 2
     description: Channel selector
     name: CHANNEL1
+  - bit: 64
+    description: Channel selector
+    name: CHANNEL6
   - bit: 4
     description: Channel selector
     name: CHANNEL2
+  - bit: 128
+    description: Channel selector
+    name: CHANNEL7
   - bit: 8
     description: Channel selector
     name: CHANNEL3
   - bit: 16
     description: Channel selector
     name: CHANNEL4
-  - bit: 32
-    description: Channel selector
-    name: CHANNEL5
-  - bit: 64
-    description: Channel selector
-    name: CHANNEL6
-  - bit: 128
-    description: Channel selector
-    name: CHANNEL7
   description: User USART3
   name: USERUSART3
 - address: 7
@@ -2524,18 +1949,18 @@ registers:
   - bit: 128
     description: BOD Level
     name: LVL2
-  - bit: 4
-    description: BOD Operation in Active Mode
-    name: ACTIVE0
-  - bit: 8
-    description: BOD Operation in Active Mode
-    name: ACTIVE1
   - bit: 1
     description: BOD Operation in Sleep Mode
     name: SLEEP0
+  - bit: 4
+    description: BOD Operation in Active Mode
+    name: ACTIVE0
   - bit: 2
     description: BOD Operation in Sleep Mode
     name: SLEEP1
+  - bit: 8
+    description: BOD Operation in Active Mode
+    name: ACTIVE1
   - bit: 16
     description: BOD Sample Frequency
     name: SAMPFREQ
@@ -2563,12 +1988,12 @@ registers:
   - bit: 64
     description: CRC Source
     name: CRCSRC0
-  - bit: 128
-    description: CRC Source
-    name: CRCSRC1
   - bit: 8
     description: Reset Pin Configuration
     name: RSTPINCFG
+  - bit: 128
+    description: CRC Source
+    name: CRCSRC1
   - bit: 1
     description: EEPROM Save
     name: EESAVE
@@ -2589,30 +2014,30 @@ registers:
   name: SYSCFG1
 - address: 0
   bit_fields:
-  - bit: 16
-    description: Watchdog Window Timeout Period
-    name: WINDOW0
   - bit: 32
     description: Watchdog Window Timeout Period
     name: WINDOW1
-  - bit: 64
-    description: Watchdog Window Timeout Period
-    name: WINDOW2
-  - bit: 128
-    description: Watchdog Window Timeout Period
-    name: WINDOW3
   - bit: 1
     description: Watchdog Timeout Period
     name: PERIOD0
   - bit: 2
     description: Watchdog Timeout Period
     name: PERIOD1
+  - bit: 64
+    description: Watchdog Window Timeout Period
+    name: WINDOW2
   - bit: 4
     description: Watchdog Timeout Period
     name: PERIOD2
+  - bit: 128
+    description: Watchdog Window Timeout Period
+    name: WINDOW3
   - bit: 8
     description: Watchdog Timeout Period
     name: PERIOD3
+  - bit: 16
+    description: Watchdog Window Timeout Period
+    name: WINDOW0
   description: Watchdog Configuration
   name: WDTCFG
 - address: 0
@@ -2677,9 +2102,9 @@ registers:
   name: OUTTGL
 - address: 16
   bit_fields:
-  - bit: 8
-    description: Pullup enable
-    name: PULLUPEN
+  - bit: 128
+    description: Inverted I/O Enable
+    name: INVEN
   - bit: 1
     description: Input/Sense Configuration
     name: ISC0
@@ -2689,16 +2114,16 @@ registers:
   - bit: 4
     description: Input/Sense Configuration
     name: ISC2
-  - bit: 128
-    description: Inverted I/O Enable
-    name: INVEN
+  - bit: 8
+    description: Pullup enable
+    name: PULLUPEN
   description: Pin 0 Control
   name: PIN0CTRL
 - address: 17
   bit_fields:
-  - bit: 8
-    description: Pullup enable
-    name: PULLUPEN
+  - bit: 128
+    description: Inverted I/O Enable
+    name: INVEN
   - bit: 1
     description: Input/Sense Configuration
     name: ISC0
@@ -2708,16 +2133,16 @@ registers:
   - bit: 4
     description: Input/Sense Configuration
     name: ISC2
-  - bit: 128
-    description: Inverted I/O Enable
-    name: INVEN
+  - bit: 8
+    description: Pullup enable
+    name: PULLUPEN
   description: Pin 1 Control
   name: PIN1CTRL
 - address: 18
   bit_fields:
-  - bit: 8
-    description: Pullup enable
-    name: PULLUPEN
+  - bit: 128
+    description: Inverted I/O Enable
+    name: INVEN
   - bit: 1
     description: Input/Sense Configuration
     name: ISC0
@@ -2727,16 +2152,16 @@ registers:
   - bit: 4
     description: Input/Sense Configuration
     name: ISC2
-  - bit: 128
-    description: Inverted I/O Enable
-    name: INVEN
+  - bit: 8
+    description: Pullup enable
+    name: PULLUPEN
   description: Pin 2 Control
   name: PIN2CTRL
 - address: 19
   bit_fields:
-  - bit: 8
-    description: Pullup enable
-    name: PULLUPEN
+  - bit: 128
+    description: Inverted I/O Enable
+    name: INVEN
   - bit: 1
     description: Input/Sense Configuration
     name: ISC0
@@ -2746,9 +2171,9 @@ registers:
   - bit: 4
     description: Input/Sense Configuration
     name: ISC2
-  - bit: 128
-    description: Inverted I/O Enable
-    name: INVEN
+  - bit: 8
+    description: Pullup enable
+    name: PULLUPEN
   description: Pin 3 Control
   name: PIN3CTRL
 - address: 20
@@ -2756,9 +2181,6 @@ registers:
   - bit: 128
     description: Inverted I/O Enable
     name: INVEN
-  - bit: 8
-    description: Pullup enable
-    name: PULLUPEN
   - bit: 1
     description: Input/Sense Configuration
     name: ISC0
@@ -2768,6 +2190,9 @@ registers:
   - bit: 4
     description: Input/Sense Configuration
     name: ISC2
+  - bit: 8
+    description: Pullup enable
+    name: PULLUPEN
   description: Pin 4 Control
   name: PIN4CTRL
 - address: 21
@@ -2775,9 +2200,6 @@ registers:
   - bit: 128
     description: Inverted I/O Enable
     name: INVEN
-  - bit: 8
-    description: Pullup enable
-    name: PULLUPEN
   - bit: 1
     description: Input/Sense Configuration
     name: ISC0
@@ -2787,6 +2209,9 @@ registers:
   - bit: 4
     description: Input/Sense Configuration
     name: ISC2
+  - bit: 8
+    description: Pullup enable
+    name: PULLUPEN
   description: Pin 5 Control
   name: PIN5CTRL
 - address: 22
@@ -2794,9 +2219,6 @@ registers:
   - bit: 128
     description: Inverted I/O Enable
     name: INVEN
-  - bit: 8
-    description: Pullup enable
-    name: PULLUPEN
   - bit: 1
     description: Input/Sense Configuration
     name: ISC0
@@ -2806,6 +2228,9 @@ registers:
   - bit: 4
     description: Input/Sense Configuration
     name: ISC2
+  - bit: 8
+    description: Pullup enable
+    name: PULLUPEN
   description: Pin 6 Control
   name: PIN6CTRL
 - address: 23
@@ -2813,9 +2238,6 @@ registers:
   - bit: 128
     description: Inverted I/O Enable
     name: INVEN
-  - bit: 8
-    description: Pullup enable
-    name: PULLUPEN
   - bit: 1
     description: Input/Sense Configuration
     name: ISC0
@@ -2825,6 +2247,9 @@ registers:
   - bit: 4
     description: Input/Sense Configuration
     name: ISC2
+  - bit: 8
+    description: Pullup enable
+    name: PULLUPEN
   description: Pin 7 Control
   name: PIN7CTRL
 - address: 10
@@ -2839,19 +2264,25 @@ registers:
   - bit: 8
     description: CCL LUT3
     name: LUT3
-  - bit: 4
-    description: CCL LUT2
-    name: LUT2
-  - bit: 2
-    description: CCL LUT1
-    name: LUT1
   - bit: 1
     description: CCL LUT0
     name: LUT0
+  - bit: 2
+    description: CCL LUT1
+    name: LUT1
+  - bit: 4
+    description: CCL LUT2
+    name: LUT2
   description: Port Multiplexer CCL
   name: CCLROUTEA
 - address: 0
   bit_fields:
+  - bit: 32
+    description: Event Output 5
+    name: EVOUT5
+  - bit: 1
+    description: Event Output 0
+    name: EVOUT0
   - bit: 2
     description: Event Output 1
     name: EVOUT1
@@ -2864,12 +2295,6 @@ registers:
   - bit: 16
     description: Event Output 4
     name: EVOUT4
-  - bit: 32
-    description: Event Output 5
-    name: EVOUT5
-  - bit: 1
-    description: Event Output 0
-    name: EVOUT0
   description: Port Multiplexer EVSYS
   name: EVSYSROUTEA
 - address: 4
@@ -2890,15 +2315,15 @@ registers:
   - bit: 8
     description: Port Multiplexer TCB3
     name: TCB3
-  - bit: 4
-    description: Port Multiplexer TCB2
-    name: TCB2
-  - bit: 2
-    description: Port Multiplexer TCB1
-    name: TCB1
   - bit: 1
     description: Port Multiplexer TCB0
     name: TCB0
+  - bit: 2
+    description: Port Multiplexer TCB1
+    name: TCB1
+  - bit: 4
+    description: Port Multiplexer TCB2
+    name: TCB2
   description: Port Multiplexer TCB
   name: TCBROUTEA
 - address: 3
@@ -2906,12 +2331,12 @@ registers:
   - bit: 16
     description: Port Multiplexer TWI0
     name: TWI00
-  - bit: 32
-    description: Port Multiplexer TWI0
-    name: TWI01
   - bit: 1
     description: Port Multiplexer SPI0
     name: SPI00
+  - bit: 32
+    description: Port Multiplexer TWI0
+    name: TWI01
   - bit: 2
     description: Port Multiplexer SPI0
     name: SPI01
@@ -2919,18 +2344,9 @@ registers:
   name: TWISPIROUTEA
 - address: 2
   bit_fields:
-  - bit: 16
-    description: Port Multiplexer USART2
-    name: USART20
   - bit: 32
     description: Port Multiplexer USART2
     name: USART21
-  - bit: 4
-    description: Port Multiplexer USART1
-    name: USART10
-  - bit: 8
-    description: Port Multiplexer USART1
-    name: USART11
   - bit: 1
     description: Port Multiplexer USART0
     name: USART00
@@ -2940,31 +2356,40 @@ registers:
   - bit: 64
     description: Port Multiplexer USART3
     name: USART30
+  - bit: 4
+    description: Port Multiplexer USART1
+    name: USART10
   - bit: 128
     description: Port Multiplexer USART3
     name: USART31
+  - bit: 8
+    description: Port Multiplexer USART1
+    name: USART11
+  - bit: 16
+    description: Port Multiplexer USART2
+    name: USART20
   description: Port Multiplexer USART register A
   name: USARTROUTEA
 - address: 0
   bit_fields:
+  - bit: 32
+    description: UPDI Reset flag
+    name: UPDIRF
+  - bit: 1
+    description: Power on Reset flag
+    name: PORF
   - bit: 2
     description: Brown out detector Reset flag
     name: BORF
   - bit: 4
     description: External Reset flag
     name: EXTRF
-  - bit: 1
-    description: Power on Reset flag
-    name: PORF
-  - bit: 16
-    description: Software Reset flag
-    name: SWRF
-  - bit: 32
-    description: UPDI Reset flag
-    name: UPDIRF
   - bit: 8
     description: Watch dog Reset flag
     name: WDRF
+  - bit: 16
+    description: Software Reset flag
+    name: SWRF
   description: Reset Flags
   name: RSTFR
 - address: 1
@@ -2998,21 +2423,21 @@ registers:
   name: PER
 - address: 16
   bit_fields:
+  - bit: 32
+    description: Period
+    name: PERIOD2
+  - bit: 1
+    description: Enable
+    name: PITEN
+  - bit: 64
+    description: Period
+    name: PERIOD3
   - bit: 8
     description: Period
     name: PERIOD0
   - bit: 16
     description: Period
     name: PERIOD1
-  - bit: 32
-    description: Period
-    name: PERIOD2
-  - bit: 64
-    description: Period
-    name: PERIOD3
-  - bit: 1
-    description: Enable
-    name: PITEN
   description: PIT Control A
   name: PITCTRLA
 - address: 21
@@ -3191,62 +2616,50 @@ registers:
   name: CMP2BUF
 - address: 4
   bit_fields:
-  - bit: 4
-    description: Command
-    name: CMD0
   - bit: 8
     description: Command
     name: CMD1
-  - bit: 2
-    description: Lock Update
-    name: LUPD
   - bit: 1
     description: Direction
     name: DIR
+  - bit: 2
+    description: Lock Update
+    name: LUPD
   - bit: 4
     description: Command
     name: CMD0
-  - bit: 8
-    description: Command
-    name: CMD1
   description: Control E Clear
   name: CTRLECLR
 - address: 5
   bit_fields:
-  - bit: 4
-    description: Command
-    name: CMD0
   - bit: 8
     description: Command
     name: CMD1
-  - bit: 2
-    description: Lock Update
-    name: LUPD
   - bit: 1
     description: Direction
     name: DIR
+  - bit: 2
+    description: Lock Update
+    name: LUPD
   - bit: 4
     description: Command
     name: CMD0
-  - bit: 8
-    description: Command
-    name: CMD1
   description: Control E Set
   name: CTRLESET
 - address: 6
   bit_fields:
-  - bit: 1
-    description: Period Buffer Valid
-    name: PERBV
   - bit: 8
     description: Compare 2 Buffer Valid
     name: CMP2BV
-  - bit: 4
-    description: Compare 1 Buffer Valid
-    name: CMP1BV
+  - bit: 1
+    description: Period Buffer Valid
+    name: PERBV
   - bit: 2
     description: Compare 0 Buffer Valid
     name: CMP0BV
+  - bit: 4
+    description: Compare 1 Buffer Valid
+    name: CMP1BV
   description: Control F Clear
   name: CTRLFCLR
 - address: 7
@@ -3254,15 +2667,15 @@ registers:
   - bit: 8
     description: Compare 2 Buffer Valid
     name: CMP2BV
-  - bit: 4
-    description: Compare 1 Buffer Valid
-    name: CMP1BV
-  - bit: 2
-    description: Compare 0 Buffer Valid
-    name: CMP0BV
   - bit: 1
     description: Period Buffer Valid
     name: PERBV
+  - bit: 2
+    description: Compare 0 Buffer Valid
+    name: CMP0BV
+  - bit: 4
+    description: Compare 1 Buffer Valid
+    name: CMP1BV
   description: Control F Set
   name: CTRLFSET
 - address: 54
@@ -3327,40 +2740,40 @@ registers:
   name: MBAUD
 - address: 3
   bit_fields:
-  - bit: 4
-    description: Inactive Bus Timeout
-    name: TIMEOUT0
-  - bit: 8
-    description: Inactive Bus Timeout
-    name: TIMEOUT1
-  - bit: 1
-    description: Enable TWI Master
-    name: ENABLE
   - bit: 64
     description: Write Interrupt Enable
     name: WIEN
-  - bit: 16
-    description: Quick Command Enable
-    name: QCEN
+  - bit: 1
+    description: Enable TWI Master
+    name: ENABLE
   - bit: 128
     description: Read Interrupt Enable
     name: RIEN
   - bit: 2
     description: Smart Mode Enable
     name: SMEN
+  - bit: 4
+    description: Inactive Bus Timeout
+    name: TIMEOUT0
+  - bit: 8
+    description: Inactive Bus Timeout
+    name: TIMEOUT1
+  - bit: 16
+    description: Quick Command Enable
+    name: QCEN
   description: Master Control A
   name: MCTRLA
 - address: 4
   bit_fields:
+  - bit: 8
+    description: Flush
+    name: FLUSH
   - bit: 1
     description: Command
     name: MCMD0
   - bit: 2
     description: Command
     name: MCMD1
-  - bit: 8
-    description: Flush
-    name: FLUSH
   - bit: 4
     description: Acknowledge Action
     name: ACKACT
@@ -3372,30 +2785,30 @@ registers:
   name: MDATA
 - address: 5
   bit_fields:
+  - bit: 32
+    description: Clock Hold
+    name: CLKHOLD
   - bit: 1
     description: Bus State
     name: BUSSTATE0
   - bit: 2
     description: Bus State
     name: BUSSTATE1
-  - bit: 32
-    description: Clock Hold
-    name: CLKHOLD
   - bit: 128
     description: Read Interrupt Flag
     name: RIF
-  - bit: 16
-    description: Received Acknowledge
-    name: RXACK
-  - bit: 8
-    description: Arbitration Lost
-    name: ARBLOST
   - bit: 64
     description: Write Interrupt Flag
     name: WIF
   - bit: 4
     description: Bus Error
     name: BUSERR
+  - bit: 8
+    description: Arbitration Lost
+    name: ARBLOST
+  - bit: 16
+    description: Received Acknowledge
+    name: RXACK
   description: Master Status
   name: MSTATUS
 - address: 12
@@ -3404,30 +2817,30 @@ registers:
   name: SADDR
 - address: 14
   bit_fields:
-  - bit: 2
-    description: Address Mask
-    name: ADDRMASK0
-  - bit: 4
-    description: Address Mask
-    name: ADDRMASK1
-  - bit: 8
-    description: Address Mask
-    name: ADDRMASK2
-  - bit: 16
-    description: Address Mask
-    name: ADDRMASK3
   - bit: 32
     description: Address Mask
     name: ADDRMASK4
   - bit: 64
     description: Address Mask
     name: ADDRMASK5
+  - bit: 2
+    description: Address Mask
+    name: ADDRMASK0
   - bit: 128
     description: Address Mask
     name: ADDRMASK6
+  - bit: 4
+    description: Address Mask
+    name: ADDRMASK1
   - bit: 1
     description: Address Enable
     name: ADDREN
+  - bit: 8
+    description: Address Mask
+    name: ADDRMASK2
+  - bit: 16
+    description: Address Mask
+    name: ADDRMASK3
   description: Slave Address Mask
   name: SADDRMASK
 - address: 9
@@ -3441,12 +2854,12 @@ registers:
   - bit: 32
     description: Stop Interrupt Enable
     name: PIEN
-  - bit: 4
-    description: Promiscuous Mode Enable
-    name: PMEN
   - bit: 2
     description: Smart Mode Enable
     name: SMEN
+  - bit: 4
+    description: Promiscuous Mode Enable
+    name: PMEN
   - bit: 64
     description: Address/Stop Interrupt Enable
     name: APIEN
@@ -3471,15 +2884,18 @@ registers:
   name: SDATA
 - address: 11
   bit_fields:
+  - bit: 128
+    description: Data Interrupt Flag
+    name: DIF
+  - bit: 1
+    description: Slave Address or Stop
+    name: AP
   - bit: 2
     description: Read/Write Direction
     name: DIR
   - bit: 64
     description: Address/Stop Interrupt Flag
     name: APIF
-  - bit: 16
-    description: Received Acknowledge
-    name: RXACK
   - bit: 4
     description: Bus Error
     name: BUSERR
@@ -3489,12 +2905,9 @@ registers:
   - bit: 8
     description: Collision
     name: COLL
-  - bit: 128
-    description: Data Interrupt Flag
-    name: DIF
-  - bit: 1
-    description: Slave Address or Stop
-    name: AP
+  - bit: 16
+    description: Received Acknowledge
+    name: RXACK
   description: Slave Status
   name: SSTATUS
 - address: 8
@@ -3503,59 +2916,65 @@ registers:
   name: BAUD
 - address: 1
   bit_fields:
-  - bit: 4
-    description: Frame Error
-    name: FERR
-  - bit: 2
-    description: Parity Error
-    name: PERR
   - bit: 128
     description: Receive Complete Interrupt Flag
     name: RXCIF
-  - bit: 64
-    description: Buffer Overflow
-    name: BUFOVF
   - bit: 1
     description: Receiver Data Register
     name: DATA8
+  - bit: 2
+    description: Parity Error
+    name: PERR
+  - bit: 64
+    description: Buffer Overflow
+    name: BUFOVF
+  - bit: 4
+    description: Frame Error
+    name: FERR
   description: Receive Data High Byte
   name: RXDATAH
 - address: 0
   bit_fields:
+  - bit: 32
+    description: RX Data
+    name: DATA5
   - bit: 1
     description: RX Data
     name: DATA0
   - bit: 2
     description: RX Data
     name: DATA1
+  - bit: 64
+    description: RX Data
+    name: DATA6
   - bit: 4
     description: RX Data
     name: DATA2
+  - bit: 128
+    description: RX Data
+    name: DATA7
   - bit: 8
     description: RX Data
     name: DATA3
   - bit: 16
     description: RX Data
     name: DATA4
-  - bit: 32
-    description: RX Data
-    name: DATA5
-  - bit: 64
-    description: RX Data
-    name: DATA6
-  - bit: 128
-    description: RX Data
-    name: DATA7
   description: Receive Data Low Byte
   name: RXDATAL
 - address: 14
   bit_fields:
+  - bit: 32
+    description: Receiver Pulse Lenght
+    name: RXPL5
   - bit: 1
     description: Receiver Pulse Lenght
     name: RXPL0
   - bit: 2
     description: Receiver Pulse Lenght
     name: RXPL1
+  - bit: 64
+    description: Receiver Pulse Lenght
+    name: RXPL6
   - bit: 4
     description: Receiver Pulse Lenght
     name: RXPL2
@@ -3565,12 +2984,6 @@ registers:
   - bit: 16
     description: Receiver Pulse Lenght
     name: RXPL4
-  - bit: 32
-    description: Receiver Pulse Lenght
-    name: RXPL5
-  - bit: 64
-    description: Receiver Pulse Lenght
-    name: RXPL6
   description: IRCOM Receiver Pulse Length Control
   name: RXPLCTRL
 - address: 3
@@ -3582,58 +2995,58 @@ registers:
   name: TXDATAH
 - address: 2
   bit_fields:
+  - bit: 32
+    description: Transmit Data Register
+    name: DATA5
   - bit: 1
     description: Transmit Data Register
     name: DATA0
   - bit: 2
     description: Transmit Data Register
     name: DATA1
+  - bit: 64
+    description: Transmit Data Register
+    name: DATA6
   - bit: 4
     description: Transmit Data Register
     name: DATA2
+  - bit: 128
+    description: Transmit Data Register
+    name: DATA7
   - bit: 8
     description: Transmit Data Register
     name: DATA3
   - bit: 16
     description: Transmit Data Register
     name: DATA4
-  - bit: 32
-    description: Transmit Data Register
-    name: DATA5
-  - bit: 64
-    description: Transmit Data Register
-    name: DATA6
-  - bit: 128
-    description: Transmit Data Register
-    name: DATA7
   description: Transmit Data Low Byte
   name: TXDATAL
 - address: 13
   bit_fields:
+  - bit: 32
+    description: Transmit pulse length
+    name: TXPL5
   - bit: 1
     description: Transmit pulse length
     name: TXPL0
   - bit: 2
     description: Transmit pulse length
     name: TXPL1
+  - bit: 64
+    description: Transmit pulse length
+    name: TXPL6
   - bit: 4
     description: Transmit pulse length
     name: TXPL2
+  - bit: 128
+    description: Transmit pulse length
+    name: TXPL7
   - bit: 8
     description: Transmit pulse length
     name: TXPL3
   - bit: 16
     description: Transmit pulse length
     name: TXPL4
-  - bit: 32
-    description: Transmit pulse length
-    name: TXPL5
-  - bit: 64
-    description: Transmit pulse length
-    name: TXPL6
-  - bit: 128
-    description: Transmit pulse length
-    name: TXPL7
   description: IRCOM Transmitter Pulse Length Control
   name: TXPLCTRL
 - address: 0

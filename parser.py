@@ -50,12 +50,14 @@ class AttrCast:
             return attr
 
 
-class BitField (Hashable, Base, Sortable, AttrCast):
+class BitField (Hashable, Base, Sortable):
 
-    def __init__(self, elem):
-        super().__init__(elem=elem)
-        self._hash_ = self['name']
-        self._lt_ = self['mask']
+    def __init__(self, mask, name, caption):
+        self._hash_ = mask
+        self._lt_ = mask
+        self.name = name
+        self.mask = mask
+        self.caption = caption
 
 
 class Register(Hashable, Sortable, Base, AttrCast):
@@ -144,7 +146,7 @@ def isPowerOfTwo(number):
 
 def splitBitField(field):
     for num, position in enumerate(bitPositions(field['mask'])):
-        yield dict(
+        yield BitField(
             name=field['name'] + str(num),
             mask=(1 << position),
             caption=field['caption'],
@@ -154,7 +156,7 @@ def createBitFields(fields):
     for field in fields:
         field = AttrCast(elem=field)
         if isPowerOfTwo(field['mask']):
-            yield dict(
+            yield BitField(
                 name=field['name'],
                 mask=field['mask'],
                 caption=field['caption'],
@@ -173,7 +175,7 @@ def dedupRegisters(root):
         reg = Register(elem)
         registers[reg].update(elem.findall('bitfield'))
     for reg, fields in registers.items():
-        reg.bit_fields = tuple(createBitFields(fields))
+        reg.bit_fields = set(createBitFields(fields))
         yield reg
 
 
