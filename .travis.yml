@@ -1,0 +1,15 @@
+notifications:
+  email:
+    on_success: change
+    on_failure: change
+dist: bionic
+sudo: false
+language: python
+cache: pip
+python:
+  - 3.7
+install:
+  - pip install -U -r requirements.txt
+  - pip install -e .
+script:
+  - pytest tests/
