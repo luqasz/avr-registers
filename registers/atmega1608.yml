@@ -1,31 +1,32 @@
 - address: 0
   bit_fields:
-  - bit: 128
-    description: Run standby mode
-    name: RUNSTBY
+  - bit: 32
+    description: Interrupt Mode
+    name: INTMODE1
   - bit: 1
-    description: ADC Enable
-    name: ENABLE
+    description: Command
+    name: CMD0
   - bit: 2
-    description: Clock Selection
-    name: CLKSEL0
+    description: Command
+    name: CMD1
   - bit: 64
     description: Data Order Setting
     name: DORD
   - bit: 4
-    description: Operation in active mode
-    name: ACTIVE0
-  - bit: 32
-    description: Interrupt Mode
-    name: INTMODE1
+    description: Command
+    name: CMD2
+  - bit: 128
+    description: Window
+    name: WINDOW3
   - bit: 8
-    description: Low Power Mode
-    name: LPMODE
+    description: Clock Selection
+    name: CLKSEL2
   - bit: 16
-    description: Enable Double Speed
-    name: CLK2X
+    description: Interrupt Mode
+    name: INTMODE0
   description: Control A
   name: CTRLA
+  size: 1
 - address: 4
   bit_fields:
   - bit: 32
@@ -54,31 +55,33 @@
     name: DATA4
   description: Referance scale control
   name: DACREF
+  size: 1
 - address: 6
   bit_fields:
   - bit: 32
     description: Compare 1 Interrupt
     name: CMP1
   - bit: 1
-    description: voltage level monitor interrrupt enable
-    name: VLMIE
+    description: Overflow Interrupt enable
+    name: OVF
+  - bit: 2
+    description: Compare Match Interrupt enable
+    name: CMP
   - bit: 64
     description: Compare 2 Interrupt
     name: CMP2
-  - bit: 2
-    description: High Underflow Interrupt Enable
-    name: HUNF
-  - bit: 128
-    description: Receive Complete Interrupt Enable
-    name: RXCIE
   - bit: 4
     description: Configuration
     name: VLMCFG1
+  - bit: 128
+    description: Receive Complete Interrupt Enable
+    name: RXCIE
   - bit: 16
-    description: Slave Select Trigger Interrupt Enable
-    name: SSIE
+    description: Compare 0 Interrupt
+    name: CMP0
   description: Interrupt Control
   name: INTCTRL
+  size: 1
 - address: 2
   bit_fields:
   - bit: 128
@@ -98,14 +101,15 @@
     name: MUXPOS1
   description: Mux Control A
   name: MUXCTRLA
+  size: 1
 - address: 7
   bit_fields:
   - bit: 128
     description: Lock enable
     name: LOCK
   - bit: 1
-    description: Syncronization busy
-    name: SYNCBUSY
+    description: CTRLA Synchronization Busy Flag
+    name: CTRLABUSY
   - bit: 2
     description: Level 1 Interrupt Executing
     name: LVL1EX
@@ -126,14 +130,15 @@
     name: STATE
   description: Status
   name: STATUS
+  size: 1
 - address: 22
   bit_fields:
   - bit: 128
     description: Error Correction Sign Bit
     name: SIGN
   - bit: 1
-    description: Error Correction Value
-    name: ERROR0
+    description: Duty Cycle
+    name: DUTYCYC
   - bit: 2
     description: Error Correction Value
     name: ERROR1
@@ -154,6 +159,7 @@
     name: ERROR4
   description: Calibration
   name: CALIB
+  size: 1
 - address: 8
   bit_fields:
   - bit: 1
@@ -161,20 +167,21 @@
     name: STCONV
   description: Command
   name: COMMAND
+  size: 1
 - address: 1
   bit_fields:
-  - bit: 128
-    description: Reciever enable
-    name: RXEN
+  - bit: 64
+    description: High Compare 2 Enable
+    name: HCMP2EN
   - bit: 1
     description: Low Compare 0 Enable
     name: LCMP0EN
   - bit: 2
     description: Receiver Mode
     name: RXMODE0
-  - bit: 64
-    description: Transmitter Enable
-    name: TXEN
+  - bit: 128
+    description: Reciever enable
+    name: RXEN
   - bit: 4
     description: Receiver Mode
     name: RXMODE1
@@ -182,55 +189,57 @@
     description: Compare 1 Enable
     name: CMP1EN
   - bit: 8
-    description: Auto Lock Update
-    name: ALUPD
+    description: Open Drain Mode Enable
+    name: ODME
   - bit: 16
     description: Start Frame Detection Enable
     name: SFDEN
   description: Control B
   name: CTRLB
+  size: 1
 - address: 2
   bit_fields:
   - bit: 32
     description: High Compare 1 Output Value
     name: HCMP1OV
   - bit: 1
-    description: Compare 0 Waveform Output Value
-    name: CMP0OV
+    description: Clock Pre-scaler
+    name: PRESC0
   - bit: 2
-    description: Compare 1 Waveform Output Value
-    name: CMP1OV
+    description: Low Compare 1 Output Value
+    name: LCMP1OV
   - bit: 64
     description: High Compare 2 Output Value
     name: HCMP2OV
   - bit: 4
-    description: Compare 2 Waveform Output Value
-    name: CMP2OV
+    description: Low Compare 2 Output Value
+    name: LCMP2OV
   - bit: 16
     description: High Compare 0 Output Value
     name: HCMP0OV
   description: Control C
   name: CTRLC
+  size: 1
 - address: 3
   bit_fields:
-  - bit: 32
-    description: Initial Delay Selection
-    name: INITDLY0
+  - bit: 64
+    description: Auto Baud Window
+    name: ABW0
   - bit: 1
-    description: Split Mode Enable
-    name: SPLITM
+    description: Sampling Delay Selection
+    name: SAMPDLY0
   - bit: 2
     description: Sampling Delay Selection
     name: SAMPDLY1
-  - bit: 64
-    description: Initial Delay Selection
-    name: INITDLY1
+  - bit: 128
+    description: Auto Baud Window
+    name: ABW1
   - bit: 4
     description: Sampling Delay Selection
     name: SAMPDLY2
-  - bit: 128
+  - bit: 32
     description: Initial Delay Selection
-    name: INITDLY2
+    name: INITDLY0
   - bit: 8
     description: Sampling Delay Selection
     name: SAMPDLY3
@@ -239,6 +248,7 @@
     name: ASDV
   description: Control D
   name: CTRLD
+  size: 1
 - address: 4
   bit_fields:
   - bit: 1
@@ -252,6 +262,7 @@
     name: WINCM2
   description: Control E
   name: CTRLE
+  size: 1
 - address: 12
   bit_fields:
   - bit: 128
@@ -262,14 +273,15 @@
     name: DBGRUN
   description: Debug Control
   name: DBGCTRL
+  size: 1
 - address: 9
   bit_fields:
   - bit: 64
     description: Input Capture Noise Cancellation Filter
     name: FILTER
   - bit: 1
-    description: Count on Event Input
-    name: CNTEI
+    description: Start Event Input Enable
+    name: STARTEI
   - bit: 2
     description: Event Action
     name: EVACT0
@@ -281,6 +293,7 @@
     name: EDGE
   description: Event Control
   name: EVCTRL
+  size: 1
 - address: 11
   bit_fields:
   - bit: 32
@@ -296,19 +309,20 @@
     description: Compare 2 Interrupt
     name: CMP2
   - bit: 4
-    description: Interrupt Flags
+    description: Pin Interrupt
     name: INT2
   - bit: 128
     description: Pin Interrupt
     name: INT7
   - bit: 8
-    description: Interrupt Flags
+    description: Pin Interrupt
     name: INT3
   - bit: 16
     description: Compare 0 Interrupt
     name: CMP0
   description: Interrupt Flags
   name: INTFLAGS
+  size: 1
 - address: 6
   bit_fields:
   - bit: 1
@@ -328,10 +342,12 @@
     name: MUXPOS4
   description: Positive mux input
   name: MUXPOS
+  size: 1
 - address: 16
   bit_fields: []
   description: ADC Accumulator Result
   name: RES
+  size: 2
 - address: 5
   bit_fields:
   - bit: 1
@@ -351,6 +367,7 @@
     name: SAMPLEN4
   description: Sample Control
   name: SAMPCTRL
+  size: 1
 - address: 13
   bit_fields:
   - bit: 32
@@ -379,14 +396,17 @@
     name: TEMP4
   description: Temporary Data
   name: TEMP
+  size: 1
 - address: 20
   bit_fields: []
   description: Window comparator high threshold
   name: WINHT
+  size: 2
 - address: 18
   bit_fields: []
   description: Window comparator low threshold
   name: WINLT
+  size: 2
 - address: 8
   bit_fields:
   - bit: 1
@@ -397,26 +417,27 @@
     name: VLMLVL1
   description: Voltage level monitor Control
   name: VLMCTRLA
+  size: 1
 - address: 5
   bit_fields:
+  - bit: 64
+    description: Interrupt Mode for LUT3
+    name: INTMODE30
   - bit: 32
     description: Interrupt Mode for LUT2
     name: INTMODE21
+  - bit: 128
+    description: Interrupt Mode for LUT3
+    name: INTMODE31
   - bit: 1
     description: Interrupt Mode for LUT0
     name: INTMODE00
   - bit: 2
     description: Interrupt Mode for LUT0
     name: INTMODE01
-  - bit: 64
-    description: Interrupt Mode for LUT3
-    name: INTMODE30
   - bit: 4
     description: Interrupt Mode for LUT1
     name: INTMODE10
-  - bit: 128
-    description: Interrupt Mode for LUT3
-    name: INTMODE31
   - bit: 8
     description: Interrupt Mode for LUT1
     name: INTMODE11
@@ -425,26 +446,27 @@
     name: INTMODE20
   description: Interrupt Control 0
   name: INTCTRL0
+  size: 1
 - address: 8
   bit_fields:
-  - bit: 64
-    description: Output Enable
-    name: OUTEN
-  - bit: 32
-    description: Filter Selection
-    name: FILTSEL1
   - bit: 128
     description: Edge Detection Enable
     name: EDGEDET
-  - bit: 1
-    description: LUT Enable
-    name: ENABLE
+  - bit: 32
+    description: Filter Selection
+    name: FILTSEL1
   - bit: 2
     description: Clock Source Selection
     name: CLKSRC0
+  - bit: 1
+    description: LUT Enable
+    name: ENABLE
   - bit: 4
     description: Clock Source Selection
     name: CLKSRC1
+  - bit: 64
+    description: Output Enable
+    name: OUTEN
   - bit: 8
     description: Clock Source Selection
     name: CLKSRC2
@@ -453,6 +475,7 @@
     name: FILTSEL0
   description: LUT Control 0 A
   name: LUT0CTRLA
+  size: 1
 - address: 9
   bit_fields:
   - bit: 32
@@ -481,6 +504,7 @@
     name: INSEL10
   description: LUT Control 0 B
   name: LUT0CTRLB
+  size: 1
 - address: 10
   bit_fields:
   - bit: 8
@@ -497,26 +521,27 @@
     name: INSEL22
   description: LUT Control 0 C
   name: LUT0CTRLC
+  size: 1
 - address: 12
   bit_fields:
-  - bit: 32
-    description: Filter Selection
-    name: FILTSEL1
-  - bit: 1
-    description: LUT Enable
-    name: ENABLE
-  - bit: 64
-    description: Output Enable
-    name: OUTEN
   - bit: 128
     description: Edge Detection Enable
     name: EDGEDET
+  - bit: 1
+    description: LUT Enable
+    name: ENABLE
   - bit: 2
     description: Clock Source Selection
     name: CLKSRC0
+  - bit: 32
+    description: Filter Selection
+    name: FILTSEL1
   - bit: 4
     description: Clock Source Selection
     name: CLKSRC1
+  - bit: 64
+    description: Output Enable
+    name: OUTEN
   - bit: 8
     description: Clock Source Selection
     name: CLKSRC2
@@ -525,6 +550,7 @@
     name: FILTSEL0
   description: LUT Control 1 A
   name: LUT1CTRLA
+  size: 1
 - address: 13
   bit_fields:
   - bit: 32
@@ -533,18 +559,18 @@
   - bit: 1
     description: LUT Input 0 Source Selection
     name: INSEL00
-  - bit: 2
-    description: LUT Input 0 Source Selection
-    name: INSEL01
   - bit: 64
     description: LUT Input 1 Source Selection
     name: INSEL12
-  - bit: 4
-    description: LUT Input 0 Source Selection
-    name: INSEL02
   - bit: 128
     description: LUT Input 1 Source Selection
     name: INSEL13
+  - bit: 2
+    description: LUT Input 0 Source Selection
+    name: INSEL01
+  - bit: 4
+    description: LUT Input 0 Source Selection
+    name: INSEL02
   - bit: 8
     description: LUT Input 0 Source Selection
     name: INSEL03
@@ -553,6 +579,7 @@
     name: INSEL10
   description: LUT Control 1 B
   name: LUT1CTRLB
+  size: 1
 - address: 14
   bit_fields:
   - bit: 8
@@ -569,26 +596,27 @@
     name: INSEL22
   description: LUT Control 1 C
   name: LUT1CTRLC
+  size: 1
 - address: 16
   bit_fields:
-  - bit: 32
-    description: Filter Selection
-    name: FILTSEL1
-  - bit: 1
-    description: LUT Enable
-    name: ENABLE
-  - bit: 2
-    description: Clock Source Selection
-    name: CLKSRC0
   - bit: 64
     description: Output Enable
     name: OUTEN
-  - bit: 4
-    description: Clock Source Selection
-    name: CLKSRC1
   - bit: 128
     description: Edge Detection Enable
     name: EDGEDET
+  - bit: 2
+    description: Clock Source Selection
+    name: CLKSRC0
+  - bit: 32
+    description: Filter Selection
+    name: FILTSEL1
+  - bit: 4
+    description: Clock Source Selection
+    name: CLKSRC1
+  - bit: 1
+    description: LUT Enable
+    name: ENABLE
   - bit: 8
     description: Clock Source Selection
     name: CLKSRC2
@@ -597,6 +625,7 @@
     name: FILTSEL0
   description: LUT Control 2 A
   name: LUT2CTRLA
+  size: 1
 - address: 17
   bit_fields:
   - bit: 32
@@ -625,6 +654,7 @@
     name: INSEL10
   description: LUT Control 2 B
   name: LUT2CTRLB
+  size: 1
 - address: 18
   bit_fields:
   - bit: 8
@@ -641,26 +671,27 @@
     name: INSEL22
   description: LUT Control 2 C
   name: LUT2CTRLC
+  size: 1
 - address: 20
   bit_fields:
-  - bit: 128
-    description: Edge Detection Enable
-    name: EDGEDET
-  - bit: 1
-    description: LUT Enable
-    name: ENABLE
-  - bit: 2
-    description: Clock Source Selection
-    name: CLKSRC0
   - bit: 32
     description: Filter Selection
     name: FILTSEL1
-  - bit: 4
-    description: Clock Source Selection
-    name: CLKSRC1
+  - bit: 1
+    description: LUT Enable
+    name: ENABLE
   - bit: 64
     description: Output Enable
     name: OUTEN
+  - bit: 2
+    description: Clock Source Selection
+    name: CLKSRC0
+  - bit: 4
+    description: Clock Source Selection
+    name: CLKSRC1
+  - bit: 128
+    description: Edge Detection Enable
+    name: EDGEDET
   - bit: 8
     description: Clock Source Selection
     name: CLKSRC2
@@ -669,6 +700,7 @@
     name: FILTSEL0
   description: LUT Control 3 A
   name: LUT3CTRLA
+  size: 1
 - address: 21
   bit_fields:
   - bit: 32
@@ -677,18 +709,18 @@
   - bit: 1
     description: LUT Input 0 Source Selection
     name: INSEL00
-  - bit: 64
-    description: LUT Input 1 Source Selection
-    name: INSEL12
-  - bit: 128
-    description: LUT Input 1 Source Selection
-    name: INSEL13
   - bit: 2
     description: LUT Input 0 Source Selection
     name: INSEL01
+  - bit: 64
+    description: LUT Input 1 Source Selection
+    name: INSEL12
   - bit: 4
     description: LUT Input 0 Source Selection
     name: INSEL02
+  - bit: 128
+    description: LUT Input 1 Source Selection
+    name: INSEL13
   - bit: 8
     description: LUT Input 0 Source Selection
     name: INSEL03
@@ -697,6 +729,7 @@
     name: INSEL10
   description: LUT Control 3 B
   name: LUT3CTRLB
+  size: 1
 - address: 22
   bit_fields:
   - bit: 8
@@ -713,6 +746,7 @@
     name: INSEL22
   description: LUT Control 3 C
   name: LUT3CTRLC
+  size: 1
 - address: 1
   bit_fields:
   - bit: 1
@@ -726,6 +760,7 @@
     name: SEQSEL02
   description: Sequential Control 0
   name: SEQCTRL0
+  size: 1
 - address: 2
   bit_fields:
   - bit: 1
@@ -739,22 +774,27 @@
     name: SEQSEL12
   description: Sequential Control 1
   name: SEQCTRL1
+  size: 1
 - address: 11
   bit_fields: []
   description: Truth 0
   name: TRUTH0
+  size: 1
 - address: 15
   bit_fields: []
   description: Truth 1
   name: TRUTH1
+  size: 1
 - address: 19
   bit_fields: []
   description: Truth 2
   name: TRUTH2
+  size: 1
 - address: 23
   bit_fields: []
   description: Truth 3
   name: TRUTH3
+  size: 1
 - address: 0
   bit_fields:
   - bit: 128
@@ -768,6 +808,7 @@
     name: CLKSEL1
   description: MCLK Control A
   name: MCLKCTRLA
+  size: 1
 - address: 1
   bit_fields:
   - bit: 1
@@ -787,6 +828,7 @@
     name: PDIV3
   description: MCLK Control B
   name: MCLKCTRLB
+  size: 1
 - address: 2
   bit_fields:
   - bit: 1
@@ -794,6 +836,7 @@
     name: LOCKEN
   description: MCLK Lock
   name: MCLKLOCK
+  size: 1
 - address: 3
   bit_fields:
   - bit: 32
@@ -813,6 +856,7 @@
     name: OSC20MS
   description: MCLK Status
   name: MCLKSTATUS
+  size: 1
 - address: 17
   bit_fields:
   - bit: 32
@@ -838,6 +882,7 @@
     name: CAL20M4
   description: OSC20M Calibration A
   name: OSC20MCALIBA
+  size: 1
 - address: 18
   bit_fields:
   - bit: 128
@@ -857,6 +902,7 @@
     name: TEMPCAL20M3
   description: OSC20M Calibration B
   name: OSC20MCALIBB
+  size: 1
 - address: 16
   bit_fields:
   - bit: 2
@@ -864,6 +910,7 @@
     name: RUNSTDBY
   description: OSC20M Control A
   name: OSC20MCTRLA
+  size: 1
 - address: 24
   bit_fields:
   - bit: 2
@@ -871,6 +918,7 @@
     name: RUNSTDBY
   description: OSC32K Control A
   name: OSC32KCTRLA
+  size: 1
 - address: 28
   bit_fields:
   - bit: 32
@@ -890,6 +938,7 @@
     name: CSUT0
   description: XOSC32K Control A
   name: XOSC32KCTRLA
+  size: 1
 - address: 4
   bit_fields:
   - bit: 32
@@ -918,34 +967,37 @@
     name: CCP4
   description: Configuration Change Protection
   name: CCP
+  size: 1
 - address: 14
   bit_fields: []
   description: Stack Pointer High
   name: SPH
+  size: 1
 - address: 13
   bit_fields: []
   description: Stack Pointer Low
   name: SPL
+  size: 1
 - address: 15
   bit_fields:
-  - bit: 32
-    description: Half Carry Flag
-    name: H
-  - bit: 1
-    description: Carry Flag
-    name: C
   - bit: 64
     description: Transfer Bit
     name: T
+  - bit: 1
+    description: Carry Flag
+    name: C
+  - bit: 32
+    description: Half Carry Flag
+    name: H
   - bit: 2
     description: Zero Flag
     name: Z
-  - bit: 128
-    description: Global Interrupt Enable Flag
-    name: I
   - bit: 4
     description: Negative Flag
     name: N
+  - bit: 128
+    description: Global Interrupt Enable Flag
+    name: I
   - bit: 8
     description: Two's Complement Overflow Flag
     name: V
@@ -954,6 +1006,7 @@
     name: S
   description: Status Register
   name: SREG
+  size: 1
 - address: 2
   bit_fields:
   - bit: 32
@@ -982,6 +1035,7 @@
     name: LVL0PRI4
   description: Interrupt Level 0 Priority
   name: LVL0PRI
+  size: 1
 - address: 3
   bit_fields:
   - bit: 32
@@ -1010,6 +1064,7 @@
     name: LVL1VEC4
   description: Interrupt Level 1 Priority Vector
   name: LVL1VEC
+  size: 1
 - address: 16
   bit_fields:
   - bit: 32
@@ -1038,6 +1093,7 @@
     name: GENERATOR4
   description: Multiplexer Channel 0
   name: CHANNEL0
+  size: 1
 - address: 17
   bit_fields:
   - bit: 32
@@ -1066,6 +1122,7 @@
     name: GENERATOR4
   description: Multiplexer Channel 1
   name: CHANNEL1
+  size: 1
 - address: 18
   bit_fields:
   - bit: 32
@@ -1094,6 +1151,7 @@
     name: GENERATOR4
   description: Multiplexer Channel 2
   name: CHANNEL2
+  size: 1
 - address: 19
   bit_fields:
   - bit: 32
@@ -1122,6 +1180,7 @@
     name: GENERATOR4
   description: Multiplexer Channel 3
   name: CHANNEL3
+  size: 1
 - address: 20
   bit_fields:
   - bit: 32
@@ -1150,6 +1209,7 @@
     name: GENERATOR4
   description: Multiplexer Channel 4
   name: CHANNEL4
+  size: 1
 - address: 21
   bit_fields:
   - bit: 32
@@ -1178,6 +1238,7 @@
     name: GENERATOR4
   description: Multiplexer Channel 5
   name: CHANNEL5
+  size: 1
 - address: 0
   bit_fields:
   - bit: 32
@@ -1206,6 +1267,7 @@
     name: STROBE04
   description: Channel Strobe
   name: STROBE
+  size: 1
 - address: 40
   bit_fields:
   - bit: 32
@@ -1234,6 +1296,7 @@
     name: CHANNEL4
   description: User ADC0
   name: USERADC0
+  size: 1
 - address: 32
   bit_fields:
   - bit: 32
@@ -1262,6 +1325,7 @@
     name: CHANNEL4
   description: User CCL LUT0 Event A
   name: USERCCLLUT0A
+  size: 1
 - address: 33
   bit_fields:
   - bit: 32
@@ -1290,6 +1354,7 @@
     name: CHANNEL4
   description: User CCL LUT0 Event B
   name: USERCCLLUT0B
+  size: 1
 - address: 34
   bit_fields:
   - bit: 32
@@ -1318,6 +1383,7 @@
     name: CHANNEL4
   description: User CCL LUT1 Event A
   name: USERCCLLUT1A
+  size: 1
 - address: 35
   bit_fields:
   - bit: 32
@@ -1346,6 +1412,7 @@
     name: CHANNEL4
   description: User CCL LUT1 Event B
   name: USERCCLLUT1B
+  size: 1
 - address: 36
   bit_fields:
   - bit: 32
@@ -1374,6 +1441,7 @@
     name: CHANNEL4
   description: User CCL LUT2 Event A
   name: USERCCLLUT2A
+  size: 1
 - address: 37
   bit_fields:
   - bit: 32
@@ -1402,6 +1470,7 @@
     name: CHANNEL4
   description: User CCL LUT2 Event B
   name: USERCCLLUT2B
+  size: 1
 - address: 38
   bit_fields:
   - bit: 32
@@ -1430,6 +1499,7 @@
     name: CHANNEL4
   description: User CCL LUT3 Event A
   name: USERCCLLUT3A
+  size: 1
 - address: 39
   bit_fields:
   - bit: 32
@@ -1458,6 +1528,7 @@
     name: CHANNEL4
   description: User CCL LUT3 Event B
   name: USERCCLLUT3B
+  size: 1
 - address: 41
   bit_fields:
   - bit: 32
@@ -1486,6 +1557,7 @@
     name: CHANNEL4
   description: User EVOUT Port A
   name: USEREVOUTA
+  size: 1
 - address: 42
   bit_fields:
   - bit: 32
@@ -1514,6 +1586,7 @@
     name: CHANNEL4
   description: User EVOUT Port B
   name: USEREVOUTB
+  size: 1
 - address: 43
   bit_fields:
   - bit: 32
@@ -1542,6 +1615,7 @@
     name: CHANNEL4
   description: User EVOUT Port C
   name: USEREVOUTC
+  size: 1
 - address: 44
   bit_fields:
   - bit: 32
@@ -1570,6 +1644,7 @@
     name: CHANNEL4
   description: User EVOUT Port D
   name: USEREVOUTD
+  size: 1
 - address: 45
   bit_fields:
   - bit: 32
@@ -1598,6 +1673,7 @@
     name: CHANNEL4
   description: User EVOUT Port E
   name: USEREVOUTE
+  size: 1
 - address: 46
   bit_fields:
   - bit: 32
@@ -1626,6 +1702,7 @@
     name: CHANNEL4
   description: User EVOUT Port F
   name: USEREVOUTF
+  size: 1
 - address: 51
   bit_fields:
   - bit: 32
@@ -1654,6 +1731,7 @@
     name: CHANNEL4
   description: User TCA0
   name: USERTCA0
+  size: 1
 - address: 52
   bit_fields:
   - bit: 32
@@ -1682,6 +1760,7 @@
     name: CHANNEL4
   description: User TCB0
   name: USERTCB0
+  size: 1
 - address: 53
   bit_fields:
   - bit: 32
@@ -1710,6 +1789,7 @@
     name: CHANNEL4
   description: User TCB1
   name: USERTCB1
+  size: 1
 - address: 54
   bit_fields:
   - bit: 32
@@ -1738,6 +1818,7 @@
     name: CHANNEL4
   description: User TCB2
   name: USERTCB2
+  size: 1
 - address: 55
   bit_fields:
   - bit: 32
@@ -1766,6 +1847,7 @@
     name: CHANNEL4
   description: User TCB3
   name: USERTCB3
+  size: 1
 - address: 47
   bit_fields:
   - bit: 32
@@ -1794,6 +1876,7 @@
     name: CHANNEL4
   description: User USART0
   name: USERUSART0
+  size: 1
 - address: 48
   bit_fields:
   - bit: 32
@@ -1822,6 +1905,7 @@
     name: CHANNEL4
   description: User USART1
   name: USERUSART1
+  size: 1
 - address: 49
   bit_fields:
   - bit: 32
@@ -1850,6 +1934,7 @@
     name: CHANNEL4
   description: User USART2
   name: USERUSART2
+  size: 1
 - address: 50
   bit_fields:
   - bit: 32
@@ -1878,10 +1963,12 @@
     name: CHANNEL4
   description: User USART3
   name: USERUSART3
+  size: 1
 - address: 7
   bit_fields: []
   description: Application Code Section End
   name: APPEND
+  size: 1
 - address: 1
   bit_fields:
   - bit: 32
@@ -1910,10 +1997,12 @@
     name: SAMPFREQ
   description: BOD Configuration
   name: BODCFG
+  size: 1
 - address: 8
   bit_fields: []
   description: Boot Section End
   name: BOOTEND
+  size: 1
 - address: 2
   bit_fields:
   - bit: 128
@@ -1927,22 +2016,24 @@
     name: FREQSEL1
   description: Oscillator Configuration
   name: OSCCFG
+  size: 1
 - address: 5
   bit_fields:
   - bit: 64
     description: CRC Source
     name: CRCSRC0
-  - bit: 1
-    description: EEPROM Save
-    name: EESAVE
-  - bit: 128
-    description: CRC Source
-    name: CRCSRC1
   - bit: 8
     description: Reset Pin Configuration
     name: RSTPINCFG
+  - bit: 128
+    description: CRC Source
+    name: CRCSRC1
+  - bit: 1
+    description: EEPROM Save
+    name: EESAVE
   description: System Configuration 0
   name: SYSCFG0
+  size: 1
 - address: 6
   bit_fields:
   - bit: 1
@@ -1956,6 +2047,7 @@
     name: SUT2
   description: System Configuration 1
   name: SYSCFG1
+  size: 1
 - address: 0
   bit_fields:
   - bit: 32
@@ -1984,66 +2076,82 @@
     name: WINDOW0
   description: Watchdog Configuration
   name: WDTCFG
+  size: 1
 - address: 0
   bit_fields: []
   description: General Purpose IO Register 0
   name: GPIOR0
+  size: 1
 - address: 1
   bit_fields: []
   description: General Purpose IO Register 1
   name: GPIOR1
+  size: 1
 - address: 2
   bit_fields: []
   description: General Purpose IO Register 2
   name: GPIOR2
+  size: 1
 - address: 3
   bit_fields: []
   description: General Purpose IO Register 3
   name: GPIOR3
+  size: 1
 - address: 8
   bit_fields: []
   description: Address
   name: ADDR
+  size: 2
 - address: 6
   bit_fields: []
   description: Data
   name: DATA
+  size: 2
 - address: 0
   bit_fields: []
   description: Data Direction
   name: DIR
+  size: 1
 - address: 2
   bit_fields: []
   description: Data Direction Clear
   name: DIRCLR
+  size: 1
 - address: 1
   bit_fields: []
   description: Data Direction Set
   name: DIRSET
+  size: 1
 - address: 3
   bit_fields: []
   description: Data Direction Toggle
   name: DIRTGL
+  size: 1
 - address: 8
   bit_fields: []
   description: Input Value
   name: IN
+  size: 1
 - address: 4
   bit_fields: []
   description: Output Value
   name: OUT
+  size: 1
 - address: 6
   bit_fields: []
   description: Output Value Clear
   name: OUTCLR
+  size: 1
 - address: 5
   bit_fields: []
   description: Output Value Set
   name: OUTSET
+  size: 1
 - address: 7
   bit_fields: []
   description: Output Value Toggle
   name: OUTTGL
+  size: 1
 - address: 16
   bit_fields:
   - bit: 128
@@ -2063,6 +2171,7 @@
     name: PULLUPEN
   description: Pin 0 Control
   name: PIN0CTRL
+  size: 1
 - address: 17
   bit_fields:
   - bit: 128
@@ -2082,6 +2191,7 @@
     name: PULLUPEN
   description: Pin 1 Control
   name: PIN1CTRL
+  size: 1
 - address: 18
   bit_fields:
   - bit: 128
@@ -2101,6 +2211,7 @@
     name: PULLUPEN
   description: Pin 2 Control
   name: PIN2CTRL
+  size: 1
 - address: 19
   bit_fields:
   - bit: 128
@@ -2120,6 +2231,7 @@
     name: PULLUPEN
   description: Pin 3 Control
   name: PIN3CTRL
+  size: 1
 - address: 20
   bit_fields:
   - bit: 128
@@ -2139,6 +2251,7 @@
     name: PULLUPEN
   description: Pin 4 Control
   name: PIN4CTRL
+  size: 1
 - address: 21
   bit_fields:
   - bit: 128
@@ -2158,6 +2271,7 @@
     name: PULLUPEN
   description: Pin 5 Control
   name: PIN5CTRL
+  size: 1
 - address: 22
   bit_fields:
   - bit: 128
@@ -2177,6 +2291,7 @@
     name: PULLUPEN
   description: Pin 6 Control
   name: PIN6CTRL
+  size: 1
 - address: 23
   bit_fields:
   - bit: 128
@@ -2196,6 +2311,7 @@
     name: PULLUPEN
   description: Pin 7 Control
   name: PIN7CTRL
+  size: 1
 - address: 10
   bit_fields:
   - bit: 1
@@ -2203,6 +2319,7 @@
     name: SRL
   description: Port Control
   name: PORTCTRL
+  size: 1
 - address: 1
   bit_fields:
   - bit: 8
@@ -2219,6 +2336,7 @@
     name: LUT2
   description: Port Multiplexer CCL
   name: CCLROUTEA
+  size: 1
 - address: 0
   bit_fields:
   - bit: 32
@@ -2241,6 +2359,7 @@
     name: EVOUT4
   description: Port Multiplexer EVSYS
   name: EVSYSROUTEA
+  size: 1
 - address: 4
   bit_fields:
   - bit: 1
@@ -2254,6 +2373,7 @@
     name: TCA02
   description: Port Multiplexer TCA
   name: TCAROUTEA
+  size: 1
 - address: 5
   bit_fields:
   - bit: 8
@@ -2270,6 +2390,7 @@
     name: TCB2
   description: Port Multiplexer TCB
   name: TCBROUTEA
+  size: 1
 - address: 3
   bit_fields:
   - bit: 16
@@ -2286,26 +2407,27 @@
     name: SPI01
   description: Port Multiplexer TWI and SPI
   name: TWISPIROUTEA
+  size: 1
 - address: 2
   bit_fields:
-  - bit: 64
-    description: Port Multiplexer USART3
-    name: USART30
   - bit: 32
     description: Port Multiplexer USART2
     name: USART21
-  - bit: 128
-    description: Port Multiplexer USART3
-    name: USART31
   - bit: 1
     description: Port Multiplexer USART0
     name: USART00
-  - bit: 4
-    description: Port Multiplexer USART1
-    name: USART10
   - bit: 2
     description: Port Multiplexer USART0
     name: USART01
+  - bit: 64
+    description: Port Multiplexer USART3
+    name: USART30
+  - bit: 4
+    description: Port Multiplexer USART1
+    name: USART10
+  - bit: 128
+    description: Port Multiplexer USART3
+    name: USART31
   - bit: 8
     description: Port Multiplexer USART1
     name: USART11
@@ -2314,6 +2436,7 @@
     name: USART20
   description: Port Multiplexer USART register A
   name: USARTROUTEA
+  size: 1
 - address: 0
   bit_fields:
   - bit: 32
@@ -2336,6 +2459,7 @@
     name: SWRF
   description: Reset Flags
   name: RSTFR
+  size: 1
 - address: 1
   bit_fields:
   - bit: 1
@@ -2343,6 +2467,7 @@
     name: SWRE
   description: Software Reset
   name: SWRR
+  size: 1
 - address: 7
   bit_fields:
   - bit: 1
@@ -2353,29 +2478,33 @@
     name: CLKSEL1
   description: Clock Select
   name: CLKSEL
+  size: 1
 - address: 12
   bit_fields: []
   description: Compare
   name: CMP
+  size: 2
 - address: 8
   bit_fields: []
   description: Counter
   name: CNT
+  size: 2
 - address: 10
   bit_fields: []
   description: Period
   name: PER
+  size: 2
 - address: 16
   bit_fields:
   - bit: 32
     description: Period
     name: PERIOD2
-  - bit: 64
-    description: Period
-    name: PERIOD3
   - bit: 1
     description: Enable
     name: PITEN
+  - bit: 64
+    description: Period
+    name: PERIOD3
   - bit: 8
     description: Period
     name: PERIOD0
@@ -2384,6 +2513,7 @@
     name: PERIOD1
   description: PIT Control A
   name: PITCTRLA
+  size: 1
 - address: 21
   bit_fields:
   - bit: 1
@@ -2391,6 +2521,7 @@
     name: DBGRUN
   description: PIT Debug control
   name: PITDBGCTRL
+  size: 1
 - address: 18
   bit_fields:
   - bit: 1
@@ -2398,6 +2529,7 @@
     name: PI
   description: PIT Interrupt Control
   name: PITINTCTRL
+  size: 1
 - address: 19
   bit_fields:
   - bit: 1
@@ -2405,6 +2537,7 @@
     name: PI
   description: PIT Interrupt Flags
   name: PITINTFLAGS
+  size: 1
 - address: 17
   bit_fields:
   - bit: 1
@@ -2412,106 +2545,132 @@
     name: CTRLBUSY
   description: PIT Status
   name: PITSTATUS
+  size: 1
 - address: 47
   bit_fields: []
   description: CRC Checksum Byte 1
   name: CHECKSUM1
+  size: 1
 - address: 0
   bit_fields: []
   description: Device ID Byte 0
   name: DEVICEID0
+  size: 1
 - address: 1
   bit_fields: []
   description: Device ID Byte 1
   name: DEVICEID1
+  size: 1
 - address: 2
   bit_fields: []
   description: Device ID Byte 2
   name: DEVICEID2
+  size: 1
 - address: 24
   bit_fields: []
   description: Oscillator Calibration 16 MHz Byte 0
   name: OSCCAL16M0
+  size: 1
 - address: 25
   bit_fields: []
   description: Oscillator Calibration 16 MHz Byte 1
   name: OSCCAL16M1
+  size: 1
 - address: 26
   bit_fields: []
   description: Oscillator Calibration 20 MHz Byte 0
   name: OSCCAL20M0
+  size: 1
 - address: 27
   bit_fields: []
   description: Oscillator Calibration 20 MHz Byte 1
   name: OSCCAL20M1
+  size: 1
 - address: 20
   bit_fields: []
   description: Oscillator Calibration for 32kHz ULP
   name: OSCCAL32K
+  size: 1
 - address: 34
   bit_fields: []
   description: OSC16 error at 3V
   name: OSC16ERR3V
+  size: 1
 - address: 35
   bit_fields: []
   description: OSC16 error at 5V
   name: OSC16ERR5V
+  size: 1
 - address: 36
   bit_fields: []
   description: OSC20 error at 3V
   name: OSC20ERR3V
+  size: 1
 - address: 37
   bit_fields: []
   description: OSC20 error at 5V
   name: OSC20ERR5V
+  size: 1
 - address: 3
   bit_fields: []
   description: Serial Number Byte 0
   name: SERNUM0
+  size: 1
 - address: 4
   bit_fields: []
   description: Serial Number Byte 1
   name: SERNUM1
+  size: 1
 - address: 5
   bit_fields: []
   description: Serial Number Byte 2
   name: SERNUM2
+  size: 1
 - address: 6
   bit_fields: []
   description: Serial Number Byte 3
   name: SERNUM3
+  size: 1
 - address: 7
   bit_fields: []
   description: Serial Number Byte 4
   name: SERNUM4
+  size: 1
 - address: 8
   bit_fields: []
   description: Serial Number Byte 5
   name: SERNUM5
+  size: 1
 - address: 9
   bit_fields: []
   description: Serial Number Byte 6
   name: SERNUM6
+  size: 1
 - address: 10
   bit_fields: []
   description: Serial Number Byte 7
   name: SERNUM7
+  size: 1
 - address: 11
   bit_fields: []
   description: Serial Number Byte 8
   name: SERNUM8
+  size: 1
 - address: 12
   bit_fields: []
   description: Serial Number Byte 9
   name: SERNUM9
+  size: 1
 - address: 32
   bit_fields: []
   description: Temperature Sensor Calibration Byte 0
   name: TEMPSENSE0
+  size: 1
 - address: 33
   bit_fields: []
   description: Temperature Sensor Calibration Byte 1
   name: TEMPSENSE1
+  size: 1
 - address: 2
   bit_fields:
   - bit: 1
@@ -2519,10 +2678,12 @@
     name: ENEXTBRK
   description: External Break
   name: EXTBRK
+  size: 1
 - address: 24
   bit_fields: []
   description: OCD Message Register
   name: OCDM
+  size: 1
 - address: 25
   bit_fields:
   - bit: 1
@@ -2530,34 +2691,42 @@
     name: OCDMR
   description: OCD Message Status
   name: OCDMS
+  size: 1
 - address: 1
   bit_fields: []
   description: Revision ID
   name: REVID
+  size: 1
 - address: 40
   bit_fields: []
   description: Compare 0
   name: CMP0
+  size: 2
 - address: 56
   bit_fields: []
   description: Compare 0 Buffer
   name: CMP0BUF
+  size: 2
 - address: 42
   bit_fields: []
   description: Compare 1
   name: CMP1
+  size: 2
 - address: 58
   bit_fields: []
   description: Compare 1 Buffer
   name: CMP1BUF
+  size: 2
 - address: 44
   bit_fields: []
   description: Compare 2
   name: CMP2
+  size: 2
 - address: 60
   bit_fields: []
   description: Compare 2 Buffer
   name: CMP2BUF
+  size: 2
 - address: 4
   bit_fields:
   - bit: 8
@@ -2574,6 +2743,7 @@
     name: CMD0
   description: Control E Clear
   name: CTRLECLR
+  size: 1
 - address: 5
   bit_fields:
   - bit: 8
@@ -2590,6 +2760,7 @@
     name: CMD0
   description: Control E Set
   name: CTRLESET
+  size: 1
 - address: 6
   bit_fields:
   - bit: 8
@@ -2606,6 +2777,7 @@
     name: CMP1BV
   description: Control F Clear
   name: CTRLFCLR
+  size: 1
 - address: 7
   bit_fields:
   - bit: 8
@@ -2622,66 +2794,82 @@
     name: CMP1BV
   description: Control F Set
   name: CTRLFSET
+  size: 1
 - address: 54
   bit_fields: []
   description: Period Buffer
   name: PERBUF
+  size: 2
 - address: 41
   bit_fields: []
   description: High Compare
   name: HCMP0
+  size: 1
 - address: 43
   bit_fields: []
   description: High Compare
   name: HCMP1
+  size: 1
 - address: 45
   bit_fields: []
   description: High Compare
   name: HCMP2
+  size: 1
 - address: 33
   bit_fields: []
   description: High Count
   name: HCNT
+  size: 1
 - address: 39
   bit_fields: []
   description: High Period
   name: HPER
+  size: 1
 - address: 40
   bit_fields: []
   description: Low Compare
   name: LCMP0
+  size: 1
 - address: 42
   bit_fields: []
   description: Low Compare
   name: LCMP1
+  size: 1
 - address: 44
   bit_fields: []
   description: Low Compare
   name: LCMP2
+  size: 1
 - address: 32
   bit_fields: []
   description: Low Count
   name: LCNT
+  size: 1
 - address: 38
   bit_fields: []
   description: Low Period
   name: LPER
+  size: 1
 - address: 12
   bit_fields: []
   description: Compare or Capture
   name: CCMP
+  size: 2
 - address: 1
   bit_fields: []
   description: Dual Control
   name: DUALCTRL
+  size: 1
 - address: 7
   bit_fields: []
   description: Master Address
   name: MADDR
+  size: 1
 - address: 6
   bit_fields: []
   description: Master Baurd Rate Control
   name: MBAUD
+  size: 1
 - address: 3
   bit_fields:
   - bit: 128
@@ -2707,6 +2895,7 @@
     name: QCEN
   description: Master Control A
   name: MCTRLA
+  size: 1
 - address: 4
   bit_fields:
   - bit: 8
@@ -2723,10 +2912,12 @@
     name: ACKACT
   description: Master Control B
   name: MCTRLB
+  size: 1
 - address: 8
   bit_fields: []
   description: Master Data
   name: MDATA
+  size: 1
 - address: 5
   bit_fields:
   - bit: 64
@@ -2755,10 +2946,12 @@
     name: RXACK
   description: Master Status
   name: MSTATUS
+  size: 1
 - address: 12
   bit_fields: []
   description: Slave Address
   name: SADDR
+  size: 1
 - address: 14
   bit_fields:
   - bit: 32
@@ -2787,6 +2980,7 @@
     name: ADDRMASK3
   description: Slave Address Mask
   name: SADDRMASK
+  size: 1
 - address: 9
   bit_fields:
   - bit: 64
@@ -2798,17 +2992,18 @@
   - bit: 2
     description: Smart Mode Enable
     name: SMEN
-  - bit: 32
-    description: Stop Interrupt Enable
-    name: PIEN
   - bit: 128
     description: Data Interrupt Enable
     name: DIEN
   - bit: 4
     description: Promiscuous Mode Enable
     name: PMEN
+  - bit: 32
+    description: Stop Interrupt Enable
+    name: PIEN
   description: Slave Control A
   name: SCTRLA
+  size: 1
 - address: 10
   bit_fields:
   - bit: 1
@@ -2822,30 +3017,32 @@
     name: ACKACT
   description: Slave Control B
   name: SCTRLB
+  size: 1
 - address: 13
   bit_fields: []
   description: Slave Data
   name: SDATA
+  size: 1
 - address: 11
   bit_fields:
+  - bit: 32
+    description: Clock Hold
+    name: CLKHOLD
   - bit: 64
     description: Address/Stop Interrupt Flag
     name: APIF
+  - bit: 128
+    description: Data Interrupt Flag
+    name: DIF
   - bit: 1
     description: Slave Address or Stop
     name: AP
   - bit: 2
     description: Read/Write Direction
     name: DIR
-  - bit: 128
-    description: Data Interrupt Flag
-    name: DIF
   - bit: 4
     description: Bus Error
     name: BUSERR
-  - bit: 32
-    description: Clock Hold
-    name: CLKHOLD
   - bit: 8
     description: Collision
     name: COLL
@@ -2854,29 +3051,32 @@
     name: RXACK
   description: Slave Status
   name: SSTATUS
+  size: 1
 - address: 8
   bit_fields: []
   description: Baud Rate
   name: BAUD
+  size: 2
 - address: 1
   bit_fields:
-  - bit: 64
-    description: Buffer Overflow
-    name: BUFOVF
+  - bit: 128
+    description: Receive Complete Interrupt Flag
+    name: RXCIF
   - bit: 1
     description: Receiver Data Register
     name: DATA8
   - bit: 2
     description: Parity Error
     name: PERR
-  - bit: 128
-    description: Receive Complete Interrupt Flag
-    name: RXCIF
+  - bit: 64
+    description: Buffer Overflow
+    name: BUFOVF
   - bit: 4
     description: Frame Error
     name: FERR
   description: Receive Data High Byte
   name: RXDATAH
+  size: 1
 - address: 0
   bit_fields:
   - bit: 32
@@ -2905,6 +3105,7 @@
     name: DATA4
   description: Receive Data Low Byte
   name: RXDATAL
+  size: 1
 - address: 14
   bit_fields:
   - bit: 32
@@ -2930,6 +3131,7 @@
     name: RXPL4
   description: IRCOM Receiver Pulse Length Control
   name: RXPLCTRL
+  size: 1
 - address: 3
   bit_fields:
   - bit: 1
@@ -2937,6 +3139,7 @@
     name: DATA8
   description: Transmit Data High Byte
   name: TXDATAH
+  size: 1
 - address: 2
   bit_fields:
   - bit: 32
@@ -2965,6 +3168,7 @@
     name: DATA4
   description: Transmit Data Low Byte
   name: TXDATAL
+  size: 1
 - address: 13
   bit_fields:
   - bit: 32
@@ -2993,259 +3197,324 @@
     name: TXPL4
   description: IRCOM Transmitter Pulse Length Control
   name: TXPLCTRL
+  size: 1
 - address: 0
   bit_fields: []
   description: User Row Byte 0
   name: USERROW0
+  size: 1
 - address: 1
   bit_fields: []
   description: User Row Byte 1
   name: USERROW1
+  size: 1
 - address: 2
   bit_fields: []
   description: User Row Byte 2
   name: USERROW2
+  size: 1
 - address: 3
   bit_fields: []
   description: User Row Byte 3
   name: USERROW3
+  size: 1
 - address: 4
   bit_fields: []
   description: User Row Byte 4
   name: USERROW4
+  size: 1
 - address: 5
   bit_fields: []
   description: User Row Byte 5
   name: USERROW5
+  size: 1
 - address: 6
   bit_fields: []
   description: User Row Byte 6
   name: USERROW6
+  size: 1
 - address: 7
   bit_fields: []
   description: User Row Byte 7
   name: USERROW7
+  size: 1
 - address: 8
   bit_fields: []
   description: User Row Byte 8
   name: USERROW8
+  size: 1
 - address: 9
   bit_fields: []
   description: User Row Byte 9
   name: USERROW9
+  size: 1
 - address: 10
   bit_fields: []
   description: User Row Byte 10
   name: USERROW10
+  size: 1
 - address: 11
   bit_fields: []
   description: User Row Byte 11
   name: USERROW11
+  size: 1
 - address: 12
   bit_fields: []
   description: User Row Byte 12
   name: USERROW12
+  size: 1
 - address: 13
   bit_fields: []
   description: User Row Byte 13
   name: USERROW13
+  size: 1
 - address: 14
   bit_fields: []
   description: User Row Byte 14
   name: USERROW14
+  size: 1
 - address: 15
   bit_fields: []
   description: User Row Byte 15
   name: USERROW15
+  size: 1
 - address: 16
   bit_fields: []
   description: User Row Byte 16
   name: USERROW16
+  size: 1
 - address: 17
   bit_fields: []
   description: User Row Byte 17
   name: USERROW17
+  size: 1
 - address: 18
   bit_fields: []
   description: User Row Byte 18
   name: USERROW18
+  size: 1
 - address: 19
   bit_fields: []
   description: User Row Byte 19
   name: USERROW19
+  size: 1
 - address: 20
   bit_fields: []
   description: User Row Byte 20
   name: USERROW20
+  size: 1
 - address: 21
   bit_fields: []
   description: User Row Byte 21
   name: USERROW21
+  size: 1
 - address: 22
   bit_fields: []
   description: User Row Byte 22
   name: USERROW22
+  size: 1
 - address: 23
   bit_fields: []
   description: User Row Byte 23
   name: USERROW23
+  size: 1
 - address: 24
   bit_fields: []
   description: User Row Byte 24
   name: USERROW24
+  size: 1
 - address: 25
   bit_fields: []
   description: User Row Byte 25
   name: USERROW25
+  size: 1
 - address: 26
   bit_fields: []
   description: User Row Byte 26
   name: USERROW26
+  size: 1
 - address: 27
   bit_fields: []
   description: User Row Byte 27
   name: USERROW27
+  size: 1
 - address: 28
   bit_fields: []
   description: User Row Byte 28
   name: USERROW28
+  size: 1
 - address: 29
   bit_fields: []
   description: User Row Byte 29
   name: USERROW29
+  size: 1
 - address: 30
   bit_fields: []
   description: User Row Byte 30
   name: USERROW30
+  size: 1
 - address: 31
   bit_fields: []
   description: User Row Byte 31
   name: USERROW31
+  size: 1
 - address: 32
   bit_fields: []
   description: User Row Byte 32
   name: USERROW32
+  size: 1
 - address: 33
   bit_fields: []
   description: User Row Byte 33
   name: USERROW33
+  size: 1
 - address: 34
   bit_fields: []
   description: User Row Byte 34
   name: USERROW34
+  size: 1
 - address: 35
   bit_fields: []
   description: User Row Byte 35
   name: USERROW35
+  size: 1
 - address: 36
   bit_fields: []
   description: User Row Byte 36
   name: USERROW36
+  size: 1
 - address: 37
   bit_fields: []
   description: User Row Byte 37
   name: USERROW37
+  size: 1
 - address: 38
   bit_fields: []
   description: User Row Byte 38
   name: USERROW38
+  size: 1
 - address: 39
   bit_fields: []
   description: User Row Byte 39
   name: USERROW39
+  size: 1
 - address: 40
   bit_fields: []
   description: User Row Byte 40
   name: USERROW40
+  size: 1
 - address: 41
   bit_fields: []
   description: User Row Byte 41
   name: USERROW41
+  size: 1
 - address: 42
   bit_fields: []
   description: User Row Byte 42
   name: USERROW42
+  size: 1
 - address: 43
   bit_fields: []
   description: User Row Byte 43
   name: USERROW43
+  size: 1
 - address: 44
   bit_fields: []
   description: User Row Byte 44
   name: USERROW44
+  size: 1
 - address: 45
   bit_fields: []
   description: User Row Byte 45
   name: USERROW45
+  size: 1
 - address: 46
   bit_fields: []
   description: User Row Byte 46
   name: USERROW46
+  size: 1
 - address: 47
   bit_fields: []
   description: User Row Byte 47
   name: USERROW47
+  size: 1
 - address: 48
   bit_fields: []
   description: User Row Byte 48
   name: USERROW48
+  size: 1
 - address: 49
   bit_fields: []
   description: User Row Byte 49
   name: USERROW49
+  size: 1
 - address: 50
   bit_fields: []
   description: User Row Byte 50
   name: USERROW50
+  size: 1
 - address: 51
   bit_fields: []
   description: User Row Byte 51
   name: USERROW51
+  size: 1
 - address: 52
   bit_fields: []
   description: User Row Byte 52
   name: USERROW52
+  size: 1
 - address: 53
   bit_fields: []
   description: User Row Byte 53
   name: USERROW53
+  size: 1
 - address: 54
   bit_fields: []
   description: User Row Byte 54
   name: USERROW54
+  size: 1
 - address: 55
   bit_fields: []
   description: User Row Byte 55
   name: USERROW55
+  size: 1
 - address: 56
   bit_fields: []
   description: User Row Byte 56
   name: USERROW56
+  size: 1
 - address: 57
   bit_fields: []
   description: User Row Byte 57
   name: USERROW57
+  size: 1
 - address: 58
   bit_fields: []
   description: User Row Byte 58
   name: USERROW58
+  size: 1
 - address: 59
   bit_fields: []
   description: User Row Byte 59
   name: USERROW59
+  size: 1
 - address: 60
   bit_fields: []
   description: User Row Byte 60
   name: USERROW60
+  size: 1
 - address: 61
   bit_fields: []
   description: User Row Byte 61
   name: USERROW61
+  size: 1
 - address: 62
   bit_fields: []
   description: User Row Byte 62
   name: USERROW62
+  size: 1
 - address: 63
   bit_fields: []
   description: User Row Byte 63
   name: USERROW63
+  size: 1

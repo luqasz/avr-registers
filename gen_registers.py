@@ -25,6 +25,7 @@ def register(reg):
         address = reg['offset'],
         bit_fields = list(bit_field(field) for field in reg.bit_fields),
         description = reg['caption'],
+        size = reg['size'],
     )
 
 

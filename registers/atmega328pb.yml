@@ -2,26 +2,27 @@
   bit_fields: []
   description: USART I/O Data Register 0
   name: UDR0
+  size: 1
 - address: 192
   bit_fields:
-  - bit: 128
-    description: USART Receive Complete
-    name: RXC0
   - bit: 32
     description: USART Data Register Empty
     name: UDRE0
+  - bit: 128
+    description: USART Receive Complete
+    name: RXC0
   - bit: 2
     description: Double the USART transmission speed
     name: U2X0
-  - bit: 1
-    description: Multi-processor Communication Mode
-    name: MPCM0
-  - bit: 4
-    description: Parity Error
-    name: UPE0
   - bit: 64
     description: USART Transmitt Complete
     name: TXC0
+  - bit: 4
+    description: Parity Error
+    name: UPE0
+  - bit: 1
+    description: Multi-processor Communication Mode
+    name: MPCM0
   - bit: 8
     description: Data overRun
     name: DOR0
@@ -30,26 +31,27 @@
     name: FE0
   description: USART Control and Status Register A
   name: UCSR0A
+  size: 1
 - address: 193
   bit_fields:
-  - bit: 64
-    description: TX Complete Interrupt Enable
-    name: TXCIE0
-  - bit: 128
-    description: RX Complete Interrupt Enable
-    name: RXCIE0
-  - bit: 2
-    description: Receive Data Bit 8
-    name: RXB80
   - bit: 32
     description: USART Data register Empty Interrupt Enable
     name: UDRIE0
-  - bit: 4
-    description: Character Size
-    name: UCSZ02
   - bit: 1
     description: Transmit Data Bit 8
     name: TXB80
+  - bit: 2
+    description: Receive Data Bit 8
+    name: RXB80
+  - bit: 128
+    description: RX Complete Interrupt Enable
+    name: RXCIE0
+  - bit: 64
+    description: TX Complete Interrupt Enable
+    name: TXCIE0
+  - bit: 4
+    description: Character Size
+    name: UCSZ02
   - bit: 8
     description: Transmitter Enable
     name: TXEN0
@@ -58,6 +60,7 @@
     name: RXEN0
   description: USART Control and Status Register B
   name: UCSR0B
+  size: 1
 - address: 194
   bit_fields:
   - bit: 64
@@ -86,32 +89,36 @@
     name: UPM00
   description: USART Control and Status Register C
   name: UCSR0C
+  size: 1
 - address: 195
   bit_fields:
-  - bit: 128
-    description: USART RX Start Interrupt Enable
-    name: RXSIE
-  - bit: 32
-    description: Start frame detection enable
-    name: SFDE
   - bit: 64
     description: USART RX Start
     name: RXS
+  - bit: 32
+    description: Start frame detection enable
+    name: SFDE
+  - bit: 128
+    description: USART RX Start Interrupt Enable
+    name: RXSIE
   description: USART Control and Status Register D
   name: UCSR0D
+  size: 1
 - address: 196
   bit_fields: []
   description: USART Baud Rate Register Bytes
   name: UBRR0
+  size: 2
 - address: 206
   bit_fields: []
   description: USART I/O Data Register
   name: UDR1
+  size: 1
 - address: 200
   bit_fields:
-  - bit: 128
-    description: USART Receive Complete
-    name: RXC1
+  - bit: 64
+    description: USART Transmitt Complete
+    name: TXC1
   - bit: 1
     description: Multi-processor Communication Mode
     name: MPCM1
@@ -124,9 +131,9 @@
   - bit: 4
     description: Parity Error
     name: UPE1
-  - bit: 64
-    description: USART Transmitt Complete
-    name: TXC1
+  - bit: 128
+    description: USART Receive Complete
+    name: RXC1
   - bit: 8
     description: Data overRun
     name: DOR1
@@ -135,20 +142,21 @@
     name: FE1
   description: USART Control and Status Register A
   name: UCSR1A
+  size: 1
 - address: 201
   bit_fields:
-  - bit: 64
-    description: TX Complete Interrupt Enable
-    name: TXCIE1
+  - bit: 32
+    description: USART Data register Empty Interrupt Enable
+    name: UDRIE1
   - bit: 1
     description: Transmit Data Bit 8
     name: TXB81
   - bit: 2
     description: Receive Data Bit 8
     name: RXB81
-  - bit: 32
-    description: USART Data register Empty Interrupt Enable
-    name: UDRIE1
+  - bit: 64
+    description: TX Complete Interrupt Enable
+    name: TXCIE1
   - bit: 4
     description: Character Size
     name: UCSZ12
@@ -163,14 +171,9 @@
     name: RXEN1
   description: USART Control and Status Register B
   name: UCSR1B
+  size: 1
 - address: 202
   bit_fields:
-  - bit: 32
-    description: Parity Mode Bits
-    name: UPM11
-  - bit: 1
-    description: Clock Polarity
-    name: UCPOL1
   - bit: 64
     description: USART Mode Select
     name: UMSEL10
@@ -180,9 +183,15 @@
   - bit: 2
     description: Character Size
     name: UCSZ10
+  - bit: 32
+    description: Parity Mode Bits
+    name: UPM11
   - bit: 4
     description: Character Size
     name: UCSZ11
+  - bit: 1
+    description: Clock Polarity
+    name: UCPOL1
   - bit: 8
     description: Stop Bit Select
     name: USBS1
@@ -191,23 +200,26 @@
     name: UPM10
   description: USART Control and Status Register C
   name: UCSR1C
+  size: 1
 - address: 203
   bit_fields:
-  - bit: 128
-    description: USART RX Start Interrupt Enable
-    name: RXSIE1
-  - bit: 32
-    description: Start frame detection enable
-    name: SFDE1
   - bit: 64
     description: USART RX Start
     name: RXS1
+  - bit: 32
+    description: Start frame detection enable
+    name: SFDE1
+  - bit: 128
+    description: USART RX Start Interrupt Enable
+    name: RXSIE1
   description: USART Control and Status Register D
   name: UCSR1D
+  size: 1
 - address: 204
   bit_fields: []
   description: USART Baud Rate Register Bytes
   name: UBRR1
+  size: 2
 - address: 189
   bit_fields:
   - bit: 32
@@ -233,21 +245,23 @@
     name: TWAM3
   description: TWI (Slave) Address Mask Register
   name: TWAMR0
+  size: 1
 - address: 184
   bit_fields: []
   description: TWI Bit Rate register
   name: TWBR0
+  size: 1
 - address: 188
   bit_fields:
-  - bit: 64
-    description: TWI Enable Acknowledge Bit
-    name: TWEA
-  - bit: 1
-    description: TWI Interrupt Enable
-    name: TWIE
   - bit: 32
     description: TWI Start Condition Bit
     name: TWSTA
+  - bit: 1
+    description: TWI Interrupt Enable
+    name: TWIE
+  - bit: 64
+    description: TWI Enable Acknowledge Bit
+    name: TWEA
   - bit: 128
     description: TWI Interrupt Flag
     name: TWINT
@@ -262,6 +276,7 @@
     name: TWSTO
   description: TWI Control Register
   name: TWCR0
+  size: 1
 - address: 185
   bit_fields:
   - bit: 32
@@ -287,30 +302,32 @@
     name: TWS1
   description: TWI Status Register
   name: TWSR0
+  size: 1
 - address: 187
   bit_fields: []
   description: TWI Data register
   name: TWDR0
+  size: 1
 - address: 186
   bit_fields:
   - bit: 32
     description: TWI (Slave) Address register Bits
     name: TWA4
-  - bit: 1
-    description: TWI General Call Recognition Enable Bit
-    name: TWGCE
-  - bit: 2
-    description: TWI (Slave) Address register Bits
-    name: TWA0
   - bit: 64
     description: TWI (Slave) Address register Bits
     name: TWA5
-  - bit: 4
+  - bit: 2
     description: TWI (Slave) Address register Bits
-    name: TWA1
+    name: TWA0
   - bit: 128
     description: TWI (Slave) Address register Bits
     name: TWA6
+  - bit: 4
+    description: TWI (Slave) Address register Bits
+    name: TWA1
+  - bit: 1
+    description: TWI General Call Recognition Enable Bit
+    name: TWGCE
   - bit: 8
     description: TWI (Slave) Address register Bits
     name: TWA2
@@ -319,6 +336,7 @@
     name: TWA3
   description: TWI (Slave) Address register
   name: TWAR0
+  size: 1
 - address: 221
   bit_fields:
   - bit: 32
@@ -344,24 +362,26 @@
     name: TWAM13
   description: TWI (Slave) Address Mask Register
   name: TWAMR1
+  size: 1
 - address: 216
   bit_fields: []
   description: TWI Bit Rate register
   name: TWBR1
+  size: 1
 - address: 220
   bit_fields:
   - bit: 32
     description: TWI Start Condition Bit
     name: TWSTA1
+  - bit: 64
+    description: TWI Enable Acknowledge Bit
+    name: TWEA1
   - bit: 1
     description: TWI Interrupt Enable
     name: TWIE1
   - bit: 128
     description: TWI Interrupt Flag
     name: TWINT1
-  - bit: 64
-    description: TWI Enable Acknowledge Bit
-    name: TWEA1
   - bit: 4
     description: TWI Enable Bit
     name: TWEN1
@@ -373,6 +393,7 @@
     name: TWSTO1
   description: TWI Control Register
   name: TWCR1
+  size: 1
 - address: 217
   bit_fields:
   - bit: 32
@@ -398,14 +419,17 @@
     name: TWS11
   description: TWI Status Register
   name: TWSR1
+  size: 1
 - address: 219
   bit_fields: []
   description: TWI Data register
   name: TWDR1
+  size: 1
 - address: 218
   bit_fields: []
   description: TWI (Slave) Address register
   name: TWAR1
+  size: 1
 - address: 111
   bit_fields:
   - bit: 32
@@ -422,6 +446,7 @@
     name: OCIE1B
   description: Timer/Counter Interrupt Mask Register
   name: TIMSK1
+  size: 1
 - address: 54
   bit_fields:
   - bit: 32
@@ -438,6 +463,7 @@
     name: OCF1B
   description: Timer/Counter Interrupt Flag register
   name: TIFR1
+  size: 1
 - address: 128
   bit_fields:
   - bit: 64
@@ -446,20 +472,21 @@
   - bit: 1
     description: Waveform Generation Mode
     name: WGM10
-  - bit: 2
-    description: Waveform Generation Mode
-    name: WGM11
-  - bit: 128
-    description: Compare Output Mode 1A, bits
-    name: COM1A1
   - bit: 32
     description: Compare Output Mode 1B, bits
     name: COM1B1
+  - bit: 128
+    description: Compare Output Mode 1A, bits
+    name: COM1A1
+  - bit: 2
+    description: Waveform Generation Mode
+    name: WGM11
   - bit: 16
     description: Compare Output Mode 1B, bits
     name: COM1B0
   description: Timer/Counter1 Control Register A
   name: TCCR1A
+  size: 1
 - address: 129
   bit_fields:
   - bit: 64
@@ -485,32 +512,38 @@
     name: WGM13
   description: Timer/Counter1 Control Register B
   name: TCCR1B
+  size: 1
 - address: 130
   bit_fields:
-  - bit: 128
-    description: ''
-    name: FOC1A
   - bit: 64
     description: ''
     name: FOC1B
+  - bit: 128
+    description: ''
+    name: FOC1A
   description: Timer/Counter1 Control Register C
   name: TCCR1C
+  size: 1
 - address: 132
   bit_fields: []
   description: Timer/Counter1 Bytes
   name: TCNT1
+  size: 2
 - address: 136
   bit_fields: []
   description: Timer/Counter1 Output Compare Register Bytes
   name: OCR1A
+  size: 2
 - address: 138
   bit_fields: []
   description: Timer/Counter1 Output Compare Register Bytes
   name: OCR1B
+  size: 2
 - address: 134
   bit_fields: []
   description: Timer/Counter1 Input Capture Register Bytes
   name: ICR1
+  size: 2
 - address: 67
   bit_fields:
   - bit: 128
@@ -524,6 +557,7 @@
     name: PSRASY
   description: General Timer/Counter Control Register
   name: GTCCR
+  size: 1
 - address: 113
   bit_fields:
   - bit: 32
@@ -540,6 +574,7 @@
     name: OCIE3B
   description: Timer/Counter Interrupt Mask Register
   name: TIMSK3
+  size: 1
 - address: 56
   bit_fields:
   - bit: 32
@@ -556,42 +591,44 @@
     name: OCF3B
   description: Timer/Counter3 Interrupt Flag register
   name: TIFR3
+  size: 1
 - address: 144
   bit_fields:
   - bit: 64
     description: Compare Output Mode bits
     name: COM3A0
-  - bit: 1
-    description: Waveform Generation Mode
-    name: WGM30
+  - bit: 32
+    description: Compare Output Mode bits
+    name: COM3B1
   - bit: 2
     description: Waveform Generation Mode
     name: WGM31
   - bit: 128
     description: Compare Output Mode bits
     name: COM3A1
-  - bit: 32
-    description: Compare Output Mode bits
-    name: COM3B1
+  - bit: 1
+    description: Waveform Generation Mode
+    name: WGM30
   - bit: 16
     description: Compare Output Mode bits
     name: COM3B0
   description: Timer/Counter3 Control Register A
   name: TCCR3A
+  size: 1
 - address: 145
   bit_fields:
-  - bit: 64
-    description: Input Capture Edge Select
-    name: ICES3
+  - bit: 128
+    description: Input Capture Noise Canceler
+    name: ICNC3
   - bit: 1
     description: Clock Select bits
     name: CS30
   - bit: 2
     description: Clock Select bits
     name: CS31
-  - bit: 128
-    description: Input Capture Noise Canceler
-    name: ICNC3
+  - bit: 64
+    description: Input Capture Edge Select
+    name: ICES3
   - bit: 4
     description: Clock Select bits
     name: CS32
@@ -603,6 +640,7 @@
     name: WGM33
   description: Timer/Counter3 Control Register B
   name: TCCR3B
+  size: 1
 - address: 146
   bit_fields:
   - bit: 128
@@ -613,22 +651,27 @@
     name: FOC3B
   description: Timer/Counter3 Control Register C
   name: TCCR3C
+  size: 1
 - address: 148
   bit_fields: []
   description: Timer/Counter3 Bytes
   name: TCNT3
+  size: 2
 - address: 152
   bit_fields: []
   description: Timer/Counter3 Output Compare Register Bytes
   name: OCR3A
+  size: 2
 - address: 154
   bit_fields: []
   description: Timer/Counter3 Output Compare Register Bytes
   name: OCR3B
+  size: 2
 - address: 150
   bit_fields: []
   description: Timer/Counter3 Input Capture Register Bytes
   name: ICR3
+  size: 2
 - address: 114
   bit_fields:
   - bit: 32
@@ -645,6 +688,7 @@
     name: OCIE4B
   description: Timer/Counter4 Interrupt Mask Register
   name: TIMSK4
+  size: 1
 - address: 57
   bit_fields:
   - bit: 32
@@ -661,6 +705,7 @@
     name: OCF4B
   description: Timer/Counter4 Interrupt Flag register
   name: TIFR4
+  size: 1
 - address: 160
   bit_fields:
   - bit: 32
@@ -669,34 +714,35 @@
   - bit: 1
     description: Waveform Generation Mode
     name: WGM40
+  - bit: 2
+    description: Waveform Generation Mode
+    name: WGM41
   - bit: 64
     description: Compare Output Mode bits
     name: COM4A0
   - bit: 128
     description: Compare Output Mode bits
     name: COM4A1
-  - bit: 2
-    description: Waveform Generation Mode
-    name: WGM41
   - bit: 16
     description: Compare Output Mode bits
     name: COM4B0
   description: Timer/Counter4 Control Register A
   name: TCCR4A
+  size: 1
 - address: 161
   bit_fields:
-  - bit: 128
-    description: Input Capture Noise Canceler
-    name: ICNC4
+  - bit: 64
+    description: Input Capture Edge Select
+    name: ICES4
   - bit: 1
     description: Clock Select bits
     name: CS40
   - bit: 2
     description: Clock Select bits
     name: CS41
-  - bit: 64
-    description: Input Capture Edge Select
-    name: ICES4
+  - bit: 128
+    description: Input Capture Noise Canceler
+    name: ICNC4
   - bit: 4
     description: Clock Select bits
     name: CS42
@@ -708,6 +754,7 @@
     name: WGM43
   description: Timer/Counter4 Control Register B
   name: TCCR4B
+  size: 1
 - address: 162
   bit_fields:
   - bit: 64
@@ -718,22 +765,27 @@
     name: FOC4A
   description: Timer/Counter4 Control Register C
   name: TCCR4C
+  size: 1
 - address: 164
   bit_fields: []
   description: Timer/Counter4 Bytes
   name: TCNT4
+  size: 2
 - address: 168
   bit_fields: []
   description: Timer/Counter4 Output Compare Register Bytes
   name: OCR4A
+  size: 2
 - address: 170
   bit_fields: []
   description: Timer/Counter4 Output Compare Register Bytes
   name: OCR4B
+  size: 2
 - address: 166
   bit_fields: []
   description: Timer/Counter4 Input Capture Register Bytes
   name: ICR4
+  size: 2
 - address: 112
   bit_fields:
   - bit: 1
@@ -747,6 +799,7 @@
     name: OCIE2B
   description: Timer/Counter Interrupt Mask register
   name: TIMSK2
+  size: 1
 - address: 55
   bit_fields:
   - bit: 1
@@ -760,6 +813,7 @@
     name: OCF2B
   description: Timer/Counter Interrupt Flag Register
   name: TIFR2
+  size: 1
 - address: 176
   bit_fields:
   - bit: 32
@@ -768,34 +822,35 @@
   - bit: 1
     description: Waveform Genration Mode
     name: WGM20
-  - bit: 2
-    description: Waveform Genration Mode
-    name: WGM21
   - bit: 64
     description: Compare Output Mode bits
     name: COM2A0
   - bit: 128
     description: Compare Output Mode bits
     name: COM2A1
+  - bit: 2
+    description: Waveform Genration Mode
+    name: WGM21
   - bit: 16
     description: Compare Output Mode bits
     name: COM2B0
   description: Timer/Counter2 Control Register A
   name: TCCR2A
+  size: 1
 - address: 177
   bit_fields:
-  - bit: 128
-    description: Force Output Compare A
-    name: FOC2A
   - bit: 64
     description: Force Output Compare B
     name: FOC2B
-  - bit: 2
-    description: Clock Select bits
-    name: CS21
   - bit: 1
     description: Clock Select bits
     name: CS20
+  - bit: 2
+    description: Clock Select bits
+    name: CS21
+  - bit: 128
+    description: Force Output Compare A
+    name: FOC2A
   - bit: 4
     description: Clock Select bits
     name: CS22
@@ -804,32 +859,36 @@
     name: WGM22
   description: Timer/Counter2 Control Register B
   name: TCCR2B
+  size: 1
 - address: 178
   bit_fields: []
   description: Timer/Counter2
   name: TCNT2
+  size: 1
 - address: 180
   bit_fields: []
   description: Timer/Counter2 Output Compare Register B
   name: OCR2B
+  size: 1
 - address: 179
   bit_fields: []
   description: Timer/Counter2 Output Compare Register A
   name: OCR2A
+  size: 1
 - address: 182
   bit_fields:
-  - bit: 64
-    description: Enable External Clock Input
-    name: EXCLK
+  - bit: 32
+    description: Asynchronous Timer/Counter2
+    name: AS2
   - bit: 1
     description: Timer/Counter Control Register2 Update Busy
     name: TCR2BUB
   - bit: 2
     description: Timer/Counter Control Register2 Update Busy
     name: TCR2AUB
-  - bit: 32
-    description: Asynchronous Timer/Counter2
-    name: AS2
+  - bit: 64
+    description: Enable External Clock Input
+    name: EXCLK
   - bit: 4
     description: Output Compare Register 2 Update Busy
     name: OCR2BUB
@@ -841,6 +900,7 @@
     name: TCN2UB
   description: Asynchronous Status Register
   name: ASSR
+  size: 1
 - address: 124
   bit_fields:
   - bit: 32
@@ -866,15 +926,20 @@
     name: MUX3
   description: The ADC multiplexer Selection Register
   name: ADMUX
+  size: 1
 - address: 120
   bit_fields: []
   description: ADC Data Register Bytes
   name: ADC
+  size: 2
 - address: 122
   bit_fields:
   - bit: 32
     description: ADC Auto Trigger Enable
     name: ADATE
+  - bit: 64
+    description: ADC Start Conversion
+    name: ADSC
   - bit: 128
     description: ADC Enable
     name: ADEN
@@ -887,9 +952,6 @@
   - bit: 4
     description: ADC Prescaler Select Bits
     name: ADPS2
-  - bit: 64
-    description: ADC Start Conversion
-    name: ADSC
   - bit: 8
     description: ADC Interrupt Enable
     name: ADIE
@@ -898,6 +960,7 @@
     name: ADIF
   description: The ADC Control and Status register A
   name: ADCSRA
+  size: 1
 - address: 123
   bit_fields:
   - bit: 64
@@ -914,6 +977,7 @@
     name: ADTS2
   description: The ADC Control and Status register B
   name: ADCSRB
+  size: 1
 - address: 126
   bit_fields:
   - bit: 32
@@ -936,30 +1000,32 @@
     name: ADC4D
   description: Digital Input Disable Register
   name: DIDR0
+  size: 1
 - address: 80
   bit_fields: []
   description: Analog Comparator Control And Status Register-A
   name: ACSRA
+  size: 1
 - address: 80
   bit_fields:
-  - bit: 32
-    description: Analog Compare Output
-    name: ACO
-  - bit: 1
-    description: Analog Comparator Interrupt Mode Select bits
-    name: ACIS0
-  - bit: 128
-    description: Analog Comparator Disable
-    name: ACD
-  - bit: 2
-    description: Analog Comparator Interrupt Mode Select bits
-    name: ACIS1
-  - bit: 4
-    description: Analog Comparator Input Capture Enable
-    name: ACIC
   - bit: 64
     description: Analog Comparator Bandgap Select
     name: ACBG
+  - bit: 1
+    description: Analog Comparator Interrupt Mode Select bits
+    name: ACIS0
+  - bit: 2
+    description: Analog Comparator Interrupt Mode Select bits
+    name: ACIS1
+  - bit: 32
+    description: Analog Compare Output
+    name: ACO
+  - bit: 4
+    description: Analog Comparator Input Capture Enable
+    name: ACIC
+  - bit: 128
+    description: Analog Comparator Disable
+    name: ACD
   - bit: 8
     description: Analog Comparator Interrupt Enable
     name: ACIE
@@ -968,6 +1034,7 @@
     name: ACI
   description: Analog Comparator Control And Status Register
   name: ACSR
+  size: 1
 - address: 79
   bit_fields:
   - bit: 1
@@ -975,6 +1042,7 @@
     name: ACOE
   description: Analog Comparator Control And Status Register-B
   name: ACSRB
+  size: 1
 - address: 127
   bit_fields:
   - bit: 1
@@ -985,80 +1053,96 @@
     name: AIN1D
   description: Digital Input Disable Register 1
   name: DIDR1
+  size: 1
 - address: 37
   bit_fields: []
   description: Port B Data Register
   name: PORTB
+  size: 1
 - address: 36
   bit_fields: []
   description: Port B Data Direction Register
   name: DDRB
+  size: 1
 - address: 35
   bit_fields: []
   description: Port B Input Pins
   name: PINB
+  size: 1
 - address: 40
   bit_fields: []
   description: Port C Data Register
   name: PORTC
+  size: 1
 - address: 39
   bit_fields: []
   description: Port C Data Direction Register
   name: DDRC
+  size: 1
 - address: 38
   bit_fields: []
   description: Port C Input Pins
   name: PINC
+  size: 1
 - address: 43
   bit_fields: []
   description: Port D Data Register
   name: PORTD
+  size: 1
 - address: 42
   bit_fields: []
   description: Port D Data Direction Register
   name: DDRD
+  size: 1
 - address: 41
   bit_fields: []
   description: Port D Input Pins
   name: PIND
+  size: 1
 - address: 46
   bit_fields: []
   description: Port E Data Register
   name: PORTE
+  size: 1
 - address: 45
   bit_fields: []
   description: Port E Data Direction Register
   name: DDRE
+  size: 1
 - address: 44
   bit_fields: []
   description: Port E Input Pins
   name: PINE
+  size: 1
 - address: 72
   bit_fields: []
   description: Timer/Counter0 Output Compare Register
   name: OCR0B
+  size: 1
 - address: 71
   bit_fields: []
   description: Timer/Counter0 Output Compare Register
   name: OCR0A
+  size: 1
 - address: 70
   bit_fields: []
   description: Timer/Counter0
   name: TCNT0
+  size: 1
 - address: 69
   bit_fields:
-  - bit: 64
-    description: Force Output Compare B
-    name: FOC0B
+  - bit: 128
+    description: Force Output Compare A
+    name: FOC0A
   - bit: 1
     description: Clock Select
     name: CS00
   - bit: 2
     description: Clock Select
     name: CS01
-  - bit: 128
-    description: Force Output Compare A
-    name: FOC0A
+  - bit: 64
+    description: Force Output Compare B
+    name: FOC0B
   - bit: 4
     description: Clock Select
     name: CS02
@@ -1067,28 +1151,30 @@
     name: WGM02
   description: Timer/Counter Control Register B
   name: TCCR0B
+  size: 1
 - address: 68
   bit_fields:
-  - bit: 64
-    description: Compare Output Mode, Phase Correct PWM Mode
-    name: COM0A0
+  - bit: 32
+    description: Compare Output Mode, Fast PWM
+    name: COM0B1
   - bit: 1
     description: Waveform Generation Mode
     name: WGM00
   - bit: 2
     description: Waveform Generation Mode
     name: WGM01
+  - bit: 64
+    description: Compare Output Mode, Phase Correct PWM Mode
+    name: COM0A0
   - bit: 128
     description: Compare Output Mode, Phase Correct PWM Mode
     name: COM0A1
-  - bit: 32
-    description: Compare Output Mode, Fast PWM
-    name: COM0B1
   - bit: 16
     description: Compare Output Mode, Fast PWM
     name: COM0B0
   description: Timer/Counter Control Register A
   name: TCCR0A
+  size: 1
 - address: 110
   bit_fields:
   - bit: 1
@@ -1102,6 +1188,7 @@
     name: OCIE0B
   description: Timer/Counter0 Interrupt Mask Register
   name: TIMSK0
+  size: 1
 - address: 53
   bit_fields:
   - bit: 1
@@ -1115,6 +1202,7 @@
     name: OCF0B
   description: Timer/Counter0 Interrupt Flag register
   name: TIFR0
+  size: 1
 - address: 105
   bit_fields:
   - bit: 8
@@ -1131,6 +1219,7 @@
     name: ISC10
   description: External Interrupt Control Register
   name: EICRA
+  size: 1
 - address: 61
   bit_fields:
   - bit: 1
@@ -1141,6 +1230,7 @@
     name: INT1
   description: External Interrupt Mask Register
   name: EIMSK
+  size: 1
 - address: 60
   bit_fields:
   - bit: 1
@@ -1151,6 +1241,7 @@
     name: INTF1
   description: External Interrupt Flag Register
   name: EIFR
+  size: 1
 - address: 104
   bit_fields:
   - bit: 8
@@ -1167,6 +1258,7 @@
     name: PCIE2
   description: Pin Change Interrupt Control Register
   name: PCICR
+  size: 1
 - address: 115
   bit_fields:
   - bit: 8
@@ -1183,6 +1275,7 @@
     name: PCINT2
   description: Pin Change Mask Register 3
   name: PCMSK3
+  size: 1
 - address: 109
   bit_fields:
   - bit: 32
@@ -1211,6 +1304,7 @@
     name: PCINT4
   description: Pin Change Mask Register 2
   name: PCMSK2
+  size: 1
 - address: 108
   bit_fields:
   - bit: 32
@@ -1236,6 +1330,7 @@
     name: PCINT4
   description: Pin Change Mask Register 1
   name: PCMSK1
+  size: 1
 - address: 107
   bit_fields:
   - bit: 32
@@ -1264,6 +1359,7 @@
     name: PCINT4
   description: Pin Change Mask Register 0
   name: PCMSK0
+  size: 1
 - address: 59
   bit_fields:
   - bit: 8
@@ -1280,10 +1376,12 @@
     name: PCIF2
   description: Pin Change Interrupt Flag Register
   name: PCIFR
+  size: 1
 - address: 78
   bit_fields: []
   description: SPI Data Register
   name: SPDR0
+  size: 1
 - address: 77
   bit_fields:
   - bit: 64
@@ -1297,26 +1395,27 @@
     name: SPIF
   description: SPI Status Register
   name: SPSR0
+  size: 1
 - address: 76
   bit_fields:
-  - bit: 32
-    description: Data Order
-    name: DORD
-  - bit: 64
-    description: SPI Enable
-    name: SPE
   - bit: 128
     description: SPI Interrupt Enable
     name: SPIE
   - bit: 1
     description: SPI Clock Rate Selects
     name: SPR0
-  - bit: 4
-    description: Clock Phase
-    name: CPHA
   - bit: 2
     description: SPI Clock Rate Selects
     name: SPR1
+  - bit: 64
+    description: SPI Enable
+    name: SPE
+  - bit: 4
+    description: Clock Phase
+    name: CPHA
+  - bit: 32
+    description: Data Order
+    name: DORD
   - bit: 8
     description: Clock polarity
     name: CPOL
@@ -1325,10 +1424,12 @@
     name: MSTR
   description: SPI Control Register
   name: SPCR0
+  size: 1
 - address: 174
   bit_fields: []
   description: SPI Data Register
   name: SPDR1
+  size: 1
 - address: 173
   bit_fields:
   - bit: 64
@@ -1342,26 +1443,27 @@
     name: SPIF1
   description: SPI Status Register
   name: SPSR1
+  size: 1
 - address: 172
   bit_fields:
-  - bit: 128
-    description: SPI Interrupt Enable
-    name: SPIE1
-  - bit: 32
-    description: Data Order
-    name: DORD1
   - bit: 64
     description: SPI Enable
     name: SPE1
   - bit: 1
     description: SPI Clock Rate Selects
     name: SPR10
-  - bit: 4
-    description: Clock Phase
-    name: CPHA1
   - bit: 2
     description: SPI Clock Rate Selects
     name: SPR11
+  - bit: 32
+    description: Data Order
+    name: DORD1
+  - bit: 4
+    description: Clock Phase
+    name: CPHA1
+  - bit: 128
+    description: SPI Interrupt Enable
+    name: SPIE1
   - bit: 8
     description: Clock polarity
     name: CPOL1
@@ -1370,26 +1472,27 @@
     name: MSTR1
   description: SPI Control Register
   name: SPCR1
+  size: 1
 - address: 96
   bit_fields:
-  - bit: 64
-    description: Watchdog Timeout Interrupt Enable
-    name: WDIE
-  - bit: 128
-    description: Watchdog Timeout Interrupt Flag
-    name: WDIF
+  - bit: 32
+    description: Watchdog Timer Prescaler Bits
+    name: WDP3
   - bit: 1
     description: Watchdog Timer Prescaler Bits
     name: WDP0
   - bit: 2
     description: Watchdog Timer Prescaler Bits
     name: WDP1
+  - bit: 64
+    description: Watchdog Timeout Interrupt Enable
+    name: WDIE
   - bit: 4
     description: Watchdog Timer Prescaler Bits
     name: WDP2
-  - bit: 32
-    description: Watchdog Timer Prescaler Bits
-    name: WDP3
+  - bit: 128
+    description: Watchdog Timeout Interrupt Flag
+    name: WDIF
   - bit: 8
     description: Watch Dog Enable
     name: WDE
@@ -1398,6 +1501,7 @@
     name: WDCE
   description: Watchdog Timer Control Register
   name: WDTCSR
+  size: 1
 - address: 98
   bit_fields:
   - bit: 1
@@ -1408,26 +1512,27 @@
     name: XFDIF
   description: XOSC Failure Detection Control and Status Register
   name: XFDCSR
+  size: 1
 - address: 100
   bit_fields:
-  - bit: 32
-    description: Power Reduction Timer/Counter0
-    name: PRTIM0
+  - bit: 64
+    description: Power Reduction Timer/Counter2
+    name: PRTIM2
   - bit: 1
     description: Power Reduction ADC
     name: PRADC
   - bit: 2
     description: Power Reduction USART0
     name: PRUSART0
-  - bit: 128
-    description: Power Reduction TWI0
-    name: PRTWI0
+  - bit: 32
+    description: Power Reduction Timer/Counter0
+    name: PRTIM0
   - bit: 4
     description: Power Reduction Serial Peripheral Interface 1
     name: PRSPI0
-  - bit: 64
-    description: Power Reduction Timer/Counter2
-    name: PRTIM2
+  - bit: 128
+    description: Power Reduction TWI0
+    name: PRTWI0
   - bit: 8
     description: Power Reduction Timer/Counter1
     name: PRTIM1
@@ -1436,6 +1541,7 @@
     name: PRUSART1
   description: Power Reduction Register 0
   name: PRR0
+  size: 1
 - address: 101
   bit_fields:
   - bit: 32
@@ -1455,6 +1561,7 @@
     name: PRPTC
   description: Power Reduction Register 1
   name: PRR1
+  size: 1
 - address: 102
   bit_fields:
   - bit: 32
@@ -1483,6 +1590,7 @@
     name: OSCCAL4
   description: Oscillator Calibration Value
   name: OSCCAL
+  size: 1
 - address: 97
   bit_fields:
   - bit: 128
@@ -1502,6 +1610,7 @@
     name: CLKPS3
   description: Clock Prescale Register
   name: CLKPR
+  size: 1
 - address: 95
   bit_fields:
   - bit: 128
@@ -1516,12 +1625,12 @@
   - bit: 64
     description: Bit Copy Storage
     name: T
-  - bit: 32
-    description: Half Carry Flag
-    name: H
   - bit: 4
     description: Negative Flag
     name: N
+  - bit: 32
+    description: Half Carry Flag
+    name: H
   - bit: 8
     description: Two's Complement Overflow Flag
     name: V
@@ -1530,30 +1639,32 @@
     name: S
   description: Status Register
   name: SREG
+  size: 1
 - address: 93
   bit_fields: []
   description: Stack Pointer
   name: SP
+  size: 2
 - address: 87
   bit_fields:
-  - bit: 64
-    description: Read-While-Write Section Busy
-    name: RWWSB
-  - bit: 1
-    description: Store Program Memory
-    name: SPMEN
+  - bit: 128
+    description: SPM Interrupt Enable
+    name: SPMIE
   - bit: 32
     description: Signature Row Read
     name: SIGRD
+  - bit: 64
+    description: Read-While-Write Section Busy
+    name: RWWSB
   - bit: 2
     description: Page Erase
     name: PGERS
   - bit: 4
     description: Page Write
     name: PGWRT
-  - bit: 128
-    description: SPM Interrupt Enable
-    name: SPMIE
+  - bit: 1
+    description: Store Program Memory
+    name: SPMEN
   - bit: 8
     description: Boot Lock Bit Set
     name: BLBSET
@@ -1562,14 +1673,15 @@
     name: RWWSRE
   description: Store Program Memory Control and Status Register
   name: SPMCSR
+  size: 1
 - address: 85
   bit_fields:
-  - bit: 32
-    description: BOD Sleep Enable
-    name: BODSE
   - bit: 64
     description: BOD Sleep
     name: BODS
+  - bit: 32
+    description: BOD Sleep Enable
+    name: BODSE
   - bit: 2
     description: ''
     name: IVSEL
@@ -1581,6 +1693,7 @@
     name: PUD
   description: MCU Control Register
   name: MCUCR
+  size: 1
 - address: 84
   bit_fields:
   - bit: 8
@@ -1597,6 +1710,7 @@
     name: BORF
   description: MCU Status Register
   name: MCUSR
+  size: 1
 - address: 83
   bit_fields:
   - bit: 8
@@ -1613,26 +1727,32 @@
     name: SM1
   description: Sleep Mode Control Register
   name: SMCR
+  size: 1
 - address: 75
   bit_fields: []
   description: General Purpose I/O Register 2
   name: GPIOR2
+  size: 1
 - address: 74
   bit_fields: []
   description: General Purpose I/O Register 1
   name: GPIOR1
+  size: 1
 - address: 62
   bit_fields: []
   description: General Purpose I/O Register 0
   name: GPIOR0
+  size: 1
 - address: 65
   bit_fields: []
   description: EEPROM Address Register Bytes
   name: EEAR
+  size: 2
 - address: 64
   bit_fields: []
   description: EEPROM Data Register
   name: EEDR
+  size: 1
 - address: 63
   bit_fields:
   - bit: 32
@@ -1655,3 +1775,4 @@
     name: EEPM0
   description: EEPROM Control Register
   name: EECR
+  size: 1
