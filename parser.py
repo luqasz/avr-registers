@@ -36,7 +36,12 @@ class AttrCast:
 
     def __getitem__(self, key):
         """Due to inconsistency in atdf files, some attributes are in hex and some as int."""
-        attr = self.elem.attrib.get(key, '').strip()
+        key = key.strip()
+        if key == 'caption':
+            return self.elem.attrib.get(key, '').strip()
+
+        attr = self.elem.attrib[key].strip()
+
         if attr.startswith('0x'):
             return int(attr, 16)
         elif attr.isnumeric():
@@ -116,8 +121,46 @@ def bitPositions(num):
         position += 1
 
 
+def filterFuses(register):
+    return register['name'] not in (
+        'LOCKBIT',
+        'EXTENDED',
+        'HIGH',
+        'LOW',
+    )
+
+
+def bitPositions(num):
+    position = 0
+    while (position < 8):
+        if (num >> position) & 1:
+            yield position
+        position += 1
+
+
 def isPowerOfTwo(number):
     return (number & (number - 1)) == 0
+
+
+def splitBitField(field):
+    for num, position in enumerate(bitPositions(field['mask'])):
+        yield dict(
+            name=field['name'] + str(num),
+            mask=(1 << position),
+            caption=field['caption'],
+        )
+
+def createBitFields(fields):
+    for field in fields:
+        field = AttrCast(elem=field)
+        if isPowerOfTwo(field['mask']):
+            yield dict(
+                name=field['name'],
+                mask=field['mask'],
+                caption=field['caption'],
+            )
+        else:
+            yield from splitBitField(field)
 
 
 def dedupRegisters(root):
@@ -127,20 +170,19 @@ def dedupRegisters(root):
     """
     registers = defaultdict(set)
     for elem in root.findall('./modules/module/register-group/register'):
-        fields = (BitField(elem=e) for e in elem.findall('bitfield'))
         reg = Register(elem)
-        registers[reg].update(fields)
+        registers[reg].update(elem.findall('bitfield'))
     for reg, fields in registers.items():
-        reg.bit_fields = fields
+        reg.bit_fields = tuple(createBitFields(fields))
         yield reg
 
 
-def parseString(file_name):
+def parseFile(file_name):
     """Parse given atdf file and yield each device as a Device object."""
     root = ElementTree.parse(file_name).getroot()
     devices = root.find('./devices')
-    regs = tuple(dedupRegisters(root))
+    regs = filter(filterFuses, dedupRegisters(root))
     for elem in devices:
         device = Device(elem=elem)
-        device.registers = regs
+        device.registers = tuple(regs)
         yield device
