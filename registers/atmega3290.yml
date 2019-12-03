@@ -1,23 +1,23 @@
 - address: 68
   bit_fields:
-  - bit: 128
-    description: Force Output Compare
-    name: FOC0A
   - bit: 32
     description: Compare Match Output Modes
     name: COM0A1
-  - bit: 2
-    description: Clock Selects
-    name: CS01
   - bit: 1
     description: Clock Selects
     name: CS00
-  - bit: 4
+  - bit: 2
     description: Clock Selects
-    name: CS02
+    name: CS01
   - bit: 64
     description: Waveform Generation Mode 0
     name: WGM00
+  - bit: 4
+    description: Clock Selects
+    name: CS02
+  - bit: 128
+    description: Force Output Compare
+    name: FOC0A
   - bit: 8
     description: Waveform Generation Mode 1
     name: WGM01
@@ -75,21 +75,21 @@
   size: 1
 - address: 128
   bit_fields:
-  - bit: 32
-    description: Compare Output Mode 1B, bits
-    name: COM1B1
+  - bit: 64
+    description: Compare Output Mode 1A, bits
+    name: COM1A0
   - bit: 1
     description: Waveform Generation Mode
     name: WGM10
   - bit: 2
     description: Waveform Generation Mode
     name: WGM11
-  - bit: 64
-    description: Compare Output Mode 1A, bits
-    name: COM1A0
   - bit: 128
     description: Compare Output Mode 1A, bits
     name: COM1A1
+  - bit: 32
+    description: Compare Output Mode 1B, bits
+    name: COM1B1
   - bit: 16
     description: Compare Output Mode 1B, bits
     name: COM1B0
@@ -98,6 +98,9 @@
   size: 1
 - address: 129
   bit_fields:
+  - bit: 64
+    description: Input Capture 1 Edge Select
+    name: ICES1
   - bit: 128
     description: Input Capture 1 Noise Canceler
     name: ICNC1
@@ -107,9 +110,6 @@
   - bit: 2
     description: Prescaler source of Timer/Counter 1
     name: CS11
-  - bit: 64
-    description: Input Capture 1 Edge Select
-    name: ICES1
   - bit: 4
     description: Prescaler source of Timer/Counter 1
     name: CS12
@@ -124,12 +124,12 @@
   size: 1
 - address: 130
   bit_fields:
-  - bit: 64
-    description: Force Output Compare 1B
-    name: FOC1B
   - bit: 128
     description: Force Output Compare 1A
     name: FOC1A
+  - bit: 64
+    description: Force Output Compare 1B
+    name: FOC1B
   description: Timer/Counter 1 Control Register C
   name: TCCR1C
   size: 1
@@ -189,6 +189,12 @@
   size: 1
 - address: 176
   bit_fields:
+  - bit: 32
+    description: Compare Output Mode bits
+    name: COM2A1
+  - bit: 64
+    description: Waveform Generation Mode
+    name: WGM20
   - bit: 128
     description: Force Output Compare A
     name: FOC2A
@@ -198,15 +204,9 @@
   - bit: 2
     description: Clock Select bits
     name: CS21
-  - bit: 32
-    description: Compare Output Mode bits
-    name: COM2A1
   - bit: 4
     description: Clock Select bits
     name: CS22
-  - bit: 64
-    description: Waveform Generation Mode
-    name: WGM20
   - bit: 8
     description: Waveform Generation Mode
     name: WGM21
@@ -317,9 +317,6 @@
   size: 1
 - address: 76
   bit_fields:
-  - bit: 64
-    description: SPI Enable
-    name: SPE
   - bit: 128
     description: SPI Interrupt Enable
     name: SPIE
@@ -329,6 +326,9 @@
   - bit: 2
     description: SPI Clock Rate Selects
     name: SPR1
+  - bit: 64
+    description: SPI Enable
+    name: SPE
   - bit: 4
     description: Clock Phase
     name: CPHA
@@ -517,24 +517,24 @@
   size: 1
 - address: 80
   bit_fields:
-  - bit: 32
-    description: Analog Compare Output
-    name: ACO
-  - bit: 128
-    description: Analog Comparator Disable
-    name: ACD
+  - bit: 64
+    description: Analog Comparator Bandgap Select
+    name: ACBG
   - bit: 1
     description: Analog Comparator Interrupt Mode Select bits
     name: ACIS0
   - bit: 2
     description: Analog Comparator Interrupt Mode Select bits
     name: ACIS1
+  - bit: 32
+    description: Analog Compare Output
+    name: ACO
   - bit: 4
     description: Analog Comparator Input Capture Enable
     name: ACIC
-  - bit: 64
-    description: Analog Comparator Bandgap Select
-    name: ACBG
+  - bit: 128
+    description: Analog Comparator Disable
+    name: ACD
   - bit: 8
     description: Analog Comparator Interrupt Enable
     name: ACIE
@@ -565,15 +565,15 @@
   - bit: 128
     description: JTAG Interface Disable
     name: JTD
-  - bit: 1
-    description: Interrupt Vector Change Enable
-    name: IVCE
-  - bit: 2
-    description: Interrupt Vector Select
-    name: IVSEL
   - bit: 16
     description: Pull-up disable
     name: PUD
+  - bit: 2
+    description: Interrupt Vector Select
+    name: IVSEL
+  - bit: 1
+    description: Interrupt Vector Change Enable
+    name: IVCE
   description: MCU Control Register
   name: MCUCR
   size: 1
@@ -711,12 +711,12 @@
   - bit: 64
     description: LCD Display Configuration
     name: LCDDC1
-  - bit: 4
-    description: LCD Contrast Control
-    name: LCDCC2
   - bit: 128
     description: LCD Display Configuration
     name: LCDDC2
+  - bit: 4
+    description: LCD Contrast Control
+    name: LCDCC2
   - bit: 8
     description: LCD Contrast Control
     name: LCDCC3
@@ -731,12 +731,12 @@
   - bit: 1
     description: LCD Clock Dividers
     name: LCDCD0
-  - bit: 2
-    description: LCD Clock Dividers
-    name: LCDCD1
   - bit: 64
     description: LCD Prescaler Selects
     name: LCDPS2
+  - bit: 2
+    description: LCD Clock Dividers
+    name: LCDCD1
   - bit: 4
     description: LCD Clock Dividers
     name: LCDCD2
@@ -751,21 +751,21 @@
   - bit: 64
     description: LCD 1/2 Bias Select
     name: LCD2B
-  - bit: 32
-    description: LCD Mux Selects
-    name: LCDMUX1
-  - bit: 128
-    description: LCD CLock Select
-    name: LCDCS
   - bit: 1
     description: LCD Port Masks
     name: LCDPM0
   - bit: 2
     description: LCD Port Masks
     name: LCDPM1
+  - bit: 32
+    description: LCD Mux Selects
+    name: LCDMUX1
   - bit: 4
     description: LCD Port Masks
     name: LCDPM2
+  - bit: 128
+    description: LCD CLock Select
+    name: LCDCS
   - bit: 8
     description: LCD Port Masks
     name: LCDPM3
@@ -777,15 +777,15 @@
   size: 1
 - address: 228
   bit_fields:
-  - bit: 64
-    description: LCD A or B waveform
-    name: LCDAB
   - bit: 128
     description: LCD Enable
     name: LCDEN
   - bit: 1
     description: LCD Blanking
     name: LCDBL
+  - bit: 64
+    description: LCD A or B waveform
+    name: LCDAB
   - bit: 8
     description: LCD Interrupt Enable
     name: LCDIE
@@ -967,18 +967,18 @@
   - bit: 1
     description: Carry Flag
     name: C
-  - bit: 32
-    description: Half Carry Flag
-    name: H
   - bit: 2
     description: Zero Flag
     name: Z
-  - bit: 4
-    description: Negative Flag
-    name: N
   - bit: 128
     description: Global Interrupt Enable
     name: I
+  - bit: 4
+    description: Negative Flag
+    name: N
+  - bit: 32
+    description: Half Carry Flag
+    name: H
   - bit: 8
     description: Two's Complement Overflow Flag
     name: V
@@ -1130,21 +1130,21 @@
   size: 1
 - address: 184
   bit_fields:
-  - bit: 32
-    description: USI Wire Mode Bits
-    name: USIWM1
-  - bit: 1
-    description: Toggle Clock Port Pin
-    name: USITC
   - bit: 64
     description: Counter Overflow Interrupt Enable
     name: USIOIE
-  - bit: 128
-    description: Start Condition Interrupt Enable
-    name: USISIE
+  - bit: 1
+    description: Toggle Clock Port Pin
+    name: USITC
   - bit: 2
     description: Clock Strobe
     name: USICLK
+  - bit: 32
+    description: USI Wire Mode Bits
+    name: USIWM1
+  - bit: 128
+    description: Start Condition Interrupt Enable
+    name: USISIE
   - bit: 4
     description: USI Clock Source Select Bits
     name: USICS0
@@ -1188,24 +1188,24 @@
   size: 1
 - address: 122
   bit_fields:
-  - bit: 32
-    description: ADC Auto Trigger Enable
-    name: ADATE
   - bit: 64
     description: ADC Start Conversion
     name: ADSC
-  - bit: 128
-    description: ADC Enable
-    name: ADEN
   - bit: 1
     description: ADC  Prescaler Select Bits
     name: ADPS0
   - bit: 2
     description: ADC  Prescaler Select Bits
     name: ADPS1
+  - bit: 128
+    description: ADC Enable
+    name: ADEN
   - bit: 4
     description: ADC  Prescaler Select Bits
     name: ADPS2
+  - bit: 32
+    description: ADC Auto Trigger Enable
+    name: ADATE
   - bit: 8
     description: ADC Interrupt Enable
     name: ADIE
@@ -1282,24 +1282,24 @@
   size: 1
 - address: 192
   bit_fields:
-  - bit: 128
-    description: USART Receive Complete
-    name: RXC0
-  - bit: 64
-    description: USART Transmit Complete
-    name: TXC0
-  - bit: 2
-    description: Double the USART Transmission Speed
-    name: U2X0
   - bit: 32
     description: USART Data Register Empty
     name: UDRE0
   - bit: 1
     description: Multi-processor Communication Mode
     name: MPCM0
+  - bit: 64
+    description: USART Transmit Complete
+    name: TXC0
+  - bit: 2
+    description: Double the USART Transmission Speed
+    name: U2X0
   - bit: 4
     description: USART Parity Error
     name: UPE0
+  - bit: 128
+    description: USART Receive Complete
+    name: RXC0
   - bit: 8
     description: Data OverRun
     name: DOR0
@@ -1317,18 +1317,18 @@
   - bit: 1
     description: Transmit Data Bit 8
     name: TXB80
-  - bit: 32
-    description: USART Data Register Empty Interrupt Enable
-    name: UDRIE0
   - bit: 2
     description: Receive Data Bit 8
     name: RXB80
-  - bit: 4
-    description: Character Size
-    name: UCSZ02
   - bit: 64
     description: TX Complete Interrupt Enable
     name: TXCIE0
+  - bit: 4
+    description: Character Size
+    name: UCSZ02
+  - bit: 32
+    description: USART Data Register Empty Interrupt Enable
+    name: UDRIE0
   - bit: 8
     description: Transmitter Enable
     name: TXEN0
@@ -1343,15 +1343,15 @@
   - bit: 64
     description: USART Mode Select
     name: UMSEL0
-  - bit: 32
-    description: Parity Mode Bits
-    name: UPM01
-  - bit: 2
-    description: Character Size
-    name: UCSZ00
   - bit: 1
     description: Clock Polarity
     name: UCPOL0
+  - bit: 2
+    description: Character Size
+    name: UCSZ00
+  - bit: 32
+    description: Parity Mode Bits
+    name: UPM01
   - bit: 4
     description: Character Size
     name: UCSZ01

@@ -2182,20 +2182,10 @@
           <bitfield caption="Sleep Enable" mask="0x01" name="SE"/>
         </register>
         <register caption="General Purpose I/O Register 2" name="GPIOR2" offset="0x4B" size="1">
-          <bitfield caption="General Purpose I/O Register 2 Value" mask="0xFF" name="GPIOR" lsb="20"/>
         </register>
         <register caption="General Purpose IO Register 1" name="GPIOR1" offset="0x4A" size="1">
-          <bitfield caption="General Purpose I/O Register 1 Value" mask="0xFF" name="GPIOR" lsb="10"/>
         </register>
         <register caption="General Purpose IO Register 0" name="GPIOR0" offset="0x3E" size="1">
-          <bitfield caption="General Purpose I/O Register 0 Value" mask="0x80" name="GPIOR07"/>
-          <bitfield caption="General Purpose I/O Register 0 Value" mask="0x40" name="GPIOR06"/>
-          <bitfield caption="General Purpose I/O Register 0 Value" mask="0x20" name="GPIOR05"/>
-          <bitfield caption="General Purpose I/O Register 0 Value" mask="0x10" name="GPIOR04"/>
-          <bitfield caption="General Purpose I/O Register 0 Value" mask="0x08" name="GPIOR03"/>
-          <bitfield caption="General Purpose I/O Register 0 Value" mask="0x04" name="GPIOR02"/>
-          <bitfield caption="General Purpose I/O Register 0 Value" mask="0x02" name="GPIOR01"/>
-          <bitfield caption="General Purpose I/O Register 0 Value" mask="0x01" name="GPIOR00"/>
         </register>
         <register caption="Power Reduction Register 2" name="PRR2" offset="0x63" size="1">
           <bitfield caption="Power Reduction SRAM3" mask="0x08" name="PRRAM3"/>

@@ -1,23 +1,23 @@
 - address: 68
   bit_fields:
-  - bit: 128
-    description: Force Output Compare
-    name: FOC0A
   - bit: 32
     description: Compare Match Output Modes
     name: COM0A1
-  - bit: 64
-    description: Waveform Generation Mode 0
-    name: WGM00
   - bit: 1
     description: Clock Selects
     name: CS00
   - bit: 2
     description: Clock Selects
     name: CS01
+  - bit: 128
+    description: Force Output Compare
+    name: FOC0A
   - bit: 4
     description: Clock Selects
     name: CS02
+  - bit: 64
+    description: Waveform Generation Mode 0
+    name: WGM00
   - bit: 8
     description: Waveform Generation Mode 1
     name: WGM01
@@ -75,21 +75,21 @@
   size: 1
 - address: 128
   bit_fields:
-  - bit: 32
-    description: Compare Output Mode 1B, bits
-    name: COM1B1
   - bit: 64
     description: Compare Output Mode 1A, bits
     name: COM1A0
+  - bit: 1
+    description: Waveform Generation Mode
+    name: WGM10
   - bit: 2
     description: Waveform Generation Mode
     name: WGM11
   - bit: 128
     description: Compare Output Mode 1A, bits
     name: COM1A1
-  - bit: 1
-    description: Waveform Generation Mode
-    name: WGM10
+  - bit: 32
+    description: Compare Output Mode 1B, bits
+    name: COM1B1
   - bit: 16
     description: Compare Output Mode 1B, bits
     name: COM1B0
@@ -98,18 +98,18 @@
   size: 1
 - address: 129
   bit_fields:
-  - bit: 128
-    description: Input Capture 1 Noise Canceler
-    name: ICNC1
   - bit: 64
     description: Input Capture 1 Edge Select
     name: ICES1
-  - bit: 2
-    description: Prescaler source of Timer/Counter 1
-    name: CS11
   - bit: 1
     description: Prescaler source of Timer/Counter 1
     name: CS10
+  - bit: 2
+    description: Prescaler source of Timer/Counter 1
+    name: CS11
+  - bit: 128
+    description: Input Capture 1 Noise Canceler
+    name: ICNC1
   - bit: 4
     description: Prescaler source of Timer/Counter 1
     name: CS12
@@ -124,12 +124,12 @@
   size: 1
 - address: 130
   bit_fields:
-  - bit: 128
-    description: Force Output Compare 1A
-    name: FOC1A
   - bit: 64
     description: Force Output Compare 1B
     name: FOC1B
+  - bit: 128
+    description: Force Output Compare 1A
+    name: FOC1A
   description: Timer/Counter 1 Control Register C
   name: TCCR1C
   size: 1
@@ -189,24 +189,24 @@
   size: 1
 - address: 176
   bit_fields:
-  - bit: 64
-    description: Waveform Generation Mode
-    name: WGM20
-  - bit: 32
-    description: Compare Output Mode bits
-    name: COM2A1
-  - bit: 2
-    description: Clock Select bits
-    name: CS21
-  - bit: 1
-    description: Clock Select bits
-    name: CS20
-  - bit: 4
-    description: Clock Select bits
-    name: CS22
   - bit: 128
     description: Force Output Compare A
     name: FOC2A
+  - bit: 1
+    description: Clock Select bits
+    name: CS20
+  - bit: 2
+    description: Clock Select bits
+    name: CS21
+  - bit: 32
+    description: Compare Output Mode bits
+    name: COM2A1
+  - bit: 4
+    description: Clock Select bits
+    name: CS22
+  - bit: 64
+    description: Waveform Generation Mode
+    name: WGM20
   - bit: 8
     description: Waveform Generation Mode
     name: WGM21
@@ -317,18 +317,18 @@
   size: 1
 - address: 76
   bit_fields:
-  - bit: 32
-    description: Data Order
-    name: DORD
+  - bit: 64
+    description: SPI Enable
+    name: SPE
   - bit: 1
     description: SPI Clock Rate Selects
     name: SPR0
   - bit: 2
     description: SPI Clock Rate Selects
     name: SPR1
-  - bit: 64
-    description: SPI Enable
-    name: SPE
+  - bit: 32
+    description: Data Order
+    name: DORD
   - bit: 4
     description: Clock Phase
     name: CPHA
@@ -346,15 +346,15 @@
   size: 1
 - address: 77
   bit_fields:
-  - bit: 64
-    description: Write Collision Flag
-    name: WCOL
-  - bit: 1
-    description: Double SPI Speed Bit
-    name: SPI2X
   - bit: 128
     description: SPI Interrupt Flag
     name: SPIF
+  - bit: 1
+    description: Double SPI Speed Bit
+    name: SPI2X
+  - bit: 64
+    description: Write Collision Flag
+    name: WCOL
   description: SPI Status Register
   name: SPSR
   size: 1
@@ -487,24 +487,24 @@
   size: 1
 - address: 80
   bit_fields:
-  - bit: 32
-    description: Analog Compare Output
-    name: ACO
-  - bit: 1
-    description: Analog Comparator Interrupt Mode Select bits
-    name: ACIS0
-  - bit: 2
-    description: Analog Comparator Interrupt Mode Select bits
-    name: ACIS1
   - bit: 128
     description: Analog Comparator Disable
     name: ACD
-  - bit: 4
-    description: Analog Comparator Input Capture Enable
-    name: ACIC
+  - bit: 32
+    description: Analog Compare Output
+    name: ACO
   - bit: 64
     description: Analog Comparator Bandgap Select
     name: ACBG
+  - bit: 1
+    description: Analog Comparator Interrupt Mode Select bits
+    name: ACIS0
+  - bit: 4
+    description: Analog Comparator Input Capture Enable
+    name: ACIC
+  - bit: 2
+    description: Analog Comparator Interrupt Mode Select bits
+    name: ACIS1
   - bit: 8
     description: Analog Comparator Interrupt Enable
     name: ACIE
@@ -535,15 +535,15 @@
   - bit: 128
     description: JTAG Interface Disable
     name: JTD
-  - bit: 16
-    description: Pull-up disable
-    name: PUD
-  - bit: 2
-    description: Interrupt Vector Select
-    name: IVSEL
   - bit: 1
     description: Interrupt Vector Change Enable
     name: IVCE
+  - bit: 2
+    description: Interrupt Vector Select
+    name: IVSEL
+  - bit: 16
+    description: Pull-up disable
+    name: PUD
   description: MCU Control Register
   name: MCUCR
   size: 1
@@ -569,24 +569,24 @@
   size: 1
 - address: 254
   bit_fields:
-  - bit: 128
-    description: LCD memory bit segment
-    name: SEG331
-  - bit: 1
-    description: LCD memory bit segment
-    name: SEG324
-  - bit: 2
-    description: LCD memory bit segment
-    name: SEG325
   - bit: 32
     description: LCD memory bit segment
     name: SEG329
+  - bit: 128
+    description: LCD memory bit segment
+    name: SEG331
+  - bit: 2
+    description: LCD memory bit segment
+    name: SEG325
   - bit: 64
     description: LCD memory bit segment
     name: SEG330
   - bit: 4
     description: LCD memory bit segment
     name: SEG326
+  - bit: 1
+    description: LCD memory bit segment
+    name: SEG324
   - bit: 8
     description: LCD memory bit segment
     name: SEG327
@@ -604,18 +604,18 @@
   - bit: 1
     description: LCD memory bit segment
     name: SEG316
-  - bit: 2
+  - bit: 64
     description: LCD memory bit segment
-    name: SEG317
+    name: SEG322
   - bit: 128
     description: LCD memory bit segment
     name: SEG323
   - bit: 4
     description: LCD memory bit segment
     name: SEG318
-  - bit: 64
+  - bit: 2
     description: LCD memory bit segment
-    name: SEG322
+    name: SEG317
   - bit: 8
     description: LCD memory bit segment
     name: SEG319
@@ -639,12 +639,12 @@
   - bit: 2
     description: LCD memory bit segment
     name: SEG309
-  - bit: 4
-    description: LCD memory bit segment
-    name: SEG310
   - bit: 128
     description: LCD memory bit segment
     name: SEG315
+  - bit: 4
+    description: LCD memory bit segment
+    name: SEG310
   - bit: 8
     description: LCD memory bit segment
     name: SEG311
@@ -656,24 +656,24 @@
   size: 1
 - address: 251
   bit_fields:
-  - bit: 128
-    description: LCD memory bit segment
-    name: SEG307
-  - bit: 1
-    description: LCD memory bit segment
-    name: SEG300
-  - bit: 2
-    description: LCD memory bit segment
-    name: SEG301
-  - bit: 64
-    description: LCD memory bit segment
-    name: SEG306
-  - bit: 4
-    description: LCD memory bit segment
-    name: SEG302
   - bit: 32
     description: LCD memory bit segment
     name: SEG305
+  - bit: 1
+    description: LCD memory bit segment
+    name: SEG300
+  - bit: 128
+    description: LCD memory bit segment
+    name: SEG307
+  - bit: 2
+    description: LCD memory bit segment
+    name: SEG301
+  - bit: 4
+    description: LCD memory bit segment
+    name: SEG302
+  - bit: 64
+    description: LCD memory bit segment
+    name: SEG306
   - bit: 8
     description: LCD memory bit segment
     name: SEG303
@@ -694,12 +694,12 @@
   - bit: 2
     description: LCD memory bit segment
     name: SEG225
-  - bit: 32
-    description: LCD memory bit segment
-    name: SEG229
   - bit: 128
     description: LCD memory bit segment
     name: SEG231
+  - bit: 32
+    description: LCD memory bit segment
+    name: SEG229
   - bit: 4
     description: LCD memory bit segment
     name: SEG226
@@ -714,24 +714,24 @@
   size: 1
 - address: 248
   bit_fields:
-  - bit: 32
-    description: LCD memory bit segment
-    name: SEG221
-  - bit: 1
-    description: LCD memory bit segment
-    name: SEG216
-  - bit: 2
-    description: LCD memory bit segment
-    name: SEG217
   - bit: 64
     description: LCD memory bit segment
     name: SEG222
-  - bit: 4
-    description: LCD memory bit segment
-    name: SEG218
   - bit: 128
     description: LCD memory bit segment
     name: SEG223
+  - bit: 2
+    description: LCD memory bit segment
+    name: SEG217
+  - bit: 32
+    description: LCD memory bit segment
+    name: SEG221
+  - bit: 4
+    description: LCD memory bit segment
+    name: SEG218
+  - bit: 1
+    description: LCD memory bit segment
+    name: SEG216
   - bit: 8
     description: LCD memory bit segment
     name: SEG219
@@ -743,24 +743,24 @@
   size: 1
 - address: 247
   bit_fields:
-  - bit: 128
-    description: LCD memory bit segment
-    name: SEG215
   - bit: 64
     description: LCD memory bit segment
     name: SEG214
   - bit: 1
     description: LCD memory bit segment
     name: SEG208
-  - bit: 2
+  - bit: 128
     description: LCD memory bit segment
-    name: SEG209
-  - bit: 4
-    description: LCD memory bit segment
-    name: SEG210
+    name: SEG215
   - bit: 32
     description: LCD memory bit segment
     name: SEG213
+  - bit: 4
+    description: LCD memory bit segment
+    name: SEG210
+  - bit: 2
+    description: LCD memory bit segment
+    name: SEG209
   - bit: 8
     description: LCD memory bit segment
     name: SEG211
@@ -772,18 +772,18 @@
   size: 1
 - address: 246
   bit_fields:
-  - bit: 64
+  - bit: 128
     description: LCD memory bit segment
-    name: SEG206
+    name: SEG207
   - bit: 1
     description: LCD memory bit segment
     name: SEG200
   - bit: 2
     description: LCD memory bit segment
     name: SEG201
-  - bit: 128
+  - bit: 64
     description: LCD memory bit segment
-    name: SEG207
+    name: SEG206
   - bit: 4
     description: LCD memory bit segment
     name: SEG202
@@ -807,18 +807,18 @@
   - bit: 1
     description: LCD memory bit segment
     name: SEG124
-  - bit: 64
-    description: LCD memory bit segment
-    name: SEG130
-  - bit: 128
-    description: LCD memory bit segment
-    name: SEG131
   - bit: 2
     description: LCD memory bit segment
     name: SEG125
+  - bit: 128
+    description: LCD memory bit segment
+    name: SEG131
   - bit: 4
     description: LCD memory bit segment
     name: SEG126
+  - bit: 64
+    description: LCD memory bit segment
+    name: SEG130
   - bit: 8
     description: LCD memory bit segment
     name: SEG127
@@ -833,21 +833,21 @@
   - bit: 32
     description: LCD memory bit segment
     name: SEG121
-  - bit: 64
-    description: LCD memory bit segment
-    name: SEG122
-  - bit: 128
-    description: LCD memory bit segment
-    name: SEG123
   - bit: 1
     description: LCD memory bit segment
     name: SEG116
-  - bit: 4
-    description: LCD memory bit segment
-    name: SEG118
   - bit: 2
     description: LCD memory bit segment
     name: SEG117
+  - bit: 128
+    description: LCD memory bit segment
+    name: SEG123
+  - bit: 4
+    description: LCD memory bit segment
+    name: SEG118
+  - bit: 64
+    description: LCD memory bit segment
+    name: SEG122
   - bit: 8
     description: LCD memory bit segment
     name: SEG119
@@ -859,24 +859,24 @@
   size: 1
 - address: 242
   bit_fields:
-  - bit: 64
-    description: LCD memory bit segment
-    name: SEG114
-  - bit: 1
-    description: LCD memory bit segment
-    name: SEG108
-  - bit: 2
-    description: LCD memory bit segment
-    name: SEG109
   - bit: 32
     description: LCD memory bit segment
     name: SEG113
-  - bit: 4
+  - bit: 64
     description: LCD memory bit segment
-    name: SEG110
+    name: SEG114
+  - bit: 2
+    description: LCD memory bit segment
+    name: SEG109
   - bit: 128
     description: LCD memory bit segment
     name: SEG115
+  - bit: 1
+    description: LCD memory bit segment
+    name: SEG108
+  - bit: 4
+    description: LCD memory bit segment
+    name: SEG110
   - bit: 8
     description: LCD memory bit segment
     name: SEG111
@@ -888,24 +888,24 @@
   size: 1
 - address: 241
   bit_fields:
-  - bit: 128
+  - bit: 64
     description: LCD memory bit segment
-    name: SEG107
+    name: SEG106
   - bit: 1
     description: LCD memory bit segment
     name: SEG100
   - bit: 2
     description: LCD memory bit segment
     name: SEG101
+  - bit: 128
+    description: LCD memory bit segment
+    name: SEG107
   - bit: 32
     description: LCD memory bit segment
     name: SEG105
   - bit: 4
     description: LCD memory bit segment
     name: SEG102
-  - bit: 64
-    description: LCD memory bit segment
-    name: SEG106
   - bit: 8
     description: LCD memory bit segment
     name: SEG103
@@ -920,21 +920,21 @@
   - bit: 32
     description: LCD memory bit segment
     name: SEG029
+  - bit: 128
+    description: LCD memory bit segment
+    name: SEG031
   - bit: 1
     description: LCD memory bit segment
     name: SEG024
   - bit: 2
     description: LCD memory bit segment
     name: SEG025
-  - bit: 128
-    description: LCD memory bit segment
-    name: SEG031
-  - bit: 4
-    description: LCD memory bit segment
-    name: SEG026
   - bit: 64
     description: LCD memory bit segment
     name: SEG030
+  - bit: 4
+    description: LCD memory bit segment
+    name: SEG026
   - bit: 8
     description: LCD memory bit segment
     name: SEG027
@@ -975,24 +975,24 @@
   size: 1
 - address: 237
   bit_fields:
-  - bit: 32
-    description: LCD memory bit segment
-    name: SEG013
-  - bit: 1
-    description: LCD memory bit segment
-    name: SEG008
-  - bit: 64
-    description: LCD memory bit segment
-    name: SEG014
   - bit: 128
     description: LCD memory bit segment
     name: SEG015
-  - bit: 4
+  - bit: 64
     description: LCD memory bit segment
-    name: SEG010
+    name: SEG014
   - bit: 2
     description: LCD memory bit segment
     name: SEG009
+  - bit: 32
+    description: LCD memory bit segment
+    name: SEG013
+  - bit: 4
+    description: LCD memory bit segment
+    name: SEG010
+  - bit: 1
+    description: LCD memory bit segment
+    name: SEG008
   - bit: 8
     description: LCD memory bit segment
     name: SEG011
@@ -1004,24 +1004,24 @@
   size: 1
 - address: 236
   bit_fields:
-  - bit: 32
+  - bit: 64
     description: LCD memory bit segment
-    name: SEG005
+    name: SEG006
   - bit: 1
     description: LCD memory bit segment
     name: SEG000
   - bit: 2
     description: LCD memory bit segment
     name: SEG001
-  - bit: 64
-    description: LCD memory bit segment
-    name: SEG006
-  - bit: 4
-    description: LCD memory bit segment
-    name: SEG002
   - bit: 128
     description: LCD memory bit segment
     name: SEG007
+  - bit: 4
+    description: LCD memory bit segment
+    name: SEG002
+  - bit: 32
+    description: LCD memory bit segment
+    name: SEG005
   - bit: 8
     description: LCD memory bit segment
     name: SEG003
@@ -1114,18 +1114,18 @@
   size: 1
 - address: 228
   bit_fields:
-  - bit: 64
-    description: LCD A or B waveform
-    name: LCDAB
+  - bit: 128
+    description: LCD Enable
+    name: LCDEN
   - bit: 1
     description: LCD Blanking
     name: LCDBL
   - bit: 2
     description: LCD Contrast Control Disable
     name: LCDCCD
-  - bit: 128
-    description: LCD Enable
-    name: LCDEN
+  - bit: 64
+    description: LCD A or B waveform
+    name: LCDAB
   - bit: 4
     description: LCD Buffer Disable
     name: LCDBD
@@ -1249,24 +1249,24 @@
   size: 1
 - address: 95
   bit_fields:
-  - bit: 64
-    description: Bit Copy Storage
-    name: T
-  - bit: 128
-    description: Global Interrupt Enable
-    name: I
-  - bit: 2
-    description: Zero Flag
-    name: Z
-  - bit: 1
-    description: Carry Flag
-    name: C
-  - bit: 4
-    description: Negative Flag
-    name: N
   - bit: 32
     description: Half Carry Flag
     name: H
+  - bit: 1
+    description: Carry Flag
+    name: C
+  - bit: 2
+    description: Zero Flag
+    name: Z
+  - bit: 128
+    description: Global Interrupt Enable
+    name: I
+  - bit: 4
+    description: Negative Flag
+    name: N
+  - bit: 64
+    description: Bit Copy Storage
+    name: T
   - bit: 8
     description: Two's Complement Overflow Flag
     name: V
@@ -1418,24 +1418,24 @@
   size: 1
 - address: 184
   bit_fields:
-  - bit: 64
-    description: Counter Overflow Interrupt Enable
-    name: USIOIE
-  - bit: 1
-    description: Toggle Clock Port Pin
-    name: USITC
+  - bit: 128
+    description: Start Condition Interrupt Enable
+    name: USISIE
   - bit: 32
     description: USI Wire Mode Bits
     name: USIWM1
   - bit: 2
     description: Clock Strobe
     name: USICLK
+  - bit: 1
+    description: Toggle Clock Port Pin
+    name: USITC
   - bit: 4
     description: USI Clock Source Select Bits
     name: USICS0
-  - bit: 128
-    description: Start Condition Interrupt Enable
-    name: USISIE
+  - bit: 64
+    description: Counter Overflow Interrupt Enable
+    name: USIOIE
   - bit: 8
     description: USI Clock Source Select Bits
     name: USICS1
@@ -1447,24 +1447,24 @@
   size: 1
 - address: 124
   bit_fields:
-  - bit: 32
-    description: Left Adjust Result
-    name: ADLAR
+  - bit: 64
+    description: Reference Selection Bits
+    name: REFS0
   - bit: 1
     description: Analog Channel and Gain Selection Bits
     name: MUX0
   - bit: 2
     description: Analog Channel and Gain Selection Bits
     name: MUX1
-  - bit: 64
-    description: Reference Selection Bits
-    name: REFS0
   - bit: 128
     description: Reference Selection Bits
     name: REFS1
   - bit: 4
     description: Analog Channel and Gain Selection Bits
     name: MUX2
+  - bit: 32
+    description: Left Adjust Result
+    name: ADLAR
   - bit: 8
     description: Analog Channel and Gain Selection Bits
     name: MUX3
@@ -1482,9 +1482,6 @@
   - bit: 32
     description: ADC Auto Trigger Enable
     name: ADATE
-  - bit: 128
-    description: ADC Enable
-    name: ADEN
   - bit: 1
     description: ADC  Prescaler Select Bits
     name: ADPS0
@@ -1494,6 +1491,9 @@
   - bit: 4
     description: ADC  Prescaler Select Bits
     name: ADPS2
+  - bit: 128
+    description: ADC Enable
+    name: ADEN
   - bit: 8
     description: ADC Interrupt Enable
     name: ADIE
@@ -1510,24 +1510,24 @@
   size: 2
 - address: 126
   bit_fields:
-  - bit: 128
-    description: ADC7 Digital input Disable
-    name: ADC7D
-  - bit: 1
-    description: ADC0 Digital input Disable
-    name: ADC0D
-  - bit: 2
-    description: ADC1 Digital input Disable
-    name: ADC1D
   - bit: 64
     description: ADC6 Digital input Disable
     name: ADC6D
-  - bit: 4
-    description: ADC2 Digital input Disable
-    name: ADC2D
+  - bit: 128
+    description: ADC7 Digital input Disable
+    name: ADC7D
+  - bit: 2
+    description: ADC1 Digital input Disable
+    name: ADC1D
   - bit: 32
     description: ADC5 Digital input Disable
     name: ADC5D
+  - bit: 4
+    description: ADC2 Digital input Disable
+    name: ADC2D
+  - bit: 1
+    description: ADC0 Digital input Disable
+    name: ADC0D
   - bit: 8
     description: ADC3 Digital input Disable
     name: ADC3D
@@ -1573,21 +1573,21 @@
   - bit: 64
     description: USART Transmit Complete
     name: TXC0
-  - bit: 32
-    description: USART Data Register Empty
-    name: UDRE0
-  - bit: 2
-    description: Double the USART Transmission Speed
-    name: U2X0
-  - bit: 128
-    description: USART Receive Complete
-    name: RXC0
   - bit: 1
     description: Multi-processor Communication Mode
     name: MPCM0
+  - bit: 32
+    description: USART Data Register Empty
+    name: UDRE0
+  - bit: 128
+    description: USART Receive Complete
+    name: RXC0
   - bit: 4
     description: USART Parity Error
     name: UPE0
+  - bit: 2
+    description: Double the USART Transmission Speed
+    name: U2X0
   - bit: 8
     description: Data OverRun
     name: DOR0
@@ -1599,24 +1599,24 @@
   size: 1
 - address: 193
   bit_fields:
-  - bit: 32
-    description: USART Data Register Empty Interrupt Enable
-    name: UDRIE0
-  - bit: 1
-    description: Transmit Data Bit 8
-    name: TXB80
-  - bit: 2
-    description: Receive Data Bit 8
-    name: RXB80
   - bit: 64
     description: TX Complete Interrupt Enable
     name: TXCIE0
-  - bit: 4
-    description: Character Size
-    name: UCSZ02
   - bit: 128
     description: RX Complete Interrupt Enable
     name: RXCIE0
+  - bit: 2
+    description: Receive Data Bit 8
+    name: RXB80
+  - bit: 32
+    description: USART Data Register Empty Interrupt Enable
+    name: UDRIE0
+  - bit: 4
+    description: Character Size
+    name: UCSZ02
+  - bit: 1
+    description: Transmit Data Bit 8
+    name: TXB80
   - bit: 8
     description: Transmitter Enable
     name: TXEN0
@@ -1631,15 +1631,15 @@
   - bit: 32
     description: Parity Mode Bits
     name: UPM01
-  - bit: 1
-    description: Clock Polarity
-    name: UCPOL0
-  - bit: 2
-    description: Character Size
-    name: UCSZ00
   - bit: 64
     description: USART Mode Select
     name: UMSEL0
+  - bit: 2
+    description: Character Size
+    name: UCSZ00
+  - bit: 1
+    description: Clock Polarity
+    name: UCPOL0
   - bit: 4
     description: Character Size
     name: UCSZ01

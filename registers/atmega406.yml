@@ -42,21 +42,21 @@
   - bit: 64
     description: External Interrupt Sense Control 3 Bits
     name: ISC30
-  - bit: 1
-    description: External Interrupt Sense Control 0 Bits
-    name: ISC00
-  - bit: 2
-    description: External Interrupt Sense Control 0 Bits
-    name: ISC01
   - bit: 128
     description: External Interrupt Sense Control 3 Bits
     name: ISC31
-  - bit: 4
-    description: External Interrupt Sense Control 1 Bits
-    name: ISC10
   - bit: 32
     description: External Interrupt Sense Control 2 Bits
     name: ISC21
+  - bit: 1
+    description: External Interrupt Sense Control 0 Bits
+    name: ISC00
+  - bit: 4
+    description: External Interrupt Sense Control 1 Bits
+    name: ISC10
+  - bit: 2
+    description: External Interrupt Sense Control 0 Bits
+    name: ISC01
   - bit: 8
     description: External Interrupt Sense Control 1 Bits
     name: ISC11
@@ -199,24 +199,24 @@
   size: 1
 - address: 98
   bit_fields:
-  - bit: 32
-    description: Wake-up timer Calibration Flag
-    name: WUTCF
   - bit: 64
     description: Wake-up Timer Interrupt Enable
     name: WUTIE
-  - bit: 128
-    description: Wake-up Timer Interrupt Flag
-    name: WUTIF
   - bit: 1
     description: Wake-up Timer Prescaler Bits
     name: WUTP0
   - bit: 2
     description: Wake-up Timer Prescaler Bits
     name: WUTP1
+  - bit: 128
+    description: Wake-up Timer Interrupt Flag
+    name: WUTIF
   - bit: 4
     description: Wake-up Timer Prescaler Bits
     name: WUTP2
+  - bit: 32
+    description: Wake-up timer Calibration Flag
+    name: WUTCF
   - bit: 8
     description: Wake-up Timer Enable
     name: WUTE
@@ -262,18 +262,18 @@
   - bit: 1
     description: ''
     name: OCPT0
-  - bit: 2
-    description: ''
-    name: OCPT1
   - bit: 64
     description: ''
     name: SCPT2
-  - bit: 4
-    description: ''
-    name: OCPT2
   - bit: 128
     description: ''
     name: SCPT3
+  - bit: 2
+    description: ''
+    name: OCPT1
+  - bit: 4
+    description: ''
+    name: OCPT2
   - bit: 8
     description: ''
     name: OCPT3
@@ -291,18 +291,18 @@
   - bit: 1
     description: ''
     name: CCDL0
-  - bit: 2
-    description: ''
-    name: CCDL1
   - bit: 64
     description: ''
     name: DCDL2
-  - bit: 4
-    description: ''
-    name: CCDL2
   - bit: 128
     description: ''
     name: DCDL3
+  - bit: 2
+    description: ''
+    name: CCDL1
+  - bit: 4
+    description: ''
+    name: CCDL2
   - bit: 8
     description: ''
     name: CCDL3
@@ -354,24 +354,24 @@
   size: 1
 - address: 242
   bit_fields:
-  - bit: 64
-    description: Charge Over-current Protection Activated Interrupt Flag
-    name: COCIF
-  - bit: 1
-    description: ''
-    name: SCIE
-  - bit: 32
-    description: ''
-    name: DOCIF
   - bit: 128
     description: Deep Under-voltage Early Warning Interrupt Flag
     name: DUVIF
-  - bit: 4
+  - bit: 1
     description: ''
-    name: COCIE
+    name: SCIE
   - bit: 2
     description: ''
     name: DOCIE
+  - bit: 64
+    description: Charge Over-current Protection Activated Interrupt Flag
+    name: COCIF
+  - bit: 4
+    description: ''
+    name: COCIE
+  - bit: 32
+    description: ''
+    name: DOCIF
   - bit: 8
     description: Deep Under-voltage Early Warning Interrupt Enable
     name: DUVIE
@@ -513,24 +513,24 @@
   size: 1
 - address: 95
   bit_fields:
-  - bit: 64
-    description: Bit Copy Storage
-    name: T
   - bit: 32
     description: Half Carry Flag
     name: H
+  - bit: 64
+    description: Bit Copy Storage
+    name: T
   - bit: 128
     description: Global Interrupt Enable
     name: I
-  - bit: 2
-    description: Zero Flag
-    name: Z
-  - bit: 4
-    description: Negative Flag
-    name: N
   - bit: 1
     description: Carry Flag
     name: C
+  - bit: 4
+    description: Negative Flag
+    name: N
+  - bit: 2
+    description: Zero Flag
+    name: Z
   - bit: 8
     description: Two's Complement Overflow Flag
     name: V
@@ -550,15 +550,15 @@
   - bit: 128
     description: JTAG Disable
     name: JTD
-  - bit: 1
-    description: Interrupt Vector Change Enable
-    name: IVCE
-  - bit: 2
-    description: Interrupt Vector Select
-    name: IVSEL
   - bit: 16
     description: Pull-up disable
     name: PUD
+  - bit: 2
+    description: Interrupt Vector Select
+    name: IVSEL
+  - bit: 1
+    description: Interrupt Vector Change Enable
+    name: IVCE
   description: MCU Control Register
   name: MCUCR
   size: 1
@@ -654,9 +654,9 @@
   size: 1
 - address: 96
   bit_fields:
-  - bit: 64
-    description: Watchdog Timeout Interrupt Enable
-    name: WDIE
+  - bit: 128
+    description: Watchdog Timeout Interrupt Flag
+    name: WDIF
   - bit: 1
     description: Watchdog Timer Prescaler Bits
     name: WDP0
@@ -669,9 +669,9 @@
   - bit: 4
     description: Watchdog Timer Prescaler Bits
     name: WDP2
-  - bit: 128
-    description: Watchdog Timeout Interrupt Flag
-    name: WDIF
+  - bit: 64
+    description: Watchdog Timeout Interrupt Enable
+    name: WDIE
   - bit: 8
     description: Watch Dog Enable
     name: WDE
@@ -683,21 +683,21 @@
   size: 1
 - address: 68
   bit_fields:
-  - bit: 32
-    description: ''
-    name: COM0B1
+  - bit: 64
+    description: Force Output Compare
+    name: COM0A0
   - bit: 1
     description: Clock Select0 bits
     name: WGM00
   - bit: 2
     description: Clock Select0 bits
     name: WGM01
-  - bit: 64
-    description: Force Output Compare
-    name: COM0A0
   - bit: 128
     description: Force Output Compare
     name: COM0A1
+  - bit: 32
+    description: ''
+    name: COM0B1
   - bit: 16
     description: ''
     name: COM0B0
@@ -870,24 +870,24 @@
   size: 1
 - address: 87
   bit_fields:
-  - bit: 128
-    description: SPM Interrupt Enable
-    name: SPMIE
-  - bit: 32
-    description: Signature Row Read
-    name: SIGRD
-  - bit: 2
-    description: Page Erase
-    name: PGERS
-  - bit: 1
-    description: Store Program Memory Enable
-    name: SPMEN
-  - bit: 4
-    description: Page Write
-    name: PGWRT
   - bit: 64
     description: Read While Write Section Busy
     name: RWWSB
+  - bit: 1
+    description: Store Program Memory Enable
+    name: SPMEN
+  - bit: 128
+    description: SPM Interrupt Enable
+    name: SPMIE
+  - bit: 2
+    description: Page Erase
+    name: PGERS
+  - bit: 4
+    description: Page Write
+    name: PGWRT
+  - bit: 32
+    description: Signature Row Read
+    name: SIGRD
   - bit: 8
     description: Boot Lock Bit Set
     name: BLBSET
@@ -950,18 +950,18 @@
   size: 1
 - address: 188
   bit_fields:
-  - bit: 32
-    description: TWI Start Condition Bit
-    name: TWSTA
-  - bit: 1
-    description: TWI Interrupt Enable
-    name: TWIE
   - bit: 64
     description: TWI Enable Acknowledge Bit
     name: TWEA
   - bit: 128
     description: TWI Interrupt Flag
     name: TWINT
+  - bit: 32
+    description: TWI Start Condition Bit
+    name: TWSTA
+  - bit: 1
+    description: TWI Interrupt Enable
+    name: TWIE
   - bit: 4
     description: TWI Enable Bit
     name: TWEN
@@ -1010,21 +1010,21 @@
   - bit: 32
     description: TWI (Slave) Address register Bits
     name: TWA4
-  - bit: 1
-    description: TWI General Call Recognition Enable Bit
-    name: TWGCE
-  - bit: 2
-    description: TWI (Slave) Address register Bits
-    name: TWA0
   - bit: 64
     description: TWI (Slave) Address register Bits
     name: TWA5
-  - bit: 4
+  - bit: 2
     description: TWI (Slave) Address register Bits
-    name: TWA1
+    name: TWA0
   - bit: 128
     description: TWI (Slave) Address register Bits
     name: TWA6
+  - bit: 4
+    description: TWI (Slave) Address register Bits
+    name: TWA1
+  - bit: 1
+    description: TWI General Call Recognition Enable Bit
+    name: TWGCE
   - bit: 8
     description: TWI (Slave) Address register Bits
     name: TWA2
@@ -1041,20 +1041,20 @@
   size: 1
 - address: 208
   bit_fields:
-  - bit: 32
-    description: BG Calibration of PTAT Current Bits
-    name: BGCC5
+  - bit: 128
+    description: Setting the BGD bit to one will disable the bandgap voltage reference.
+      This bit must be cleared before enabling CC-ADC or V-ADC, and must remain unset
+      while either ADC is enabled.
+    name: BGD
   - bit: 1
     description: BG Calibration of PTAT Current Bits
     name: BGCC0
   - bit: 2
     description: BG Calibration of PTAT Current Bits
     name: BGCC1
-  - bit: 128
-    description: Setting the BGD bit to one will disable the bandgap voltage reference.
-      This bit must be cleared before enabling CC-ADC or V-ADC, and must remain unset
-      while either ADC is enabled.
-    name: BGD
+  - bit: 32
+    description: BG Calibration of PTAT Current Bits
+    name: BGCC5
   - bit: 4
     description: BG Calibration of PTAT Current Bits
     name: BGCC2

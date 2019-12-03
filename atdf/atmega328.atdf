@@ -1066,13 +1066,10 @@
           <bitfield caption="Sleep Enable" mask="0x01" name="SE"/>
         </register>
         <register caption="General Purpose I/O Register 2" name="GPIOR2" offset="0x4B" size="1" mask="0xFF">
-          <bitfield caption="General Purpose I/O bits" mask="0xFF" name="GPIOR2"/>
         </register>
         <register caption="General Purpose I/O Register 1" name="GPIOR1" offset="0x4A" size="1" mask="0xFF">
-          <bitfield caption="General Purpose I/O bits" mask="0xFF" name="GPIOR1"/>
         </register>
         <register caption="General Purpose I/O Register 0" name="GPIOR0" offset="0x3E" size="1" mask="0xFF">
-          <bitfield caption="General Purpose I/O bits" mask="0xFF" name="GPIOR0"/>
         </register>
       </register-group>
       <value-group caption="" name="CPU_CLK_PRESCALE_4_BITS_SMALL">

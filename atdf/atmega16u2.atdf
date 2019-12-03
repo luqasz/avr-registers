@@ -861,20 +861,10 @@
         </register>
         <register caption="Extended Indirect Register" name="EIND" offset="0x5C" size="1" mask="0x01"/>
         <register caption="General Purpose IO Register 2" name="GPIOR2" offset="0x4B" size="1">
-          <bitfield caption="General Purpose IO Register 2 bis" mask="0xFF" name="GPIOR" lsb="20"/>
         </register>
         <register caption="General Purpose IO Register 1" name="GPIOR1" offset="0x4A" size="1">
-          <bitfield caption="General Purpose IO Register 1 bis" mask="0xFF" name="GPIOR" lsb="10"/>
         </register>
         <register caption="General Purpose IO Register 0" name="GPIOR0" offset="0x3E" size="1">
-          <bitfield caption="General Purpose IO Register 0 bit 7" mask="0x80" name="GPIOR07"/>
-          <bitfield caption="General Purpose IO Register 0 bit 6" mask="0x40" name="GPIOR06"/>
-          <bitfield caption="General Purpose IO Register 0 bit 5" mask="0x20" name="GPIOR05"/>
-          <bitfield caption="General Purpose IO Register 0 bit 4" mask="0x10" name="GPIOR04"/>
-          <bitfield caption="General Purpose IO Register 0 bit 3" mask="0x08" name="GPIOR03"/>
-          <bitfield caption="General Purpose IO Register 0 bit 2" mask="0x04" name="GPIOR02"/>
-          <bitfield caption="General Purpose IO Register 0 bit 1" mask="0x02" name="GPIOR01"/>
-          <bitfield caption="General Purpose IO Register 0 bit 0" mask="0x01" name="GPIOR00"/>
         </register>
         <register caption="Power Reduction Register1" name="PRR1" offset="0x65" size="1">
           <bitfield caption="Power Reduction USB" mask="0x80" name="PRUSB"/>

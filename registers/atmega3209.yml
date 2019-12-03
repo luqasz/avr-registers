@@ -1,29 +1,29 @@
 - address: 0
   bit_fields:
-  - bit: 32
-    description: Interrupt Mode
-    name: INTMODE1
+  - bit: 64
+    description: Run in Standby
+    name: RUNSTDBY
   - bit: 1
-    description: Enable
-    name: ENABLE
+    description: Command
+    name: CMD0
   - bit: 2
-    description: ADC Freerun mode
-    name: FREERUN
+    description: Command
+    name: CMD1
   - bit: 128
     description: Run standby mode
     name: RUNSTBY
   - bit: 4
-    description: Clock Selection
-    name: CLKSEL1
-  - bit: 64
-    description: Interrupt Vector Select
-    name: IVSEL
+    description: Command
+    name: CMD2
+  - bit: 32
+    description: Window
+    name: WINDOW1
   - bit: 8
-    description: Clock Selection
-    name: CLKSEL2
+    description: Operation in active mode
+    name: ACTIVE1
   - bit: 16
-    description: Interrupt Mode
-    name: INTMODE0
+    description: Window
+    name: WINDOW0
   description: Control A
   name: CTRLA
   size: 1
@@ -58,27 +58,27 @@
   size: 1
 - address: 6
   bit_fields:
-  - bit: 128
-    description: Receive Complete Interrupt Enable
-    name: RXCIE
-  - bit: 1
-    description: Overflow Interrupt enable
-    name: OVF
   - bit: 32
     description: Compare 1 Interrupt
     name: CMP1
+  - bit: 1
+    description: Overflow Interrupt enable
+    name: OVF
+  - bit: 2
+    description: Compare Match Interrupt enable
+    name: CMP
   - bit: 64
     description: Compare 2 Interrupt
     name: CMP2
-  - bit: 2
-    description: High Underflow Interrupt Enable
-    name: HUNF
+  - bit: 128
+    description: Receive Complete Interrupt Enable
+    name: RXCIE
   - bit: 4
     description: Configuration
     name: VLMCFG1
   - bit: 16
-    description: Low Compare 0 Interrupt Enable
-    name: LCMP0
+    description: Compare 0 Interrupt
+    name: CMP0
   description: Interrupt Control
   name: INTCTRL
   size: 1
@@ -108,8 +108,8 @@
     description: Lock enable
     name: LOCK
   - bit: 1
-    description: Syncronization busy
-    name: SYNCBUSY
+    description: CTRLA Synchronization Busy Flag
+    name: CTRLABUSY
   - bit: 2
     description: Level 1 Interrupt Executing
     name: LVL1EX
@@ -126,31 +126,31 @@
     description: Inconsistent Sync Field Interrupt Flag
     name: ISFIF
   - bit: 16
-    description: Receive Start Interrupt
-    name: RXSIF
+    description: Analog Comparator State
+    name: STATE
   description: Status
   name: STATUS
   size: 1
 - address: 22
   bit_fields:
-  - bit: 128
-    description: Error Correction Sign Bit
-    name: SIGN
-  - bit: 1
-    description: Error Correction Value
-    name: ERROR0
-  - bit: 2
-    description: Error Correction Value
-    name: ERROR1
   - bit: 32
     description: Error Correction Value
     name: ERROR5
-  - bit: 4
+  - bit: 1
+    description: Duty Cycle
+    name: DUTYCYC
+  - bit: 2
     description: Error Correction Value
-    name: ERROR2
+    name: ERROR1
   - bit: 64
     description: Error Correction Value
     name: ERROR6
+  - bit: 4
+    description: Error Correction Value
+    name: ERROR2
+  - bit: 128
+    description: Error Correction Sign Bit
+    name: SIGN
   - bit: 8
     description: Error Correction Value
     name: ERROR3
@@ -171,26 +171,26 @@
 - address: 1
   bit_fields:
   - bit: 64
-    description: Transmitter Enable
-    name: TXEN
+    description: High Compare 2 Enable
+    name: HCMP2EN
   - bit: 1
     description: Low Compare 0 Enable
     name: LCMP0EN
   - bit: 2
     description: Receiver Mode
     name: RXMODE0
-  - bit: 32
-    description: Compare 1 Enable
-    name: CMP1EN
+  - bit: 128
+    description: Reciever enable
+    name: RXEN
   - bit: 4
     description: Receiver Mode
     name: RXMODE1
-  - bit: 128
-    description: Buffer Mode Enable
-    name: BUFEN
+  - bit: 32
+    description: Compare 1 Enable
+    name: CMP1EN
   - bit: 8
-    description: Auto Lock Update
-    name: ALUPD
+    description: Open Drain Mode Enable
+    name: ODME
   - bit: 16
     description: Start Frame Detection Enable
     name: SFDEN
@@ -199,21 +199,21 @@
   size: 1
 - address: 2
   bit_fields:
-  - bit: 32
-    description: High Compare 1 Output Value
-    name: HCMP1OV
-  - bit: 1
-    description: Compare 0 Waveform Output Value
-    name: CMP0OV
-  - bit: 2
-    description: Compare 1 Waveform Output Value
-    name: CMP1OV
   - bit: 64
     description: Sample Capacitance Selection
     name: SAMPCAP
+  - bit: 32
+    description: High Compare 1 Output Value
+    name: HCMP1OV
+  - bit: 2
+    description: Low Compare 1 Output Value
+    name: LCMP1OV
+  - bit: 1
+    description: Compare 0 Waveform Output Value
+    name: CMP0OV
   - bit: 4
-    description: Compare 2 Waveform Output Value
-    name: CMP2OV
+    description: Low Compare 2 Output Value
+    name: LCMP2OV
   - bit: 16
     description: High Compare 0 Output Value
     name: HCMP0OV
@@ -222,24 +222,24 @@
   size: 1
 - address: 3
   bit_fields:
-  - bit: 64
-    description: Auto Baud Window
-    name: ABW0
+  - bit: 32
+    description: Initial Delay Selection
+    name: INITDLY0
   - bit: 1
     description: Split Mode Enable
     name: SPLITM
   - bit: 2
     description: Sampling Delay Selection
     name: SAMPDLY1
-  - bit: 128
-    description: Auto Baud Window
-    name: ABW1
+  - bit: 64
+    description: Initial Delay Selection
+    name: INITDLY1
   - bit: 4
     description: Sampling Delay Selection
     name: SAMPDLY2
-  - bit: 32
+  - bit: 128
     description: Initial Delay Selection
-    name: INITDLY0
+    name: INITDLY2
   - bit: 8
     description: Sampling Delay Selection
     name: SAMPDLY3
@@ -280,8 +280,8 @@
     description: Input Capture Noise Cancellation Filter
     name: FILTER
   - bit: 1
-    description: Event Input Enable
-    name: CAPTEI
+    description: Start Event Input Enable
+    name: STARTEI
   - bit: 2
     description: Event Action
     name: EVACT0
@@ -449,6 +449,12 @@
   size: 1
 - address: 8
   bit_fields:
+  - bit: 128
+    description: Edge Detection Enable
+    name: EDGEDET
+  - bit: 1
+    description: LUT Enable
+    name: ENABLE
   - bit: 32
     description: Filter Selection
     name: FILTSEL1
@@ -458,15 +464,9 @@
   - bit: 2
     description: Clock Source Selection
     name: CLKSRC0
-  - bit: 128
-    description: Edge Detection Enable
-    name: EDGEDET
   - bit: 4
     description: Clock Source Selection
     name: CLKSRC1
-  - bit: 1
-    description: LUT Enable
-    name: ENABLE
   - bit: 8
     description: Clock Source Selection
     name: CLKSRC2
@@ -524,12 +524,15 @@
   size: 1
 - address: 12
   bit_fields:
-  - bit: 32
-    description: Filter Selection
-    name: FILTSEL1
+  - bit: 128
+    description: Edge Detection Enable
+    name: EDGEDET
   - bit: 1
     description: LUT Enable
     name: ENABLE
+  - bit: 32
+    description: Filter Selection
+    name: FILTSEL1
   - bit: 64
     description: Output Enable
     name: OUTEN
@@ -539,9 +542,6 @@
   - bit: 4
     description: Clock Source Selection
     name: CLKSRC1
-  - bit: 128
-    description: Edge Detection Enable
-    name: EDGEDET
   - bit: 8
     description: Clock Source Selection
     name: CLKSRC2
@@ -559,18 +559,18 @@
   - bit: 1
     description: LUT Input 0 Source Selection
     name: INSEL00
-  - bit: 64
-    description: LUT Input 1 Source Selection
-    name: INSEL12
-  - bit: 128
-    description: LUT Input 1 Source Selection
-    name: INSEL13
   - bit: 2
     description: LUT Input 0 Source Selection
     name: INSEL01
+  - bit: 64
+    description: LUT Input 1 Source Selection
+    name: INSEL12
   - bit: 4
     description: LUT Input 0 Source Selection
     name: INSEL02
+  - bit: 128
+    description: LUT Input 1 Source Selection
+    name: INSEL13
   - bit: 8
     description: LUT Input 0 Source Selection
     name: INSEL03
@@ -680,18 +680,18 @@
   - bit: 1
     description: LUT Enable
     name: ENABLE
-  - bit: 32
-    description: Filter Selection
-    name: FILTSEL1
-  - bit: 64
-    description: Output Enable
-    name: OUTEN
   - bit: 2
     description: Clock Source Selection
     name: CLKSRC0
+  - bit: 32
+    description: Filter Selection
+    name: FILTSEL1
   - bit: 4
     description: Clock Source Selection
     name: CLKSRC1
+  - bit: 64
+    description: Output Enable
+    name: OUTEN
   - bit: 8
     description: Clock Source Selection
     name: CLKSRC2
@@ -980,21 +980,21 @@
   size: 1
 - address: 15
   bit_fields:
-  - bit: 64
-    description: Transfer Bit
-    name: T
-  - bit: 1
-    description: Carry Flag
-    name: C
   - bit: 32
     description: Half Carry Flag
     name: H
-  - bit: 2
-    description: Zero Flag
-    name: Z
+  - bit: 1
+    description: Carry Flag
+    name: C
+  - bit: 64
+    description: Transfer Bit
+    name: T
   - bit: 128
     description: Global Interrupt Enable Flag
     name: I
+  - bit: 2
+    description: Zero Flag
+    name: Z
   - bit: 4
     description: Negative Flag
     name: N
@@ -2032,21 +2032,21 @@
   - bit: 32
     description: BOD Level
     name: LVL0
-  - bit: 1
-    description: BOD Operation in Sleep Mode
-    name: SLEEP0
-  - bit: 2
-    description: BOD Operation in Sleep Mode
-    name: SLEEP1
   - bit: 64
     description: BOD Level
     name: LVL1
-  - bit: 4
-    description: BOD Operation in Active Mode
-    name: ACTIVE0
   - bit: 128
     description: BOD Level
     name: LVL2
+  - bit: 1
+    description: BOD Operation in Sleep Mode
+    name: SLEEP0
+  - bit: 4
+    description: BOD Operation in Active Mode
+    name: ACTIVE0
+  - bit: 2
+    description: BOD Operation in Sleep Mode
+    name: SLEEP1
   - bit: 8
     description: BOD Operation in Active Mode
     name: ACTIVE1
@@ -2077,18 +2077,18 @@
   size: 1
 - address: 5
   bit_fields:
-  - bit: 8
-    description: Reset Pin Configuration
-    name: RSTPINCFG
-  - bit: 1
-    description: EEPROM Save
-    name: EESAVE
   - bit: 64
     description: CRC Source
     name: CRCSRC0
+  - bit: 8
+    description: Reset Pin Configuration
+    name: RSTPINCFG
   - bit: 128
     description: CRC Source
     name: CRCSRC1
+  - bit: 1
+    description: EEPROM Save
+    name: EESAVE
   description: System Configuration 0
   name: SYSCFG0
   size: 1
@@ -2114,18 +2114,18 @@
   - bit: 1
     description: Watchdog Timeout Period
     name: PERIOD0
-  - bit: 2
-    description: Watchdog Timeout Period
-    name: PERIOD1
   - bit: 64
     description: Watchdog Window Timeout Period
     name: WINDOW2
-  - bit: 4
-    description: Watchdog Timeout Period
-    name: PERIOD2
   - bit: 128
     description: Watchdog Window Timeout Period
     name: WINDOW3
+  - bit: 2
+    description: Watchdog Timeout Period
+    name: PERIOD1
+  - bit: 4
+    description: Watchdog Timeout Period
+    name: PERIOD2
   - bit: 8
     description: Watchdog Timeout Period
     name: PERIOD3
@@ -2468,24 +2468,24 @@
   size: 1
 - address: 2
   bit_fields:
-  - bit: 64
-    description: Port Multiplexer USART3
-    name: USART30
   - bit: 32
     description: Port Multiplexer USART2
     name: USART21
-  - bit: 128
-    description: Port Multiplexer USART3
-    name: USART31
   - bit: 1
     description: Port Multiplexer USART0
     name: USART00
-  - bit: 4
-    description: Port Multiplexer USART1
-    name: USART10
   - bit: 2
     description: Port Multiplexer USART0
     name: USART01
+  - bit: 64
+    description: Port Multiplexer USART3
+    name: USART30
+  - bit: 4
+    description: Port Multiplexer USART1
+    name: USART10
+  - bit: 128
+    description: Port Multiplexer USART3
+    name: USART31
   - bit: 8
     description: Port Multiplexer USART1
     name: USART11
@@ -3083,24 +3083,24 @@
   size: 1
 - address: 11
   bit_fields:
+  - bit: 32
+    description: Clock Hold
+    name: CLKHOLD
   - bit: 64
     description: Address/Stop Interrupt Flag
     name: APIF
+  - bit: 128
+    description: Data Interrupt Flag
+    name: DIF
   - bit: 1
     description: Slave Address or Stop
     name: AP
   - bit: 2
     description: Read/Write Direction
     name: DIR
-  - bit: 128
-    description: Data Interrupt Flag
-    name: DIF
   - bit: 4
     description: Bus Error
     name: BUSERR
-  - bit: 32
-    description: Clock Hold
-    name: CLKHOLD
   - bit: 8
     description: Collision
     name: COLL
@@ -3117,18 +3117,18 @@
   size: 2
 - address: 1
   bit_fields:
-  - bit: 64
-    description: Buffer Overflow
-    name: BUFOVF
+  - bit: 128
+    description: Receive Complete Interrupt Flag
+    name: RXCIF
   - bit: 1
     description: Receiver Data Register
     name: DATA8
   - bit: 2
     description: Parity Error
     name: PERR
-  - bit: 128
-    description: Receive Complete Interrupt Flag
-    name: RXCIF
+  - bit: 64
+    description: Buffer Overflow
+    name: BUFOVF
   - bit: 4
     description: Frame Error
     name: FERR

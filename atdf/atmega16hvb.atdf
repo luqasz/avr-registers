@@ -834,13 +834,10 @@
           <bitfield caption="Sleep Enable" mask="0x01" name="SE"/>
         </register>
         <register caption="General Purpose IO Register 2" name="GPIOR2" offset="0x4B" size="1" mask="0xFF">
-          <bitfield caption="General Purpose IO bits" mask="0xFF" name="GPIOR2"/>
         </register>
         <register caption="General Purpose IO Register 1" name="GPIOR1" offset="0x4A" size="1" mask="0xFF">
-          <bitfield caption="General Purpose IO bits" mask="0xFF" name="GPIOR1"/>
         </register>
         <register caption="General Purpose IO Register 0" name="GPIOR0" offset="0x3E" size="1" mask="0xFF">
-          <bitfield caption="General Purpose IO bits" mask="0xFF" name="GPIOR0"/>
         </register>
         <register caption="Digital Input Disable Register" name="DIDR0" offset="0x7E" size="1">
           <bitfield caption="When this bit is written logic one, the digital input buffer of the corresponding V_ADC pin is disabled." mask="0x02" name="PA1DID"/>
